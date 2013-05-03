@@ -6,8 +6,8 @@ require 'MonkeyEngine/version'
 Gem::Specification.new do |spec|
   spec.name          = "MonkeyEngine"
   spec.version       = MonkeyEngine::VERSION
-  spec.authors       = ["gangelo"]
-  spec.email         = ["web.gma@gmail.com"]
+  spec.authors       = ["Gene M. Angelo, Jr."]
+  spec.email         = ["public.gma@gmail.com"]
   spec.description   = %q{TODO: Write a gem description}
   spec.summary       = %q{TODO: Write a gem summary}
   spec.homepage      = ""

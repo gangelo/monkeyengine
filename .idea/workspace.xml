@@ -2,11 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="61433b63-e048-489d-a5ba-f534d6910d63" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/monkey_action_eat.rb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/monkey_action_pause.rb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/monkey_action_sleep.rb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/monkey_action_type.rb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/monkey_timed_action.rb" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="MonkeyEngine.iws" />
@@ -37,7 +32,8 @@
     <file path="/exceptions.rb" changelist="61433b63-e048-489d-a5ba-f534d6910d63" time="1367550643310" ignored="false" />
     <file path="/monkey_timed_action.rb" changelist="61433b63-e048-489d-a5ba-f534d6910d63" time="1367552259602" ignored="false" />
     <file path="/monkey_action_eat.rb" changelist="61433b63-e048-489d-a5ba-f534d6910d63" time="1367552798396" ignored="false" />
-    <file path="/Dummy.txt" changelist="61433b63-e048-489d-a5ba-f534d6910d63" time="1367619600613" ignored="false" />
+    <file path="/Dummy.txt" changelist="61433b63-e048-489d-a5ba-f534d6910d63" time="1367619643399" ignored="false" />
+    <file path="/monkeyengine.gemspec" changelist="61433b63-e048-489d-a5ba-f534d6910d63" time="1367619834207" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,10 +80,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="monkey.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="monkey.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/monkey.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="28" selection-start="285" selection-end="285" vertical-scroll-proportion="0.35123968">
+            <state line="17" column="28" selection-start="285" selection-end="285" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="monkeyengine.gemspec" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/monkeyengine.gemspec">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="9" column="31" selection-start="341" selection-end="341" vertical-scroll-proportion="0.18595041">
               <folding />
             </state>
           </provider>
@@ -120,7 +125,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/Gemfile" />
         <option value="$PROJECT_DIR$/lib/Exceptions/exceptions.rb" />
         <option value="$PROJECT_DIR$/lib/Modules/monkey_action.rb" />
         <option value="$PROJECT_DIR$/lib/Modules/action.rb" />
@@ -136,6 +140,7 @@
         <option value="$PROJECT_DIR$/lib/monkey_action_type.rb" />
         <option value="$PROJECT_DIR$/lib/monkey_timed_action.rb" />
         <option value="$PROJECT_DIR$/lib/MonkeyAction/version.rb" />
+        <option value="$PROJECT_DIR$/monkeyengine.gemspec" />
       </list>
     </option>
   </component>
@@ -385,6 +390,11 @@
       <created>1367362160367</created>
       <updated>1367362160367</updated>
     </task>
+    <task id="LOCAL-00001" summary="Updates">
+      <created>1367619645169</created>
+      <updated>1367619645169</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -409,13 +419,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1440" height="874" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32891247" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26398852" sideWeight="0.6697613" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26398852" sideWeight="0.6697613" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39920425" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33023873" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -472,7 +483,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updates" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -486,6 +497,7 @@
     <option name="UPDATE_FILTER_BY_SCOPE" value="false" />
     <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
+    <MESSAGE value="Updates" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -553,7 +565,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/monkey.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="28" selection-start="285" selection-end="285" vertical-scroll-proportion="0.35123968">
+        <state line="17" column="28" selection-start="285" selection-end="285" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/monkeyengine.gemspec">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="31" selection-start="341" selection-end="341" vertical-scroll-proportion="0.18595041">
           <folding />
         </state>
       </provider>
