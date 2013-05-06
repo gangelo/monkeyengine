@@ -10,6 +10,7 @@ module MonkeyEngine
     include Singleton
     include Observable
 
+    private
     def initialize
     end
 

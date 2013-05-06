@@ -1,15 +1,25 @@
 require 'rspec'
-require 'monkey'
-require 'monkey_action_type'
+require 'Monkey/monkey'
+require 'MonkeyAction/monkey_action_type'
 require 'MonkeyEngine/engine'
 require_relative 'shared_spec'
 
 describe 'MonkeyActionType' do
-  before(:each) do
+  before(:all) do
 
-    @monkey = Monkey.new :harpo, MonkeyEngine::Engine.instance
+    @monkey = Monkey.new :typing_monkey1
     @it = MonkeyActionType.new @monkey, 'abcdef.'
 
+    MonkeyEngine::MonkeyManager.instance.add(@monkey)
+
+  end
+
+  after(:all) do
+    # Kill all the threads.
+    MonkeyEngine::MonkeyManager.instance.kill_all!
+
+    # Give them a little bit to finish.
+    MonkeyEngine::MonkeyManager.instance.join_all(10)
   end
 
   it_should_behave_like 'MonkeyAction'
@@ -43,21 +53,29 @@ describe 'MonkeyActionType' do
 
   # validate
   it "should not raise an error if value is valid" do
-    lambda { MonkeyActionType.new(Monkey.new(:chico, MonkeyEngine::Engine.instance), 'a word.') }.should_not raise_error
+    monkey = Monkey.new(:typing_monkey2)
+    MonkeyEngine::MonkeyManager.instance.add(monkey)
+    lambda { MonkeyActionType.new(monkey, 'a word.') }.should_not raise_error
   end
 
   it "should raise an error if value is the wrong type" do
-    lambda { MonkeyActionType.new(Monkey.new(:chico, MonkeyEngine::Engine.instance), :wrong_type) }.should \
+    monkey = Monkey.new(:typing_monkey3)
+    MonkeyEngine::MonkeyManager.instance.add(monkey)
+    lambda { MonkeyActionType.new(monkey, :wrong_type) }.should \
       raise_error MonkeyEngine::Exceptions::InvalidArgumentTypeException
   end
 
   it "should raise an error if value is empty" do
-    lambda { MonkeyActionType.new(Monkey.new(:chico, MonkeyEngine::Engine.instance), '') }.should \
+    monkey = Monkey.new(:typing_monkey3)
+    MonkeyEngine::MonkeyManager.instance.add(monkey)
+    lambda { MonkeyActionType.new(monkey, '') }.should \
       raise_error MonkeyEngine::Exceptions::InvalidArgumentValueException
   end
 
   it "should raise an error if value is nil" do
-    lambda { MonkeyActionType.new(Monkey.new(:chico, MonkeyEngine::Engine.instance), nil) }.should \
+    monkey = Monkey.new(:typing_monkey6)
+    MonkeyEngine::MonkeyManager.instance.add(monkey)
+    lambda { MonkeyActionType.new(monkey, nil) }.should \
       raise_error MonkeyEngine::Exceptions::NilArgumentException
   end
 end

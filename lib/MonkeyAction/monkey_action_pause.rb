@@ -1,6 +1,6 @@
 require 'MonkeyAction/monkey_action'
 require 'MonkeyEngine/exceptions'
-require 'monkey_timed_action'
+require 'MonkeyAction/monkey_timed_action'
 
 # Monkey action:  pause (as in take a break)
 # The monkey paused, usually from typing.

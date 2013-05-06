@@ -1,15 +1,25 @@
 require 'rspec'
-require 'monkey'
-require 'monkey_action_sleep'
+require 'Monkey/monkey'
+require 'MonkeyAction/monkey_action_sleep'
 require 'MonkeyEngine/engine'
 require_relative 'shared_spec'
 
 describe 'MonkeyActionSleep' do
-  before(:each) do
+  before(:all) do
 
-    @monkey = Monkey.new :chico, MonkeyEngine::Engine.instance
-    @it = MonkeyActionSleep.new @monkey, 60 * 8 # minutes
+    @monkey = Monkey.new :sleeping_monkey1
+    @it = MonkeyActionSleep.new @monkey, 60 * 8 # milliseconds
 
+    MonkeyEngine::MonkeyManager.instance.add(@monkey)
+
+  end
+
+  after(:all) do
+    # Kill all the threads.
+    MonkeyEngine::MonkeyManager.instance.kill_all!
+
+    # Give them a little bit to finish.
+    MonkeyEngine::MonkeyManager.instance.join_all(10)
   end
 
   it_should_behave_like 'MonkeyAction'
@@ -43,26 +53,36 @@ describe 'MonkeyActionSleep' do
 
   # validate
   it "should not raise an error if value is within acceptable range" do
-    lambda { MonkeyActionSleep.new(Monkey.new(:chico, MonkeyEngine::Engine.instance), 60 * 8) }.should_not raise_error
+    monkey = Monkey.new(:sleeping_monkey2)
+    MonkeyEngine::MonkeyManager.instance.add(monkey)
+    lambda { MonkeyActionSleep.new(monkey, 60 * 8) }.should_not raise_error
   end
 
   it "should raise an error if value is the wrong type" do
-    lambda { MonkeyActionSleep.new(Monkey.new(:chico, MonkeyEngine::Engine.instance), :wrong_type) }.should \
+    monkey = Monkey.new(:sleeping_monkey3)
+    MonkeyEngine::MonkeyManager.instance.add(monkey)
+    lambda { MonkeyActionSleep.new(monkey, :wrong_type) }.should \
       raise_error MonkeyEngine::Exceptions::InvalidArgumentTypeException
   end
 
   it "should raise an error if value is less than min acceptable range" do
-    lambda { MonkeyActionSleep.new(Monkey.new(:chico, MonkeyEngine::Engine.instance), 60 * 5) }.should \
+    monkey = Monkey.new(:sleeping_monkey4)
+    MonkeyEngine::MonkeyManager.instance.add(monkey)
+    lambda { MonkeyActionSleep.new(monkey, 60 * 5) }.should \
       raise_error MonkeyEngine::Exceptions::InvalidArgumentValueException
   end
 
   it "should raise an error if value is greater than max acceptable range" do
-    lambda { MonkeyActionSleep.new(Monkey.new(:chico, MonkeyEngine::Engine.instance), 60 * 9) }.should \
+    monkey = Monkey.new(:sleeping_monkey5)
+    MonkeyEngine::MonkeyManager.instance.add(monkey)
+    lambda { MonkeyActionSleep.new(monkey, 60 * 9) }.should \
       raise_error MonkeyEngine::Exceptions::InvalidArgumentValueException
   end
 
   it "should raise an error if value is nil" do
-    lambda { MonkeyActionSleep.new(Monkey.new(:chico, MonkeyEngine::Engine.instance), nil) }.should \
+    monkey = Monkey.new(:sleeping_monkey6)
+    MonkeyEngine::MonkeyManager.instance.add(monkey)
+    lambda { MonkeyActionSleep.new(monkey, nil) }.should \
       raise_error MonkeyEngine::Exceptions::NilArgumentException
   end
 
