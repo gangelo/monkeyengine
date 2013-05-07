@@ -1,9 +1,15 @@
 require 'singleton'
+require 'forwardable'
 
 module MonkeyEngine
 
 # Manages monkeys.
   class MonkeyManager
+    include Enumerable
+    extend Forwardable
+
+    def_delegators :@monkeys, :each
+
     include Singleton
 
     def initialize
@@ -12,20 +18,32 @@ module MonkeyEngine
 
     public
     def add(monkey)
-      # Only add the monkey if it does not already exist by name.
-      @monkeys.push(monkey) unless exists_by_name? monkey.monkey_name
+      # Only add the monkey if it does not already exist.
+      @monkeys.push(monkey) unless exists? monkey
+    end
+
+    def count
+      @monkeys.count
     end
 
     def exists?(monkey)
-      @monkeys.include? monkey
+      true unless get(monkey).nil?
     end
 
-    def exists_by_name?(monkey_name)
-      true unless get(monkey_name).nil?
+    def alive?(monkey)
+      monkey = get(monkey)
+      monkey.alive? unless monkey.nil?
     end
 
-    def get(monkey_name)
-      @monkeys.first { |monkey| monkey.monkey_name == monkey_name } unless @monkeys.empty?
+    def get(monkey)
+      return nil if @monkeys.empty?
+
+      # TODO: This seems inefficient.
+      return @monkeys.select { |m| m.monkey_symbol == monkey }.first if monkey.is_a? Symbol
+      return @monkeys.select { |m| m.monkey_symbol == monkey.to_sym }.first if monkey.is_a? String
+      return @monkeys.select { |m| m.monkey_symbol == monkey.monkey_symbol }.first if monkey.is_a? Monkey
+
+      raise MonkeyEngine::Exceptions::InvalidArgumentTypeException.new "Parameter 'monkey' is not a Symbol, String or Monkey class"
     end
 
     # Deletes but does not kill.
