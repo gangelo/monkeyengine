@@ -7,6 +7,7 @@ describe 'MonkeyService' do
 
   before(:all) do
     @it = MonkeyEngine::MonkeyService.instance
+    @it.add_observer self
   end
 
   after(:all) do
@@ -15,6 +16,10 @@ describe 'MonkeyService' do
 
     # Give them a little bit to finish.
     @it.join_all(10)
+  end
+
+  def update(time, action, param)
+    puts "Time: [#{time}], Action: [#{action}], Param: [#{param}]"
   end
 
   context 'initialization' do

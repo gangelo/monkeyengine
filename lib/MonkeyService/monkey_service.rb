@@ -14,7 +14,7 @@ module MonkeyEngine
     include Enumerable
     extend Forwardable
 
-    def_delegators :@monkey_manager, :add, :alive?, :get, :count, :exists?, :join_all, :kill_all!
+    def_delegators :@monkey_manager, :alive?, :get, :count, :exists?, :join_all
 
     def initialize
       @monkey_manager = MonkeyEngine::MonkeyManager.instance
@@ -25,17 +25,12 @@ module MonkeyEngine
       @engine = MonkeyEngine::Engine.instance
     end
 
-    #def add(monkey)
-    #  @monkey_manager.add(monkey)
-    #end
+    def add(monkey)
+      @monkey_manager.add(monkey)
 
-    #def count
-    #  @monkey_manager.count
-    #end
-
-    #def exists?(monkey)
-    #  @monkey_manager.exists? monkey
-    #end
+      changed
+      notify_observers(Time.now, :add, monkey)
+    end
 
     #def alive?(monkey)
     #  @monkey_manager.alive? monkey
@@ -51,20 +46,37 @@ module MonkeyEngine
       alive_count
     end
 
+    #def count
+    #  @monkey_manager.count
+    #end
+
+    #def exists?(monkey)
+    #  @monkey_manager.exists? monkey
+    #end
+
     # Starts all the monkeys
-    def start_all
-    end
+    #def start_all
+    #end
 
     #def join_all(limit=nil)
     #  @monkey_manager.join_all limit
     #end
 
+    def kill!(monkey)
+      @monkey_manager.kill!(monkey)
+
+      changed
+      notify_observers(Time.now, :kill, monkey)
+    end
+
+
     # Kills all the monkeys.
-    #def kill_all
-      # Not delegating to @monkey_manager because kill_all! (bang)
-      # is somewhat misleading as  this object is not directly altered.
-    #  @monkey_manager.kill_all!
-    #end
+    def kill_all!
+      @monkey_manager.kill_all!
+
+      changed
+      notify_observers(Time.now, :kill_all, nil)
+    end
 
     # Perform a monkey action.
     #def monkey_do(monkey, action)

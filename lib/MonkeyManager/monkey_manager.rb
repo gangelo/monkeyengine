@@ -57,6 +57,9 @@ module MonkeyEngine
     end
 
     def kill!(monkey)
+      monkey = get(monkey)
+      return if monkey.nil?
+
       @monkeys.delete(monkey)
       monkey.kill
     end
