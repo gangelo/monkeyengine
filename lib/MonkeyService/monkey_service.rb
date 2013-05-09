@@ -18,10 +18,6 @@ module MonkeyEngine
 
     def initialize
       @monkey_manager = MonkeyEngine::MonkeyManager.instance
-      @monkey_manager.add(Monkey.new :groucho)
-      @monkey_manager.add(Monkey.new :harpo)
-      @monkey_manager.add(Monkey.new :chico)
-
       @engine = MonkeyEngine::Engine.instance
     end
 
@@ -29,7 +25,7 @@ module MonkeyEngine
       @monkey_manager.add(monkey)
 
       changed
-      notify_observers(Time.now, :add, monkey)
+      notify_observers(Time.now, :add, {monkey: monkey})
     end
 
     #def alive?(monkey)
@@ -66,7 +62,7 @@ module MonkeyEngine
       @monkey_manager.kill!(monkey)
 
       changed
-      notify_observers(Time.now, :kill, monkey)
+      notify_observers(Time.now, :kill!, monkey)
     end
 
 
@@ -75,7 +71,7 @@ module MonkeyEngine
       @monkey_manager.kill_all!
 
       changed
-      notify_observers(Time.now, :kill_all, nil)
+      notify_observers(Time.now, :kill_all!, nil)
     end
 
     # Perform a monkey action.

@@ -12,7 +12,7 @@ class Monkey
   end
 
   def kill
-    puts "\n\n#{monkey_symbol} call to kill: #{Time.now}"
+    #puts "\n\n#{monkey_symbol} call to kill: #{Time.now}"
     @kill_thread = true
   end
 
@@ -42,6 +42,6 @@ class Monkey
       #puts "#{monkey_symbol} monkey running...#{Time.now}\n"
       sleep(@sleep_time)
     end
-    puts "\n\n#{monkey_symbol} monkey killed: #{Time.now}"
+    #puts "\n\n#{monkey_symbol} monkey killed: #{Time.now}"
   end
 end

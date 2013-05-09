@@ -7,7 +7,13 @@ describe 'MonkeyService' do
 
   before(:all) do
     @it = MonkeyEngine::MonkeyService.instance
+
+    # Register us before we do anything, so we can be notified of everything.
     @it.add_observer self
+
+    @it.add(Monkey.new :groucho)
+    @it.add(Monkey.new :harpo)
+    @it.add(Monkey.new :chico)
   end
 
   after(:all) do
