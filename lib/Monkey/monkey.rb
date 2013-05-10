@@ -1,18 +1,21 @@
 require 'thread'
+require 'Helpers/protected_constructor'
 
 # Monkey class.
 class Monkey
+  include ProtectedConstructor
 
   attr_reader :monkey_symbol
 
-  public
+  protected
   def initialize(monkey_symbol)
     @monkey_symbol = monkey_symbol
     initialize_thread
   end
 
+  public
+
   def kill
-    #puts "\n\n#{monkey_symbol} call to kill: #{Time.now}"
     @kill_thread = true
   end
 
@@ -39,9 +42,7 @@ class Monkey
 
   def monkey_do
     until @kill_thread do
-      #puts "#{monkey_symbol} monkey running...#{Time.now}\n"
       sleep(@sleep_time)
     end
-    #puts "\n\n#{monkey_symbol} monkey killed: #{Time.now}"
   end
 end
