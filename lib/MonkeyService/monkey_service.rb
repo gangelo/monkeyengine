@@ -28,35 +28,15 @@ module MonkeyEngine
       notify_observers(Time.now, :add, {monkey: monkey})
     end
 
-    #def alive?(monkey)
-    #  @monkey_manager.alive? monkey
-    #end
-
     def any_alive?
       return false if @monkey_manager.count == 0
 
       alive_count = 0
 
-      @monkey_manager.each { |monkey| ++alive_count if monkey.alive? }
+      @monkey_manager.each { |monkey| alive_count += 1 if monkey.alive? }
 
-      alive_count
+      alive_count > 0
     end
-
-    #def count
-    #  @monkey_manager.count
-    #end
-
-    #def exists?(monkey)
-    #  @monkey_manager.exists? monkey
-    #end
-
-    # Starts all the monkeys
-    #def start_all
-    #end
-
-    #def join_all(limit=nil)
-    #  @monkey_manager.join_all limit
-    #end
 
     def kill!(monkey)
       @monkey_manager.kill!(monkey)
@@ -73,10 +53,6 @@ module MonkeyEngine
       changed
       notify_observers(Time.now, :kill_all!, nil)
     end
-
-    # Perform a monkey action.
-    #def monkey_do(monkey, action)
-    #end
   end
 
 end

@@ -1,5 +1,6 @@
 require 'rspec'
 require 'MonkeyService/monkey_service'
+require 'MonkeyFactory/monkey_factory'
 require 'MonkeyEngine/exceptions'
 
 
@@ -11,9 +12,9 @@ describe 'MonkeyService' do
     # Register us before we do anything, so we can be notified of everything.
     @it.add_observer self
 
-    @it.add(Monkey.new :groucho)
-    @it.add(Monkey.new :harpo)
-    @it.add(Monkey.new :chico)
+    @it.add(MonkeyFactory::create :groucho)
+    @it.add(MonkeyFactory::create :harpo)
+    @it.add(MonkeyFactory::create :chico)
   end
 
   after(:all) do
@@ -52,6 +53,14 @@ describe 'MonkeyService' do
 
     it "'get' should raise an exception if invalid argument type is sent" do
       lambda { @it.get(999) }.should raise_exception MonkeyEngine::Exceptions::InvalidArgumentTypeException
+    end
+
+    it "'add' should raise an exception if adding a non-unique object" do
+      lambda { @it.add(MonkeyFactory::create :chico) }.should raise_exception MonkeyEngine::Exceptions::UniqueObjectException
+    end
+
+    it "'any_alive?' should return objects that are alive" do
+      @it.any_alive?.should == true
     end
 
   end

@@ -10,5 +10,9 @@ module MonkeyEngine
 
     class NilArgumentException < ArgumentError;
     end
+
+    # The object must be unique.
+    class UniqueObjectException < ArgumentError;
+    end
   end
 end

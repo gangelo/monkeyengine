@@ -1,6 +1,7 @@
 require 'rspec'
 require 'Monkey/monkey'
 require 'MonkeyAction/monkey_action_pause'
+require 'MonkeyFactory/monkey_factory'
 require 'MonkeyEngine/engine'
 require 'MonkeyManager/monkey_manager'
 require_relative 'shared_spec'
@@ -8,7 +9,7 @@ require_relative 'shared_spec'
 describe 'MonkeyActionPause' do
   before(:all) do
 
-    @monkey = Monkey.new :pausing_monkey1
+    @monkey = MonkeyFactory.create :pausing_monkey1
     @it = MonkeyActionPause.new @monkey, 250 # milliseconds
 
     MonkeyEngine::MonkeyManager.instance.add(@monkey)
@@ -54,34 +55,34 @@ describe 'MonkeyActionPause' do
 
   # validate
   it "should not raise an error if value is within acceptable range" do
-    monkey = Monkey.new(:pausing_monkey2)
+    monkey = MonkeyFactory.create(:pausing_monkey2)
     MonkeyEngine::MonkeyManager.instance.add(monkey)
     lambda { MonkeyActionPause.new(monkey, 5000) }.should_not raise_error
   end
 
   it "should raise an error if value is the wrong type" do
-    monkey = Monkey.new(:pausing_monkey3)
+    monkey = MonkeyFactory.create(:pausing_monkey3)
     MonkeyEngine::MonkeyManager.instance.add(monkey)
     lambda { MonkeyActionPause.new(monkey, :wrong_type) }.should \
       raise_error MonkeyEngine::Exceptions::InvalidArgumentTypeException
   end
 
   it "should raise an error if value is less than min acceptable range" do
-    monkey = Monkey.new(:pausing_monkey4)
+    monkey = MonkeyFactory.create(:pausing_monkey4)
     MonkeyEngine::MonkeyManager.instance.add(monkey)
     lambda { MonkeyActionPause.new(monkey, -5000) }.should \
       raise_error MonkeyEngine::Exceptions::InvalidArgumentValueException
   end
 
   it "should raise an error if value is greater than max acceptable range" do
-    monkey = Monkey.new(:pausing_monkey5)
+    monkey = MonkeyFactory.create(:pausing_monkey5)
     MonkeyEngine::MonkeyManager.instance.add(monkey)
     lambda { MonkeyActionPause.new(monkey, 11000) }.should \
       raise_error MonkeyEngine::Exceptions::InvalidArgumentValueException
   end
 
   it "should raise an error if value is nil" do
-    monkey = Monkey.new(:pausing_monkey6)
+    monkey = MonkeyFactory.create(:pausing_monkey6)
     MonkeyEngine::MonkeyManager.instance.add(monkey)
     lambda { MonkeyActionPause.new(monkey, nil) }.should \
       raise_error MonkeyEngine::Exceptions::NilArgumentException

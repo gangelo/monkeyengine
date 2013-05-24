@@ -3,7 +3,7 @@ require 'forwardable'
 
 module MonkeyEngine
 
-# Manages monkeys.
+  # Manages monkeys.
   class MonkeyManager
     include Enumerable
     extend Forwardable
@@ -18,8 +18,11 @@ module MonkeyEngine
 
     public
     def add(monkey)
-      # Only add the monkey if it does not already exist.
-      @monkeys.push(monkey) unless exists? monkey
+      raise MonkeyEngine::Exceptions::InvalidArgumentTypeException.new "Parameter 'monkey' is not Monkey object" unless monkey.is_a? Monkey
+      raise MonkeyEngine::Exceptions::UniqueObjectException.new "Monkeys must be unique" if exists? monkey
+
+      @monkeys.push(monkey)
+      monkey
     end
 
     def count
@@ -43,7 +46,7 @@ module MonkeyEngine
       return @monkeys.select { |m| m.monkey_symbol == monkey.to_sym }.first if monkey.is_a? String
       return @monkeys.select { |m| m.monkey_symbol == monkey.monkey_symbol }.first if monkey.is_a? Monkey
 
-      raise MonkeyEngine::Exceptions::InvalidArgumentTypeException.new "Parameter 'monkey' is not a Symbol, String or Monkey class"
+      raise MonkeyEngine::Exceptions::InvalidArgumentTypeException.new "Parameter 'monkey' is not a Symbol, String or Monkey object"
     end
 
     # Deletes but does not kill.

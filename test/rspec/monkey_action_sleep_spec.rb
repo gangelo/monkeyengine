@@ -1,13 +1,14 @@
 require 'rspec'
 require 'Monkey/monkey'
 require 'MonkeyAction/monkey_action_sleep'
+require 'MonkeyFactory/monkey_factory'
 require 'MonkeyEngine/engine'
 require_relative 'shared_spec'
 
 describe 'MonkeyActionSleep' do
   before(:all) do
 
-    @monkey = Monkey.new :sleeping_monkey1
+    @monkey = MonkeyFactory.create :sleeping_monkey1
     @it = MonkeyActionSleep.new @monkey, 60 * 8 # milliseconds
 
     MonkeyEngine::MonkeyManager.instance.add(@monkey)
@@ -53,34 +54,34 @@ describe 'MonkeyActionSleep' do
 
   # validate
   it "should not raise an error if value is within acceptable range" do
-    monkey = Monkey.new(:sleeping_monkey2)
+    monkey = MonkeyFactory.create(:sleeping_monkey2)
     MonkeyEngine::MonkeyManager.instance.add(monkey)
     lambda { MonkeyActionSleep.new(monkey, 60 * 8) }.should_not raise_error
   end
 
   it "should raise an error if value is the wrong type" do
-    monkey = Monkey.new(:sleeping_monkey3)
+    monkey = MonkeyFactory.create(:sleeping_monkey3)
     MonkeyEngine::MonkeyManager.instance.add(monkey)
     lambda { MonkeyActionSleep.new(monkey, :wrong_type) }.should \
       raise_error MonkeyEngine::Exceptions::InvalidArgumentTypeException
   end
 
   it "should raise an error if value is less than min acceptable range" do
-    monkey = Monkey.new(:sleeping_monkey4)
+    monkey = MonkeyFactory.create(:sleeping_monkey4)
     MonkeyEngine::MonkeyManager.instance.add(monkey)
     lambda { MonkeyActionSleep.new(monkey, 60 * 5) }.should \
       raise_error MonkeyEngine::Exceptions::InvalidArgumentValueException
   end
 
   it "should raise an error if value is greater than max acceptable range" do
-    monkey = Monkey.new(:sleeping_monkey5)
+    monkey = MonkeyFactory.create(:sleeping_monkey5)
     MonkeyEngine::MonkeyManager.instance.add(monkey)
     lambda { MonkeyActionSleep.new(monkey, 60 * 9) }.should \
       raise_error MonkeyEngine::Exceptions::InvalidArgumentValueException
   end
 
   it "should raise an error if value is nil" do
-    monkey = Monkey.new(:sleeping_monkey6)
+    monkey = MonkeyFactory.create(:sleeping_monkey6)
     MonkeyEngine::MonkeyManager.instance.add(monkey)
     lambda { MonkeyActionSleep.new(monkey, nil) }.should \
       raise_error MonkeyEngine::Exceptions::NilArgumentException

@@ -1,13 +1,14 @@
 require 'rspec'
 require 'Monkey/monkey'
 require 'MonkeyAction/monkey_action_type'
+require 'MonkeyFactory/monkey_factory'
 require 'MonkeyEngine/engine'
 require_relative 'shared_spec'
 
 describe 'MonkeyActionType' do
   before(:all) do
 
-    @monkey = Monkey.new :typing_monkey1
+    @monkey = MonkeyFactory::create :typing_monkey1
     @it = MonkeyActionType.new @monkey, 'abcdef.'
 
     MonkeyEngine::MonkeyManager.instance.add(@monkey)
@@ -53,27 +54,27 @@ describe 'MonkeyActionType' do
 
   # validate
   it "should not raise an error if value is valid" do
-    monkey = Monkey.new(:typing_monkey2)
+    monkey = MonkeyFactory::create(:typing_monkey2)
     MonkeyEngine::MonkeyManager.instance.add(monkey)
     lambda { MonkeyActionType.new(monkey, 'a word.') }.should_not raise_error
   end
 
   it "should raise an error if value is the wrong type" do
-    monkey = Monkey.new(:typing_monkey3)
+    monkey = MonkeyFactory::create(:typing_monkey3)
     MonkeyEngine::MonkeyManager.instance.add(monkey)
     lambda { MonkeyActionType.new(monkey, :wrong_type) }.should \
       raise_error MonkeyEngine::Exceptions::InvalidArgumentTypeException
   end
 
   it "should raise an error if value is empty" do
-    monkey = Monkey.new(:typing_monkey3)
+    monkey = MonkeyFactory::create(:typing_monkey4)
     MonkeyEngine::MonkeyManager.instance.add(monkey)
     lambda { MonkeyActionType.new(monkey, '') }.should \
       raise_error MonkeyEngine::Exceptions::InvalidArgumentValueException
   end
 
   it "should raise an error if value is nil" do
-    monkey = Monkey.new(:typing_monkey6)
+    monkey = MonkeyFactory::create(:typing_monkey5)
     MonkeyEngine::MonkeyManager.instance.add(monkey)
     lambda { MonkeyActionType.new(monkey, nil) }.should \
       raise_error MonkeyEngine::Exceptions::NilArgumentException
