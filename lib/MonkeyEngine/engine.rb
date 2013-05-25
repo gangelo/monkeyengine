@@ -2,7 +2,6 @@ require 'observer'
 require 'singleton'
 require 'time'
 
-#require 'Action/action'
 require 'MonkeyAction/monkey_action_eat'
 require 'MonkeyAction/monkey_action_pause'
 require 'MonkeyAction/monkey_action_sleep'
@@ -11,7 +10,7 @@ require "MonkeyEngine/version"
 
 module MonkeyEngine
 
-  # Engine class.
+  # Assigns, executes and evaluates actions.
   class Engine
     include Singleton
     include Observable
