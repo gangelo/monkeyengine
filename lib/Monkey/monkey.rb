@@ -48,7 +48,7 @@ class Monkey
 
   def monkey_do
     until @kill_thread do
-      @action = @monkey_service.get_action(self) if @action.nil? || @action.action_completed
+      @action = @monkey_service.new_action(self) if @action.nil? || @action.action_completed?
       @monkey_service.monkey_do @action unless @monkey_service.action_eval! @action
       sleep(@sleep_time)
     end

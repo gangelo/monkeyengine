@@ -54,8 +54,8 @@ module MonkeyEngine
       notify_observers(Time.now, :kill_all!, nil)
     end
 
-    def get_action(monkey)
-      @engine.get_action monkey
+    def new_action(monkey)
+      @engine.new_action monkey
     end
 
     def monkey_do(action)
