@@ -3,15 +3,12 @@ require 'MonkeyEngine/exceptions'
 
 # Monkey action:  type (as in keyboard)
 # The monkey typed something on the keyboard.
-class MonkeyActionType
-  include MonkeyAction
+class MonkeyActionType < MonkeyAction
 
   WEIGHT = 5.0
 
   def initialize(monkey, value)
-   @monkey = monkey
-   @value = value
-   @weight = WEIGHT
+    super monkey, value, WEIGHT
 
     validate
   end

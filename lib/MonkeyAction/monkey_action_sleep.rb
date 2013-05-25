@@ -1,3 +1,4 @@
+require 'time'
 require 'MonkeyAction/monkey_action'
 require 'MonkeyEngine/exceptions'
 require 'MonkeyAction/monkey_timed_action'
@@ -10,7 +11,9 @@ class MonkeyActionSleep < MonkeyTimedAction
   VALID_VALUES = ((60 * 6)..(60 * 8)) # 6 through 8 hours
 
   def initialize(monkey, value)
-    super(monkey, value, WEIGHT)
+    super monkey, value, WEIGHT
+
+    @action_time_of_completion = @action_time + (value * (60 * 60))
 
     validate
   end

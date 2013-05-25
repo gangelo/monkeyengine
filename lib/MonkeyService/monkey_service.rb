@@ -53,6 +53,18 @@ module MonkeyEngine
       changed
       notify_observers(Time.now, :kill_all!, nil)
     end
+
+    def get_action(monkey)
+      @engine.get_action monkey
+    end
+
+    def monkey_do(action)
+      @engine.do_action action
+    end
+
+    def action_eval!(action)
+      @engine.action_eval! action
+    end
   end
 
 end

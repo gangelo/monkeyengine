@@ -10,7 +10,7 @@ describe 'MonkeyActionPause' do
   before(:all) do
 
     @monkey = MonkeyFactory.create :pausing_monkey1
-    @it = MonkeyActionPause.new @monkey, 250 # milliseconds
+    @it = MonkeyActionPause.new @monkey, 1 # 1 second
 
     MonkeyEngine::MonkeyManager.instance.add(@monkey)
 
@@ -37,7 +37,7 @@ describe 'MonkeyActionPause' do
 
   # Value
   it '@value should return the right value' do
-    @it.value.should == 250
+    @it.value.should == 1
   end
 
   it "@value should be is_a? Integer" do
@@ -57,7 +57,7 @@ describe 'MonkeyActionPause' do
   it "should not raise an error if value is within acceptable range" do
     monkey = MonkeyFactory.create(:pausing_monkey2)
     MonkeyEngine::MonkeyManager.instance.add(monkey)
-    lambda { MonkeyActionPause.new(monkey, 5000) }.should_not raise_error
+    lambda { MonkeyActionPause.new(monkey, 5) }.should_not raise_error
   end
 
   it "should raise an error if value is the wrong type" do
@@ -70,14 +70,14 @@ describe 'MonkeyActionPause' do
   it "should raise an error if value is less than min acceptable range" do
     monkey = MonkeyFactory.create(:pausing_monkey4)
     MonkeyEngine::MonkeyManager.instance.add(monkey)
-    lambda { MonkeyActionPause.new(monkey, -5000) }.should \
+    lambda { MonkeyActionPause.new(monkey, -1) }.should \
       raise_error MonkeyEngine::Exceptions::InvalidArgumentValueException
   end
 
   it "should raise an error if value is greater than max acceptable range" do
     monkey = MonkeyFactory.create(:pausing_monkey5)
     MonkeyEngine::MonkeyManager.instance.add(monkey)
-    lambda { MonkeyActionPause.new(monkey, 11000) }.should \
+    lambda { MonkeyActionPause.new(monkey, 61) }.should \
       raise_error MonkeyEngine::Exceptions::InvalidArgumentValueException
   end
 

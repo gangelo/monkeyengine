@@ -2,13 +2,14 @@ require 'MonkeyAction/monkey_action'
 require 'MonkeyEngine/exceptions'
 
 # Monkey action:  one that is timed based on an Integer.
-class MonkeyTimedAction
-  include MonkeyAction
+class MonkeyTimedAction < MonkeyAction
+
+  attr_accessor :action_time_of_completion
 
   def initialize(monkey, value, weight)
-    @monkey = monkey
-    @value = value
-    @weight = weight
+    super monkey, value, weight
+
+    @action_time_of_completion = nil
 
     validate
   end

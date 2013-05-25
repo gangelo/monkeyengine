@@ -1,3 +1,4 @@
+require 'time'
 require 'MonkeyAction/monkey_action'
 require 'MonkeyEngine/exceptions'
 require 'MonkeyAction/monkey_timed_action'
@@ -7,10 +8,12 @@ require 'MonkeyAction/monkey_timed_action'
 class MonkeyActionPause < MonkeyTimedAction
 
   WEIGHT = 2.0
-  VALID_VALUES = (0..10000) # Milliseconds (0 - 10 seconds)
+  VALID_VALUES = (0..60) # Seconds (0 - 60 seconds)
 
   def initialize(monkey, value)
-    super(monkey, value, WEIGHT)
+    super monkey, value, WEIGHT
+
+    @action_time_of_completion = @action_time + value
 
     validate
   end

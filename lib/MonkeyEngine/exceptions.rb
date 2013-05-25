@@ -14,5 +14,8 @@ module MonkeyEngine
     # The object must be unique.
     class UniqueObjectException < ArgumentError;
     end
+
+    class InvalidOperationException < ArgumentError;
+    end
   end
 end

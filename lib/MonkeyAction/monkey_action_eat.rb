@@ -1,6 +1,7 @@
+require 'time'
 require 'MonkeyAction/monkey_action'
 require 'MonkeyEngine/exceptions'
-require 'monkey_timed_action'
+require 'MonkeyAction/monkey_timed_action'
 
 # Monkey action:  eat (as in banana)
 # The monkey is eating.
@@ -10,7 +11,9 @@ class MonkeyActionEat < MonkeyTimedAction
   VALID_VALUES = (30..60) # 30 through 60 minutes
 
   def initialize(monkey, value)
-    super(monkey, value, WEIGHT)
+    super monkey, value, WEIGHT
+
+    @action_time_of_completion = @action_time + (value * 60)
 
     validate
   end
