@@ -16,7 +16,7 @@ class Action
     @action_completed
   end
 
-  def action_completed(value)
+  def action_completed=(value)
     @completed = value
   end
 

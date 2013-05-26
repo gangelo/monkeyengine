@@ -2,10 +2,12 @@ require 'observer'
 require 'singleton'
 require 'time'
 
+require_relative 'action_rules'
 require 'MonkeyAction/monkey_action_eat'
 require 'MonkeyAction/monkey_action_pause'
 require 'MonkeyAction/monkey_action_sleep'
 require 'MonkeyAction/monkey_action_type'
+require 'MonkeyAction/monkey_action_wake'
 require "MonkeyEngine/version"
 
 module MonkeyEngine
@@ -32,11 +34,17 @@ module MonkeyEngine
       action.action_completed?
     end
 
+    # Returns a new action.
     def new_action(monkey)
-      MonkeyActionPause.new monkey, 5
+      raise MonkeyEngine::Exceptions::InvalidOperationException.new \
+        "The action [#{monkey.action.class.name}] for Monkey [#{monkey.monkey_symbol}] is already completed" \
+          if !monkey.action.nil? && monkey.action.action_completed?
+
+      action_rules = ActionRules.new monkey
+      return action_rules.get_next_action
     end
 
-    # Evaluates an action and sets it to completed if he action is completed.
+    # Evaluates an action and sets it to completed if the criteria for completion is met.
     def action_eval!(action)
       raise MonkeyEngine::Exceptions::NilArgumentException.new "The [action] to be evaluated cannot be nil" \
         if action.nil?
@@ -48,6 +56,7 @@ module MonkeyEngine
       action_eval_pause(action) if action.is_a?(MonkeyActionPause)
       action_eval_sleep(action) if action.is_a?(MonkeyActionSleep)
       action_eval_type(action) if action.is_a?(MonkeyActionType)
+      action_eval_wake(action) if action.is_a?(MonkeyActionWake)
 
       # If we don't specifically handle the action, just let it pass through - Action#action_completed will
       # be set elsewhere.
@@ -55,6 +64,8 @@ module MonkeyEngine
     end
 
     private
+
+    # Action evaluation methods
 
     def action_eval_eat(action)
       raise MonkeyEngine::Exceptions::InvalidArgumentTypeException.new "The [action] is not the correct type" \
@@ -86,6 +97,15 @@ module MonkeyEngine
       action
     end
 
+    def action_eval_wake(action)
+      raise MonkeyEngine::Exceptions::InvalidArgumentTypeException.new "The [action] is not the correct type" \
+        unless action.is_a? MonkeyActionWake
+
+      action.action_completed = true
+
+      action
+    end
+
     def action_eval_timed_action(action)
       raise MonkeyEngine::Exceptions::InvalidArgumentTypeException.new "The [action] is not the correct type" \
         unless action.is_a? MonkeyTimedAction
@@ -94,5 +114,6 @@ module MonkeyEngine
 
       action
     end
+
   end
 end
