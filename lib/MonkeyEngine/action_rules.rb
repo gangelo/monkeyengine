@@ -15,6 +15,8 @@ class ActionRules
           if !monkey.action.nil? && monkey.action.action_completed?
 
     @monkey = monkey
+
+    self
   end
 
   # Gets the next action

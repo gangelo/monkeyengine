@@ -1,11 +1,11 @@
 require 'MonkeyAction/monkey_action'
 require 'MonkeyEngine/exceptions'
 
-# Monkey action:  wake (as in from sleep)
-# The monkey has awakened from sleep.
-class MonkeyActionWake < MonkeyAction
+# Monkey action:  dead (as in not alive)
+# The monkey has been killed - the thread is not running.
+class MonkeyActionDead < MonkeyAction
 
-  WEIGHT = 2.0
+  WEIGHT = 100.0
   VALID_VALUES = [ true ]
 
   def initialize(monkey)

@@ -1,4 +1,5 @@
 require 'thread'
+require 'MonkeyAction/monkey_action_dead'
 require 'MonkeyService/monkey_service'
 require 'Helpers/protected_constructor'
 
@@ -12,25 +13,33 @@ class Monkey
   def initialize(monkey_symbol)
     @monkey_symbol = monkey_symbol
     @monkey_service = MonkeyEngine::MonkeyService.instance
-    initialize_thread
+    self
   end
 
   public
+  def alive?
+    return false if @thread.nil?
+    @thread.alive?
+  end
+
+  def current_action
+    return MonkeyActionDead.new(self) unless alive?
+    @action
+  end
 
   def kill
     @kill_thread = true
   end
 
+  def start
+    raise MonkeyEngine::Exceptions::InvalidOperationException.new "The monkey [#{@monkey_symbol}] thread is already started" \
+      if alive?
+    initialize_thread
+    self
+  end
+
   def thread
     @thread
-  end
-
-  def alive?
-    @thread.alive?
-  end
-
-  def current_action
-    @action
   end
 
   protected

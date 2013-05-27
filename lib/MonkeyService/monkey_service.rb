@@ -22,7 +22,7 @@ module MonkeyEngine
     end
 
     def add(monkey)
-      @monkey_manager.add(monkey)
+      @monkey_manager.add(monkey).start
 
       changed
       notify_observers(Time.now, :add, {monkey: monkey})
@@ -44,7 +44,6 @@ module MonkeyEngine
       changed
       notify_observers(Time.now, :kill!, monkey)
     end
-
 
     # Kills all the monkeys.
     def kill_all!

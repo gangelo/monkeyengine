@@ -16,6 +16,8 @@ class MonkeyActionEat < MonkeyTimedAction
     @action_time_of_completion = @action_time + (value * 60)
 
     validate
+
+    self
   end
 
   protected

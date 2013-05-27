@@ -16,6 +16,8 @@ class MonkeyActionPause < MonkeyTimedAction
     @action_time_of_completion = @action_time + value
 
     validate
+
+    self
   end
 
   protected

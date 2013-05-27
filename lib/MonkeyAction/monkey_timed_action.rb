@@ -12,6 +12,8 @@ class MonkeyTimedAction < MonkeyAction
     @action_time_of_completion = nil
 
     validate
+
+    self
   end
 
   protected

@@ -11,6 +11,8 @@ class MonkeyActionType < MonkeyAction
     super monkey, value, WEIGHT
 
     validate
+
+    self
   end
 
   protected

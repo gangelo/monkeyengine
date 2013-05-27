@@ -8,6 +8,7 @@ require 'MonkeyAction/monkey_action_pause'
 require 'MonkeyAction/monkey_action_sleep'
 require 'MonkeyAction/monkey_action_type'
 require 'MonkeyAction/monkey_action_wake'
+require 'MonkeyAction/monkey_action_dead'
 require "MonkeyEngine/version"
 
 module MonkeyEngine

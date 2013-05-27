@@ -8,5 +8,7 @@ class MonkeyAction < Action
     super value, weight
 
     @monkey = monkey
+
+    self
   end
 end
