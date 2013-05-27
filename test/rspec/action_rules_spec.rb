@@ -21,28 +21,47 @@ describe 'ActionRules' do
   end
 
   before(:each) do
-    @monkey = MonkeyFactory::create :groucho
-    MonkeyEngine::MonkeyManager.instance.add @monkey
   end
 
   after(:all) do
-    # Kill all the threads.
-    MonkeyEngine::MonkeyManager.instance.kill_all!
-
-    # Give them a little bit to finish.
-    MonkeyEngine::MonkeyManager.instance.join_all(10)
   end
 
-  it 'should throw an exception if the action is completed' do
-    @monkey.extend(SetMonkeyAction)
+  context 'get_next_action' do
 
-    action = MonkeyActionType.new(@monkey, "Hello World")
-    action.action_completed = true
+    it 'should throw an exception if the action is not completed' do
+      monkey = MonkeyFactory::create :groucho
 
-    @monkey.set_action(action)
+      monkey.extend(SetMonkeyAction)
 
-    lambda {
-      ActionRules.new(@monkey)
-    }.should raise_error MonkeyEngine::Exceptions::InvalidOperationException
+      action = MonkeyActionType.new(monkey, "Hello World")
+      action.action_completed = false
+
+      monkey.set_action(action)
+
+      lambda { ActionRules.instance.get_next_action monkey }.should raise_error MonkeyEngine::Exceptions::InvalidOperationException
+    end
+
+    it 'should get correct action if current action is nil?' do
+      monkey = MonkeyFactory::create :groucho
+
+      monkey.extend(SetMonkeyAction)
+
+      monkey.set_action(nil)
+
+      ActionRules.instance.get_next_action(monkey).is_a?(MonkeyActionWake).should == true
+    end
+
+    it 'should get correct action if current action is MonkeyActionSleep' do
+      monkey = MonkeyFactory::create :groucho
+
+      monkey.extend(SetMonkeyAction)
+
+      action = MonkeyActionSleep.new(monkey, 6 * 60)
+      action.action_completed = true
+
+      monkey.set_action(action)
+
+      ActionRules.instance.get_next_action(monkey).is_a?(MonkeyActionWake).should == true
+    end
   end
 end
