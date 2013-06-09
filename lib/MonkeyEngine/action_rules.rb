@@ -21,7 +21,7 @@ class ActionRules
     # If the monkey is sleeping, or first action, wake him up.
     return MonkeyActionWake.new(monkey) if monkey.action.nil? || monkey.action.is_a?(MonkeyActionSleep)
 
-    # Nothing else interesting, pause...
+    # Nothing else interesting, monkey takes a breather...
     #MonkeyActionPause.new(monkey, Random.new.rand(MonkeyActionPause::VALID_VALUES))
     MonkeyActionPause.new(monkey, 5)
   end

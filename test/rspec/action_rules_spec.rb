@@ -1,4 +1,5 @@
 require 'rspec'
+require_relative 'spec_helpers'
 
 require 'Monkey/monkey'
 require 'MonkeyEngine/action_rules'
@@ -14,12 +15,6 @@ require 'MonkeyAction/monkey_action_dead'
 
 describe 'ActionRules' do
 
-  module SetMonkeyAction
-    def set_action(action)
-      @action = action
-    end
-  end
-
   before(:each) do
   end
 
@@ -31,7 +26,7 @@ describe 'ActionRules' do
     it 'should throw an exception if the action is not completed' do
       monkey = MonkeyFactory::create :groucho
 
-      monkey.extend(SetMonkeyAction)
+      monkey.extend(SpecHelpers::SetMonkeyAction)
 
       action = MonkeyActionType.new(monkey, "Hello World")
       action.action_completed = false
@@ -44,7 +39,7 @@ describe 'ActionRules' do
     it 'should get correct action if current action is nil?' do
       monkey = MonkeyFactory::create :groucho
 
-      monkey.extend(SetMonkeyAction)
+      monkey.extend(SpecHelpers::SetMonkeyAction)
 
       monkey.set_action(nil)
 
@@ -54,7 +49,7 @@ describe 'ActionRules' do
     it 'should get correct action if current action is MonkeyActionSleep' do
       monkey = MonkeyFactory::create :groucho
 
-      monkey.extend(SetMonkeyAction)
+      monkey.extend(SpecHelpers::SetMonkeyAction)
 
       action = MonkeyActionSleep.new(monkey, 6 * 60)
       action.action_completed = true
