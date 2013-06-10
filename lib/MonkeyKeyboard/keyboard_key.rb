@@ -15,6 +15,8 @@ class KeyboardKey
   end
 
   def self.make_key(char, char_weight, shift_char, shift_char_weight, keyboard_key_section)
+    # TODO: Check keyboard_key_section is :left or :right
+
     keyboard_char = KeyboardChar.new char, char_weight
     keyboard_shift_char = KeyboardChar.new shift_char, shift_char_weight
 
