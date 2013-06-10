@@ -36,7 +36,13 @@ module MonkeyEngine
       # TODO: Call observer to notify of action update.
       # TODO: Set action.action_completed to true if the action is completed.
 
+      do_action_type(action) if action.is_a? MonkeyActionType
+
       action.action_completed?
+    end
+
+    def do_action_type(action)
+
     end
 
     # Returns a new action.

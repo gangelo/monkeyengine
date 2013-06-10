@@ -38,15 +38,21 @@ describe 'Engine' do
 
       @engine.action_eval!(action).should == false
     end
+  end
 
+  context 'action_new' do
     it 'should return a new action if a the current action is completed' do
 
-      action = MonkeyActionPause.new(@monkey, 60)
+      action = MonkeyActionSleep.new(@monkey, 60*8)
       action.action_completed = true
 
       @monkey.set_action(action)
 
-      @engine.new_action(@monkey).should == is_a?(MonkeyActionWake)
+      @engine.new_action(@monkey).is_a?(MonkeyActionSleep).should_not==true
     end
+  end
+
+  context 'do_action' do
+    pending 'MonkeyEngine::Engine#do_action code is not complete to test'
   end
 end
