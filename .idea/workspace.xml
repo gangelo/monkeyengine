@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="61433b63-e048-489d-a5ba-f534d6910d63" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/MonkeyKeyboard/monkey_keyboard_en_us.rb" afterPath="$PROJECT_DIR$/lib/MonkeyKeyboard/monkey_keyboard_en_us.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="MonkeyEngine.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -61,7 +60,7 @@
     <file path="$APPLICATION_HOME_DIR$/lib/openapi.jar!/standardSchemas/XMLSchema-instance.xsd" changelist="61433b63-e048-489d-a5ba-f534d6910d63" time="1370647901853" ignored="false" />
     <file path="$APPLICATION_HOME_DIR$/lib/openapi.jar!/standardSchemas/xslt-2_0.xsd" changelist="61433b63-e048-489d-a5ba-f534d6910d63" time="1370647901853" ignored="false" />
     <file path="/spec_helpers.rb" changelist="61433b63-e048-489d-a5ba-f534d6910d63" time="1370734633482" ignored="false" />
-    <file path="/monkey_keyboard_en_us.rb" changelist="61433b63-e048-489d-a5ba-f534d6910d63" time="1370904378922" ignored="false" />
+    <file path="/monkey_keyboard_en_us.rb" changelist="61433b63-e048-489d-a5ba-f534d6910d63" time="1370905128741" ignored="false" />
     <file path="/keyboard_key.rb" changelist="61433b63-e048-489d-a5ba-f534d6910d63" time="1370825969797" ignored="false" />
     <file path="/keyboard_char.rb" changelist="61433b63-e048-489d-a5ba-f534d6910d63" time="1370824867734" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -104,7 +103,7 @@
       <file leaf-file-name="monkey_keyboard_en_us.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/MonkeyKeyboard/monkey_keyboard_en_us.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="60" column="41" selection-start="2715" selection-end="2715" vertical-scroll-proportion="0.5260989">
+            <state line="75" column="63" selection-start="3537" selection-end="3537" vertical-scroll-proportion="1.5453297">
               <folding />
             </state>
           </provider>
@@ -1076,7 +1075,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/MonkeyKeyboard/monkey_keyboard_en_us.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="60" column="41" selection-start="2715" selection-end="2715" vertical-scroll-proportion="0.5260989">
+        <state line="75" column="63" selection-start="3537" selection-end="3537" vertical-scroll-proportion="1.5453297">
           <folding />
         </state>
       </provider>

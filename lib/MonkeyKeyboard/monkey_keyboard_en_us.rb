@@ -59,27 +59,21 @@ module MonkeyEngine
 
         # Row 4 of 5
         [ KeyboardKey::make_key(:shift, 5, :shift, 5, :left) ],
-        [ KeyboardKey::make_key('xxxx', 0, 'xxxx', 0, :xxxx) ],
-        [ KeyboardKey::make_key('xxxx', 0, 'xxxx', 0, :xxxx) ],
-        [ KeyboardKey::make_key('xxxx', 0, 'xxxx', 0, :xxxx) ],
-        [ KeyboardKey::make_key('xxxx', 0, 'xxxx', 0, :xxxx) ],
-        [ KeyboardKey::make_key('xxxx', 0, 'xxxx', 0, :xxxx) ],
-        [ KeyboardKey::make_key('xxxx', 0, 'xxxx', 0, :xxxx) ],
-        [ KeyboardKey::make_key('xxxx', 0, 'xxxx', 0, :xxxx) ],
-        [ KeyboardKey::make_key('xxxx', 0, 'xxxx', 0, :xxxx) ],
-        [ KeyboardKey::make_key('xxxx', 0, 'xxxx', 0, :xxxx) ],
+        [ KeyboardKey::make_key('z', 0, 'Z', 0, :left) ],
+        [ KeyboardKey::make_key('x', 0, 'X', 0, :left) ],
+        [ KeyboardKey::make_key('c', 0, 'C', 0, :left) ],
+        [ KeyboardKey::make_key('v', 0, 'V', 0, :left) ],
+        [ KeyboardKey::make_key('b', 0, 'B', 0, :left) ],
+        [ KeyboardKey::make_key('n', 0, 'N', 0, :right) ],
+        [ KeyboardKey::make_key('m', 0, 'M', 0, :right) ],
+        [ KeyboardKey::make_key(',', 0, '<', 0, :right) ],
+        [ KeyboardKey::make_key('.', 0, '>', 0, :right) ],
+        [ KeyboardKey::make_key('/', 0, '?', 0, :right) ],
+        [ KeyboardKey::make_key(:shift, 5, :shift, 5, :right) ],
 
         # Row 5 of 5
-        [ KeyboardKey::make_key('xxxx', 0, 'xxxx', 0, :xxxx) ],
-        [ KeyboardKey::make_key('xxxx', 0, 'xxxx', 0, :xxxx) ],
-        [ KeyboardKey::make_key('xxxx', 0, 'xxxx', 0, :xxxx) ],
-        [ KeyboardKey::make_key('xxxx', 0, 'xxxx', 0, :xxxx) ],
-        [ KeyboardKey::make_key('xxxx', 0, 'xxxx', 0, :xxxx) ],
-        [ KeyboardKey::make_key('xxxx', 0, 'xxxx', 0, :xxxx) ],
-        [ KeyboardKey::make_key('xxxx', 0, 'xxxx', 0, :xxxx) ],
-        [ KeyboardKey::make_key('xxxx', 0, 'xxxx', 0, :xxxx) ],
-        [ KeyboardKey::make_key('xxxx', 0, 'xxxx', 0, :xxxx) ],
-        [ KeyboardKey::make_key('xxxx', 0, 'xxxx', 0, :xxxx) ],
+        [ KeyboardKey::make_key(:space, 5, :space, 5, :left) ],
+        [ KeyboardKey::make_key(:space, 5, :space, 5, :right) ]
     ]
 
     def initialize
