@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="61433b63-e048-489d-a5ba-f534d6910d63" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/MonkeyKeyboard/keyboard_key.rb" afterPath="$PROJECT_DIR$/lib/MonkeyKeyboard/keyboard_key.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/MonkeyKeyboard/monkey_keyboard_en_us.rb" afterPath="$PROJECT_DIR$/lib/MonkeyKeyboard/monkey_keyboard_en_us.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="MonkeyEngine.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -33,7 +33,7 @@
     <file path="/exceptions.rb" changelist="61433b63-e048-489d-a5ba-f534d6910d63" time="1369360404434" ignored="false" />
     <file path="/monkey_timed_action.rb" changelist="61433b63-e048-489d-a5ba-f534d6910d63" time="1369618558052" ignored="false" />
     <file path="/monkey_action_eat.rb" changelist="61433b63-e048-489d-a5ba-f534d6910d63" time="1369618527441" ignored="false" />
-    <file path="/Dummy.txt" changelist="61433b63-e048-489d-a5ba-f534d6910d63" time="1370818459762" ignored="false" />
+    <file path="/Dummy.txt" changelist="61433b63-e048-489d-a5ba-f534d6910d63" time="1370903040315" ignored="false" />
     <file path="/monkeyengine.gemspec" changelist="61433b63-e048-489d-a5ba-f534d6910d63" time="1367619834207" ignored="false" />
     <file path="/monkey_spec.rb" changelist="61433b63-e048-489d-a5ba-f534d6910d63" time="1367626372452" ignored="false" />
     <file path="/engine_spec.rb" changelist="61433b63-e048-489d-a5ba-f534d6910d63" time="1370821368506" ignored="false" />
@@ -61,7 +61,7 @@
     <file path="$APPLICATION_HOME_DIR$/lib/openapi.jar!/standardSchemas/XMLSchema-instance.xsd" changelist="61433b63-e048-489d-a5ba-f534d6910d63" time="1370647901853" ignored="false" />
     <file path="$APPLICATION_HOME_DIR$/lib/openapi.jar!/standardSchemas/xslt-2_0.xsd" changelist="61433b63-e048-489d-a5ba-f534d6910d63" time="1370647901853" ignored="false" />
     <file path="/spec_helpers.rb" changelist="61433b63-e048-489d-a5ba-f534d6910d63" time="1370734633482" ignored="false" />
-    <file path="/monkey_keyboard_en_us.rb" changelist="61433b63-e048-489d-a5ba-f534d6910d63" time="1370827823147" ignored="false" />
+    <file path="/monkey_keyboard_en_us.rb" changelist="61433b63-e048-489d-a5ba-f534d6910d63" time="1370904378922" ignored="false" />
     <file path="/keyboard_key.rb" changelist="61433b63-e048-489d-a5ba-f534d6910d63" time="1370825969797" ignored="false" />
     <file path="/keyboard_char.rb" changelist="61433b63-e048-489d-a5ba-f534d6910d63" time="1370824867734" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -104,7 +104,7 @@
       <file leaf-file-name="monkey_keyboard_en_us.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/MonkeyKeyboard/monkey_keyboard_en_us.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="53" selection-start="1208" selection-end="1208" vertical-scroll-proportion="0.3013393">
+            <state line="60" column="41" selection-start="2715" selection-end="2715" vertical-scroll-proportion="0.5260989">
               <folding />
             </state>
           </provider>
@@ -496,12 +496,12 @@
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="options.lastSelected" value="vcs.Git" />
     <property name="recentsLimit" value="5" />
+    <property name="options.lastSelected" value="vcs.Git" />
     <property name="restartRequiresConfirmation" value="true" />
     <property name="FullScreen" value="false" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -811,12 +811,12 @@
       <method />
     </configuration>
     <list size="6">
-      <item index="0" class="java.lang.String" itemvalue="RSpec.monkey_service_spec" />
-      <item index="1" class="java.lang.String" itemvalue="RSpec.All specs in: test" />
-      <item index="2" class="java.lang.String" itemvalue="RSpec.monkey_factory_spec" />
-      <item index="3" class="java.lang.String" itemvalue="RSpec.engine_spec" />
-      <item index="4" class="java.lang.String" itemvalue="RSpec.monkey_action_pause_spec" />
-      <item index="5" class="java.lang.String" itemvalue="RSpec.MonkeyActionPause" />
+      <item index="0" class="java.lang.String" itemvalue="RSpec.monkey_action_pause_spec" />
+      <item index="1" class="java.lang.String" itemvalue="RSpec.MonkeyActionPause" />
+      <item index="2" class="java.lang.String" itemvalue="RSpec.monkey_service_spec" />
+      <item index="3" class="java.lang.String" itemvalue="RSpec.All specs in: test" />
+      <item index="4" class="java.lang.String" itemvalue="RSpec.monkey_factory_spec" />
+      <item index="5" class="java.lang.String" itemvalue="RSpec.engine_spec" />
     </list>
     <recent_temporary>
       <list size="2">
@@ -884,11 +884,11 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32891247" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2984218" sideWeight="0.63129973" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30272597" sideWeight="0.63129973" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.40848807" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33023873" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.36870027" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.36870027" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -996,9 +996,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/bundle/gems/rspec-core-2.13.1/lib/rspec/core/example_group.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="372" column="0" selection-start="13539" selection-end="13539" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="372" column="0" selection-start="13539" selection-end="13539" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/bundle/gems/rspec-core-2.13.1/lib/rspec/core/command_line.rb">
@@ -1028,9 +1026,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/Action/action.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="41" selection-start="238" selection-end="238" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="13" column="41" selection-start="238" selection-end="238" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/MonkeyAction/monkey_action_pause.rb">
@@ -1054,9 +1050,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/MonkeyAction/monkey_action_type.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/MonkeyEngine/engine.rb">
@@ -1082,7 +1076,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/MonkeyKeyboard/monkey_keyboard_en_us.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="53" selection-start="1208" selection-end="1208" vertical-scroll-proportion="0.3013393">
+        <state line="60" column="41" selection-start="2715" selection-end="2715" vertical-scroll-proportion="0.5260989">
           <folding />
         </state>
       </provider>
