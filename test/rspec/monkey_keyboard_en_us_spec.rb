@@ -7,25 +7,37 @@ describe 'MonkeyKeyboardEnUs' do
     @it = MonkeyEngine::MonkeyKeyboardEnUs.instance
   end
 
-  after (:all) do
-  end
-
   context 'keys' do
-    pending 'Test this'
   end
 
   context 'left_keys' do
 
-    it 'should have the right left keys' do
-      @it.left_keys
+    it 'should have the correct amount of keyboard entries on the left side of the keyboard' do
 
-      true.should == false
+      key_count = 0
+
+      @it.keys.each { |key|
+        key_count += key.keyboard_key_weight if key.keyboard_key_section == :left
+      }
+
+      @it.left_keys.count.should == key_count
     end
 
   end
 
   context 'right_keys' do
-    pending 'Test this'
+
+    it 'should have the correct amount of keyboard entries on the right side of the keyboard' do
+
+      key_count = 0
+
+      @it.keys.each { |key|
+        key_count += key.keyboard_key_weight if key.keyboard_key_section == :right
+      }
+
+      @it.right_keys.count.should == key_count
+    end
+
   end
 
 end

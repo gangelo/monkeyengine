@@ -3,10 +3,8 @@ class KeyboardChar
 
   attr_reader :char, :weight
 
-  def initialize(char, weight)
+  def initialize(char)
     @char = char
-    @weight = weight
-
     self
   end
 end

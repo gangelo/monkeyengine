@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="61433b63-e048-489d-a5ba-f534d6910d63" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/rspec/monkey_keyboard_en_us_spec.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/MonkeyKeyboard/keyboard_char.rb" afterPath="$PROJECT_DIR$/lib/MonkeyKeyboard/keyboard_char.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/MonkeyKeyboard/keyboard_key.rb" afterPath="$PROJECT_DIR$/lib/MonkeyKeyboard/keyboard_key.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/MonkeyKeyboard/monkey_keyboard_en_us.rb" afterPath="$PROJECT_DIR$/lib/MonkeyKeyboard/monkey_keyboard_en_us.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/rspec/monkey_keyboard_en_us_spec.rb" afterPath="$PROJECT_DIR$/test/rspec/monkey_keyboard_en_us_spec.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="MonkeyEngine.iws" />
@@ -20,7 +22,7 @@
     <file path="/type_action.rb" changelist="61433b63-e048-489d-a5ba-f534d6910d63" time="1367454360488" ignored="false" />
     <file path="/monkey_type_action_spec.rb" changelist="61433b63-e048-489d-a5ba-f534d6910d63" time="1367462197939" ignored="false" />
     <file path="/Gemfile" changelist="61433b63-e048-489d-a5ba-f534d6910d63" time="1367486732048" ignored="false" />
-    <file path="/fragment.rb" changelist="61433b63-e048-489d-a5ba-f534d6910d63" time="1370910634873" ignored="false" />
+    <file path="/fragment.rb" changelist="61433b63-e048-489d-a5ba-f534d6910d63" time="1371074472365" ignored="false" />
     <file path="/temp.rb" changelist="61433b63-e048-489d-a5ba-f534d6910d63" time="1369474896593" ignored="false" />
     <file path="/monkey_action.rb" changelist="61433b63-e048-489d-a5ba-f534d6910d63" time="1369618564945" ignored="false" />
     <file path="/monkey_action_type_spec.rb" changelist="61433b63-e048-489d-a5ba-f534d6910d63" time="1367799540103" ignored="false" />
@@ -34,7 +36,7 @@
     <file path="/exceptions.rb" changelist="61433b63-e048-489d-a5ba-f534d6910d63" time="1369360404434" ignored="false" />
     <file path="/monkey_timed_action.rb" changelist="61433b63-e048-489d-a5ba-f534d6910d63" time="1369618558052" ignored="false" />
     <file path="/monkey_action_eat.rb" changelist="61433b63-e048-489d-a5ba-f534d6910d63" time="1369618527441" ignored="false" />
-    <file path="/Dummy.txt" changelist="61433b63-e048-489d-a5ba-f534d6910d63" time="1370903040315" ignored="false" />
+    <file path="/Dummy.txt" changelist="61433b63-e048-489d-a5ba-f534d6910d63" time="1371015920074" ignored="false" />
     <file path="/monkeyengine.gemspec" changelist="61433b63-e048-489d-a5ba-f534d6910d63" time="1367619834207" ignored="false" />
     <file path="/monkey_spec.rb" changelist="61433b63-e048-489d-a5ba-f534d6910d63" time="1367626372452" ignored="false" />
     <file path="/engine_spec.rb" changelist="61433b63-e048-489d-a5ba-f534d6910d63" time="1370821368506" ignored="false" />
@@ -62,10 +64,10 @@
     <file path="$APPLICATION_HOME_DIR$/lib/openapi.jar!/standardSchemas/XMLSchema-instance.xsd" changelist="61433b63-e048-489d-a5ba-f534d6910d63" time="1370647901853" ignored="false" />
     <file path="$APPLICATION_HOME_DIR$/lib/openapi.jar!/standardSchemas/xslt-2_0.xsd" changelist="61433b63-e048-489d-a5ba-f534d6910d63" time="1370647901853" ignored="false" />
     <file path="/spec_helpers.rb" changelist="61433b63-e048-489d-a5ba-f534d6910d63" time="1370734633482" ignored="false" />
-    <file path="/monkey_keyboard_en_us.rb" changelist="61433b63-e048-489d-a5ba-f534d6910d63" time="1370910920295" ignored="false" />
-    <file path="/keyboard_key.rb" changelist="61433b63-e048-489d-a5ba-f534d6910d63" time="1370825969797" ignored="false" />
+    <file path="/monkey_keyboard_en_us.rb" changelist="61433b63-e048-489d-a5ba-f534d6910d63" time="1371074047706" ignored="false" />
+    <file path="/keyboard_key.rb" changelist="61433b63-e048-489d-a5ba-f534d6910d63" time="1371075577114" ignored="false" />
     <file path="/keyboard_char.rb" changelist="61433b63-e048-489d-a5ba-f534d6910d63" time="1370824867734" ignored="false" />
-    <file path="/monkey_keyboard_en_us_spec.rb" changelist="61433b63-e048-489d-a5ba-f534d6910d63" time="1370910688546" ignored="false" />
+    <file path="/monkey_keyboard_en_us_spec.rb" changelist="61433b63-e048-489d-a5ba-f534d6910d63" time="1371074616262" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,16 +90,7 @@
       <file leaf-file-name="monkey_keyboard_en_us_spec.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/rspec/monkey_keyboard_en_us_spec.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="0" selection-start="322" selection-end="322" vertical-scroll-proportion="0.38995215">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="action_rules_spec.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/rspec/action_rules_spec.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+            <state line="34" column="44" selection-start="746" selection-end="746" vertical-scroll-proportion="0.6160714">
               <folding />
             </state>
           </provider>
@@ -106,7 +99,25 @@
       <file leaf-file-name="monkey_keyboard_en_us.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/MonkeyKeyboard/monkey_keyboard_en_us.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="75" selection-start="225" selection-end="225" vertical-scroll-proportion="16.90909">
+            <state line="33" column="37" selection-start="1078" selection-end="1078" vertical-scroll-proportion="-7.836364">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="keyboard_key.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/MonkeyKeyboard/keyboard_key.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="14" column="46" selection-start="599" selection-end="618" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="keyboard_char.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/MonkeyKeyboard/keyboard_char.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="6" column="16" selection-start="124" selection-end="124" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -144,8 +155,8 @@
         <option value="$PROJECT_DIR$/lib/MonkeyEngine/engine.rb" />
         <option value="$PROJECT_DIR$/lib/MonkeyKeyboard/keyboard_char.rb" />
         <option value="$PROJECT_DIR$/lib/MonkeyKeyboard/keyboard_key.rb" />
-        <option value="$PROJECT_DIR$/test/rspec/monkey_keyboard_en_us_spec.rb" />
         <option value="$PROJECT_DIR$/lib/MonkeyKeyboard/monkey_keyboard_en_us.rb" />
+        <option value="$PROJECT_DIR$/test/rspec/monkey_keyboard_en_us_spec.rb" />
       </list>
     </option>
   </component>
@@ -180,6 +191,34 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="MonkeyEngine">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="MonkeyEngine">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="lib">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -438,45 +477,17 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="MonkeyEngine">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="MonkeyEngine">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="lib">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="recentsLimit" value="5" />
     <property name="options.lastSelected" value="vcs.Git" />
+    <property name="recentsLimit" value="5" />
     <property name="restartRequiresConfirmation" value="true" />
     <property name="FullScreen" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -492,7 +503,7 @@
       <recent name="$PROJECT_DIR$/lib/Modules" />
     </key>
   </component>
-  <component name="RunManager" selected="RSpec.monkey_keyboard_en_us_spec">
+  <component name="RunManager" selected="RSpec.All specs in: test">
     <configuration default="false" name="monkey_action_pause_spec" type="RSpecRunConfigurationType" factoryName="RSpec" temporary="true">
       <predefined_log_file id="RUBY_RSPEC" enabled="true" />
       <module name="MonkeyEngine" />
@@ -826,9 +837,9 @@
       <item index="1" class="java.lang.String" itemvalue="RSpec.All specs in: test" />
       <item index="2" class="java.lang.String" itemvalue="RSpec.monkey_factory_spec" />
       <item index="3" class="java.lang.String" itemvalue="RSpec.engine_spec" />
-      <item index="4" class="java.lang.String" itemvalue="RSpec.monkey_action_pause_spec" />
-      <item index="5" class="java.lang.String" itemvalue="RSpec.MonkeyActionPause" />
-      <item index="6" class="java.lang.String" itemvalue="RSpec.monkey_keyboard_en_us_spec" />
+      <item index="4" class="java.lang.String" itemvalue="RSpec.monkey_keyboard_en_us_spec" />
+      <item index="5" class="java.lang.String" itemvalue="RSpec.monkey_action_pause_spec" />
+      <item index="6" class="java.lang.String" itemvalue="RSpec.MonkeyActionPause" />
     </list>
     <recent_temporary>
       <list size="2">
@@ -890,17 +901,17 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1440" height="874" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32891247" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30272597" sideWeight="0.59151196" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.40848807" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30703014" sideWeight="0.63129973" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.40848807" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33023873" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.36870027" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.36870027" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -994,25 +1005,15 @@
           <option name="timeStamp" value="96" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="ruby-line">
-          <url>file://$PROJECT_DIR$/test/rspec/monkey_keyboard_en_us_spec.rb</url>
-          <line>19</line>
-          <option name="timeStamp" value="97" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="ruby-line">
-          <url>file://$PROJECT_DIR$/test/rspec/monkey_keyboard_en_us_spec.rb</url>
-          <line>6</line>
-          <option name="timeStamp" value="99" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="ruby-line">
           <url>file://$PROJECT_DIR$/lib/MonkeyKeyboard/monkey_keyboard_en_us.rb</url>
-          <line>86</line>
+          <line>87</line>
           <option name="timeStamp" value="101" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="102" />
+      <option name="time" value="103" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -1069,20 +1070,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/MonkeyKeyboard/keyboard_char.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="34" selection-start="34" selection-end="34" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/MonkeyKeyboard/keyboard_key.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="18" selection-start="403" selection-end="416" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/rspec/action_rules_spec.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
@@ -1092,28 +1079,38 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/bundle/gems/rspec-core-2.13.1/lib/rspec/core/configuration.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="819" column="0" selection-start="28355" selection-end="28355" vertical-scroll-proportion="0.33333334">
-          <folding />
-        </state>
+        <state line="819" column="0" selection-start="28355" selection-end="28355" vertical-scroll-proportion="0.33333334" />
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/.rbenv/versions/1.9.3-p0/lib/ruby/1.9.1/singleton.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="137" column="0" selection-start="3214" selection-end="3214" vertical-scroll-proportion="0.3325359">
+        <state line="137" column="0" selection-start="3214" selection-end="3214" vertical-scroll-proportion="0.3325359" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/MonkeyKeyboard/keyboard_char.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="16" selection-start="124" selection-end="124" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/MonkeyKeyboard/keyboard_key.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="46" selection-start="599" selection-end="618" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/MonkeyKeyboard/monkey_keyboard_en_us.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="75" selection-start="225" selection-end="225" vertical-scroll-proportion="16.90909">
+        <state line="33" column="37" selection-start="1078" selection-end="1078" vertical-scroll-proportion="-7.836364">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/rspec/monkey_keyboard_en_us_spec.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="0" selection-start="322" selection-end="322" vertical-scroll-proportion="0.38995215">
+        <state line="34" column="44" selection-start="746" selection-end="746" vertical-scroll-proportion="0.6160714">
           <folding />
         </state>
       </provider>
