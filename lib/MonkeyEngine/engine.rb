@@ -9,7 +9,7 @@ require 'MonkeyAction/monkey_action_sleep'
 require 'MonkeyAction/monkey_action_type'
 require 'MonkeyAction/monkey_action_wake'
 require 'MonkeyAction/monkey_action_dead'
-require "MonkeyEngine/version"
+require 'MonkeyEngine/version'
 
 module MonkeyEngine
 
@@ -32,11 +32,11 @@ module MonkeyEngine
       raise MonkeyEngine::Exceptions::InvalidOperationException.new \
         "The action [#{action.class.name}] for Monkey [#{action.monkey.monkey_symbol}] is already completed" if action.action_completed?
 
+      do_action_type(action) if action.is_a? MonkeyActionType
+
       # TODO: Update database for monkey with action detail
       # TODO: Call observer to notify of action update.
       # TODO: Set action.action_completed to true if the action is completed.
-
-      do_action_type(action) if action.is_a? MonkeyActionType
 
       action.action_completed?
     end

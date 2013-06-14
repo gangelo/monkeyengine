@@ -100,6 +100,37 @@ module MonkeyEngine
       @keys_right.freeze
     end
 
+    def get_keyboard_input
+      keyboard_input = Array.new
+
+      left_keys = @left_keys
+      right_keys = @right_keys
+
+      keys = left_keys.zip(right_keys).flatten.compact.shuffle
+
+      # Take the keys until we hit a key that terminates a word...
+      keys.take_while { |key|
+        char = key.keyboard_char.char
+        shift_char = key.keyboard_shift_char.char
+
+        return nil if keyboard_char_ends_word?(char)
+
+        # TODO: Take the char or shift char depending on whether or not SHIFT is toggled on/off...
+        shift_on = false
+
+        char = shift_on ? shift_char : char
+        keyboard_input.push(char)
+
+        return char
+      }
+
+      keyboard_input
+    end
+
+    def keyboard_char_ends_word?(char)
+      char == :tab || char == :enter || char == :space || char == '.'
+    end
+
   end
 
 end

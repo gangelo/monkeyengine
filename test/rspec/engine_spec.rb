@@ -53,6 +53,8 @@ describe 'Engine' do
   end
 
   context 'do_action' do
-    pending 'MonkeyEngine::Engine#do_action code is not complete to test'
+    it 'should do something' do
+      pending 'todo'
+    end
   end
 end

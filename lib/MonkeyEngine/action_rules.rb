@@ -6,6 +6,7 @@ require 'MonkeyAction/monkey_action_pause'
 require 'MonkeyAction/monkey_action_sleep'
 require 'MonkeyAction/monkey_action_type'
 require 'MonkeyAction/monkey_action_wake'
+require 'MonkeyKeyboard/monkey_keyboard_en_us'
 
 class ActionRules
   include Singleton
@@ -21,9 +22,17 @@ class ActionRules
     # If the monkey is sleeping, or first action, wake him up.
     return MonkeyActionWake.new(monkey) if monkey.action.nil? || monkey.action.is_a?(MonkeyActionSleep)
 
+    return get_next_action_eval(monkey) unless nil
+
     # Nothing else interesting, monkey takes a breather...
     #MonkeyActionPause.new(monkey, Random.new.rand(MonkeyActionPause::VALID_VALUES))
     MonkeyActionPause.new(monkey, 5)
+  end
+
+  def get_next_action_eval(monkey)
+    keyboard_input = MonkeyEngine::MonkeyKeyboardEnUs.instance.get_keyboard_input
+
+    return MonkeyActionType.new monkey, keyboard_input
   end
 
   # Evaluates an action and sets it to completed if the criteria for completion is met.
@@ -96,6 +105,5 @@ class ActionRules
 
     action
   end
-
 
 end
