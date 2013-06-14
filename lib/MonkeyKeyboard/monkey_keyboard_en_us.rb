@@ -109,7 +109,9 @@ module MonkeyEngine
       keys = left_keys.zip(right_keys).flatten.compact.shuffle
 
       # Take the keys until we hit a key that terminates a word...
-      keys.take_while { |key|
+      keyboard_input = keys.take_while { |key|
+        !keyboard_char_ends_word?(key.keyboard_char.char)
+=begin
         char = key.keyboard_char.char
         shift_char = key.keyboard_shift_char.char
 
@@ -122,13 +124,14 @@ module MonkeyEngine
         keyboard_input.push(char)
 
         return char
+=end
       }
 
       keyboard_input
     end
 
     def keyboard_char_ends_word?(char)
-      char == :tab || char == :enter || char == :space || char == '.'
+      return char == :tab || char == :enter || char == :space || char == '.'
     end
 
   end

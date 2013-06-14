@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="61433b63-e048-489d-a5ba-f534d6910d63" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/MonkeyEngine/action_rules.rb" afterPath="$PROJECT_DIR$/lib/MonkeyEngine/action_rules.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/MonkeyEngine/engine.rb" afterPath="$PROJECT_DIR$/lib/MonkeyEngine/engine.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/rspec/engine_spec.rb" afterPath="$PROJECT_DIR$/test/rspec/engine_spec.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/MonkeyKeyboard/monkey_keyboard_en_us.rb" afterPath="$PROJECT_DIR$/lib/MonkeyKeyboard/monkey_keyboard_en_us.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="MonkeyEngine.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -22,7 +18,7 @@
     <file path="/type_action.rb" changelist="61433b63-e048-489d-a5ba-f534d6910d63" time="1367454360488" ignored="false" />
     <file path="/monkey_type_action_spec.rb" changelist="61433b63-e048-489d-a5ba-f534d6910d63" time="1367462197939" ignored="false" />
     <file path="/Gemfile" changelist="61433b63-e048-489d-a5ba-f534d6910d63" time="1367486732048" ignored="false" />
-    <file path="/fragment.rb" changelist="61433b63-e048-489d-a5ba-f534d6910d63" time="1371074472365" ignored="false" />
+    <file path="/fragment.rb" changelist="61433b63-e048-489d-a5ba-f534d6910d63" time="1371178346562" ignored="false" />
     <file path="/temp.rb" changelist="61433b63-e048-489d-a5ba-f534d6910d63" time="1369474896593" ignored="false" />
     <file path="/monkey_action.rb" changelist="61433b63-e048-489d-a5ba-f534d6910d63" time="1369618564945" ignored="false" />
     <file path="/monkey_action_type_spec.rb" changelist="61433b63-e048-489d-a5ba-f534d6910d63" time="1367799540103" ignored="false" />
@@ -64,7 +60,7 @@
     <file path="$APPLICATION_HOME_DIR$/lib/openapi.jar!/standardSchemas/XMLSchema-instance.xsd" changelist="61433b63-e048-489d-a5ba-f534d6910d63" time="1370647901853" ignored="false" />
     <file path="$APPLICATION_HOME_DIR$/lib/openapi.jar!/standardSchemas/xslt-2_0.xsd" changelist="61433b63-e048-489d-a5ba-f534d6910d63" time="1370647901853" ignored="false" />
     <file path="/spec_helpers.rb" changelist="61433b63-e048-489d-a5ba-f534d6910d63" time="1370734633482" ignored="false" />
-    <file path="/monkey_keyboard_en_us.rb" changelist="61433b63-e048-489d-a5ba-f534d6910d63" time="1371177806240" ignored="false" />
+    <file path="/monkey_keyboard_en_us.rb" changelist="61433b63-e048-489d-a5ba-f534d6910d63" time="1371178419734" ignored="false" />
     <file path="/keyboard_key.rb" changelist="61433b63-e048-489d-a5ba-f534d6910d63" time="1371176644692" ignored="false" />
     <file path="/keyboard_char.rb" changelist="61433b63-e048-489d-a5ba-f534d6910d63" time="1370824867734" ignored="false" />
     <file path="/monkey_keyboard_en_us_spec.rb" changelist="61433b63-e048-489d-a5ba-f534d6910d63" time="1371074616262" ignored="false" />
@@ -107,19 +103,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="monkey_action_type.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/MonkeyAction/monkey_action_type.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="0" selection-start="574" selection-end="574" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="monkey_keyboard_en_us.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/MonkeyKeyboard/monkey_keyboard_en_us.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="118" column="0" selection-start="4405" selection-end="4405" vertical-scroll-proportion="0.87081337">
+            <state line="131" column="33" selection-start="4655" selection-end="4655" vertical-scroll-proportion="0.5334928">
               <folding />
             </state>
           </provider>
@@ -1036,29 +1023,14 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="ruby-line">
           <url>file://$PROJECT_DIR$/lib/MonkeyKeyboard/monkey_keyboard_en_us.rb</url>
-          <line>130</line>
-          <option name="timeStamp" value="106" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="ruby-line">
-          <url>file://$PROJECT_DIR$/lib/MonkeyKeyboard/monkey_keyboard_en_us.rb</url>
-          <line>126</line>
-          <option name="timeStamp" value="107" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="ruby-line">
-          <url>file://$PROJECT_DIR$/lib/MonkeyKeyboard/monkey_keyboard_en_us.rb</url>
-          <line>118</line>
-          <option name="timeStamp" value="109" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="ruby-line">
-          <url>file://$PROJECT_DIR$/lib/MonkeyKeyboard/monkey_keyboard_en_us.rb</url>
-          <line>115</line>
-          <option name="timeStamp" value="110" />
+          <line>129</line>
+          <option name="timeStamp" value="111" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="111" />
+      <option name="time" value="112" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -1117,9 +1089,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/MonkeyEngine/engine.rb">
+    <entry file="file://$PROJECT_DIR$/lib/MonkeyKeyboard/keyboard_char.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="30" selection-start="370" selection-end="370" vertical-scroll-proportion="0.0">
+        <state line="3" column="19" selection-start="74" selection-end="74" vertical-scroll-proportion="0.100446425">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/MonkeyAction/monkey_action_type.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="0" selection-start="574" selection-end="574" vertical-scroll-proportion="0.6052632">
           <folding />
         </state>
       </provider>
@@ -1127,13 +1106,6 @@
     <entry file="file://$PROJECT_DIR$/test/rspec/engine_spec.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="56" column="19" selection-start="1519" selection-end="1519" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/MonkeyKeyboard/keyboard_char.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="19" selection-start="74" selection-end="74" vertical-scroll-proportion="0.100446425">
           <folding />
         </state>
       </provider>
@@ -1152,16 +1124,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/MonkeyAction/monkey_action_type.rb">
+    <entry file="file://$PROJECT_DIR$/lib/MonkeyEngine/engine.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="0" selection-start="574" selection-end="574" vertical-scroll-proportion="0.0">
+        <state line="11" column="30" selection-start="370" selection-end="370" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/MonkeyKeyboard/monkey_keyboard_en_us.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="118" column="0" selection-start="4405" selection-end="4405" vertical-scroll-proportion="0.87081337">
+        <state line="131" column="33" selection-start="4655" selection-end="4655" vertical-scroll-proportion="0.5334928">
           <folding />
         </state>
       </provider>
