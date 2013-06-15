@@ -116,6 +116,7 @@ module MonkeyEngine
         !keyboard_char_ends_word?(key.keyboard_char.char)
       }.collect { |key| keyboard_key_evaluator.get_char(key) }.compact
 
+      # Keep going until we get something...
       keyboard_input = get_keyboard_input if keyboard_input.nil? || keyboard_input.empty?
 
       keyboard_input
