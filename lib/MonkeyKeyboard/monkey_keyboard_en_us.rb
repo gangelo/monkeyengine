@@ -2,6 +2,7 @@ require 'singleton'
 
 require_relative 'keyboard_char'
 require_relative 'keyboard_key'
+require_relative 'keyboard_key_evaluator'
 
 
 module MonkeyEngine
@@ -59,7 +60,7 @@ module MonkeyEngine
           KeyboardKey::make_key('l', 'L', :right, 1),
           KeyboardKey::make_key(';', ':', :right, 1),
           KeyboardKey::make_key('\'', '"', :right, 1),
-          KeyboardKey::make_key(:enter, :enter, :right, 3),
+          KeyboardKey::make_key(:enter, :enter, :right, 2),
 
           # Row 4 of 5
           KeyboardKey::make_key(:shift, :shift, :left, 5),
@@ -76,8 +77,8 @@ module MonkeyEngine
           KeyboardKey::make_key(:shift, :shift, :right, 5),
 
           # Row 5 of 5
-          KeyboardKey::make_key(:space, :space, :left, 5),
-          KeyboardKey::make_key(:space, :space, :right, 5)
+          KeyboardKey::make_key(:space, :space, :left, 2),
+          KeyboardKey::make_key(:space, :space, :right, 2)
       ]
 
       @left_keys = []
@@ -108,24 +109,14 @@ module MonkeyEngine
 
       keys = left_keys.zip(right_keys).flatten.compact.shuffle
 
+      keyboard_key_evaluator = KeyboardKeyEvaluator.new
+
       # Take the keys until we hit a key that terminates a word...
       keyboard_input = keys.take_while { |key|
         !keyboard_char_ends_word?(key.keyboard_char.char)
-=begin
-        char = key.keyboard_char.char
-        shift_char = key.keyboard_shift_char.char
+      }.collect { |key| keyboard_key_evaluator.get_char(key) }.compact
 
-        return nil if keyboard_char_ends_word?(char)
-
-        # TODO: Take the char or shift char depending on whether or not SHIFT is toggled on/off...
-        shift_on = false
-
-        char = shift_on ? shift_char : char
-        keyboard_input.push(char)
-
-        return char
-=end
-      }
+      keyboard_input = get_keyboard_input if keyboard_input.nil? || keyboard_input.empty?
 
       keyboard_input
     end

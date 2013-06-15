@@ -28,7 +28,7 @@ describe 'ActionRules' do
 
       monkey.extend(SpecHelpers::SetMonkeyAction)
 
-      action = MonkeyActionType.new(monkey, "Hello World")
+      action = MonkeyActionType.new(monkey, %w{ H e l l o })
       action.action_completed = false
 
       monkey.set_action(action)

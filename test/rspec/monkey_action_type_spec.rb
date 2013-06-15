@@ -9,7 +9,7 @@ describe 'MonkeyActionType' do
   before(:all) do
 
     @monkey = MonkeyFactory::create :typing_monkey1
-    @it = MonkeyActionType.new @monkey, 'abcdef.'
+    @it = MonkeyActionType.new @monkey, %w{a b c d e f .}
 
     MonkeyEngine::MonkeyManager.instance.add(@monkey)
 
@@ -36,15 +36,15 @@ describe 'MonkeyActionType' do
 
   # Value
   it '@value should return the right value' do
-    @it.value.should == 'abcdef.'
+    @it.value.should == %w{a b c d e f .}
   end
 
-  it "@value should be is_a? String" do
-    @it.value.is_a?(String).should == true
+  it "@value should be is_a? Array" do
+    @it.value.is_a?(Array).should == true
   end
 
-  it "@value should not be empty?" do
-    @it.value.empty?.should_not == true
+  it "@value should not be nil?" do
+    @it.value.nil?.should_not == true
   end
 
   # Weight
@@ -56,7 +56,7 @@ describe 'MonkeyActionType' do
   it "should not raise an error if value is valid" do
     monkey = MonkeyFactory::create(:typing_monkey2)
     MonkeyEngine::MonkeyManager.instance.add(monkey)
-    lambda { MonkeyActionType.new(monkey, 'a word.') }.should_not raise_error
+    lambda { MonkeyActionType.new(monkey, %w{w o r d .}) }.should_not raise_error
   end
 
   it "should raise an error if value is the wrong type" do
@@ -66,10 +66,10 @@ describe 'MonkeyActionType' do
       raise_error MonkeyEngine::Exceptions::InvalidArgumentTypeException
   end
 
-  it "should raise an error if value is empty" do
+  it "should raise an error if value is empty?" do
     monkey = MonkeyFactory::create(:typing_monkey4)
     MonkeyEngine::MonkeyManager.instance.add(monkey)
-    lambda { MonkeyActionType.new(monkey, '') }.should \
+    lambda { MonkeyActionType.new(monkey, %w{}) }.should \
       raise_error MonkeyEngine::Exceptions::InvalidArgumentValueException
   end
 
