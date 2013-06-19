@@ -2,6 +2,7 @@ require 'singleton'
 
 require_relative 'keyboard_char'
 require_relative 'keyboard_key'
+require_relative 'keyboard_input'
 require_relative 'keyboard_key_evaluator'
 
 
@@ -102,7 +103,7 @@ module MonkeyEngine
     end
 
     def get_keyboard_input
-      keyboard_input = Array.new
+      keyboard_input = KeyboardInput.new
 
       left_keys = @left_keys
       right_keys = @right_keys
@@ -112,16 +113,21 @@ module MonkeyEngine
       keyboard_key_evaluator = KeyboardKeyEvaluator.new
 
       # Take the keys until we hit a key that terminates a word...
-      keyboard_input = keys.take_while { |key|
+      keyboard_input.input = keys.take_while { |key|
         !keyboard_char_ends_word?(key.keyboard_char.char)
       }.collect { |key| keyboard_key_evaluator.get_char(key) }.compact
 
       # Keep going until we get something...
-      keyboard_input = get_keyboard_input if keyboard_input.nil? || keyboard_input.empty?
+      keyboard_input.input = get_keyboard_input if keyboard_input.input.empty?
+
+      spell_checker = SpellChecker.new
+
+      keyboard_input.is_word = spell_checker.check_word(keyboard_input.input.to_s)[0][:correct]
 
       keyboard_input
     end
 
+    # Returns true if the character causes a word termination.
     def keyboard_char_ends_word?(char)
       return char == :tab || char == :enter || char == :space || char == '.'
     end
