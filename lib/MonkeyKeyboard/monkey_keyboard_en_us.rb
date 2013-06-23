@@ -1,4 +1,5 @@
 require 'singleton'
+require 'LittleWeasel'
 
 require_relative 'keyboard_char'
 require_relative 'keyboard_key'
@@ -120,9 +121,7 @@ module MonkeyEngine
       # Keep going until we get something...
       keyboard_input.input = get_keyboard_input if keyboard_input.input.empty?
 
-      spell_checker = SpellChecker.new
-
-      keyboard_input.is_word = spell_checker.check_word(keyboard_input.input.to_s)[0][:correct]
+      keyboard_input.is_word = LittleWeasel::Checker.instance.exists?(keyboard_input.input.to_s)[0][:correct]
 
       keyboard_input
     end

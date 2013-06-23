@@ -1,7 +1,7 @@
 require 'rspec'
 require_relative 'spec_helpers'
 
-require 'MonkeyEngine/engine'
+require 'MonkeyEngine'
 require 'MonkeyFactory/monkey_factory'
 require 'MonkeyAction/monkey_action_eat'
 require 'MonkeyAction/monkey_action_pause'

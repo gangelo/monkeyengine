@@ -1,5 +1,5 @@
 require 'Monkey/monkey'
-require 'MonkeyEngine/engine'
+require 'MonkeyEngine'
 require 'MonkeyManager/monkey_manager'
 require 'singleton'
 require 'observer'

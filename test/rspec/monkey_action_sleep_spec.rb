@@ -2,7 +2,7 @@ require 'rspec'
 require 'Monkey/monkey'
 require 'MonkeyAction/monkey_action_sleep'
 require 'MonkeyFactory/monkey_factory'
-require 'MonkeyEngine/engine'
+require 'MonkeyEngine'
 require_relative 'shared_spec'
 
 describe 'MonkeyActionSleep' do

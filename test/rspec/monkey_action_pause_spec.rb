@@ -2,7 +2,7 @@ require 'rspec'
 require 'Monkey/monkey'
 require 'MonkeyAction/monkey_action_pause'
 require 'MonkeyFactory/monkey_factory'
-require 'MonkeyEngine/engine'
+require 'MonkeyEngine'
 require 'MonkeyManager/monkey_manager'
 require_relative 'shared_spec'
 
