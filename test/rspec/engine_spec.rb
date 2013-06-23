@@ -2,12 +2,9 @@ require 'rspec'
 require_relative 'spec_helpers'
 
 require 'MonkeyEngine'
-require 'MonkeyFactory/monkey_factory'
-require 'MonkeyAction/monkey_action_eat'
-require 'MonkeyAction/monkey_action_pause'
-require 'MonkeyAction/monkey_action_sleep'
-require 'MonkeyAction/monkey_action_type'
-require 'MonkeyAction/monkey_action_wake'
+require 'MonkeyActions'
+require 'MonkeyFactory'
+
 
 describe 'Engine' do
 

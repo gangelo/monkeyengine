@@ -1,12 +1,8 @@
 require 'time'
 require 'singleton'
 
-require 'MonkeyAction/monkey_action_eat'
-require 'MonkeyAction/monkey_action_pause'
-require 'MonkeyAction/monkey_action_sleep'
-require 'MonkeyAction/monkey_action_type'
-require 'MonkeyAction/monkey_action_wake'
-require 'MonkeyKeyboard/monkey_keyboard_en_us'
+require 'MonkeyActions'
+require 'MonkeyKeyboardEnUs'
 
 class ActionRules
   include Singleton

@@ -1,9 +1,10 @@
-require 'Monkey/monkey'
-require 'MonkeyEngine'
-require 'MonkeyManager/monkey_manager'
 require 'singleton'
 require 'observer'
 require 'forwardable'
+
+require 'Monkey'
+require 'MonkeyEngine'
+require 'MonkeyManager'
 
 module MonkeyEngine
 

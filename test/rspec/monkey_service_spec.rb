@@ -1,7 +1,8 @@
 require 'rspec'
-require 'MonkeyService/monkey_service'
-require 'MonkeyFactory/monkey_factory'
-require 'MonkeyEngine/exceptions'
+
+require 'MonkeyService'
+require 'MonkeyFactory'
+require 'MonkeyEngine'
 
 
 describe 'MonkeyService' do

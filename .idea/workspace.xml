@@ -2,27 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="61433b63-e048-489d-a5ba-f534d6910d63" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/MonkeyEngine/engine.rb" afterPath="$PROJECT_DIR$/lib/MonkeyEngine.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile" afterPath="$PROJECT_DIR$/Gemfile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/rspec/action_rules_spec.rb" afterPath="$PROJECT_DIR$/test/rspec/action_rules_spec.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/Monkey.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/MonkeyActions.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/MonkeyFactory.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/MonkeyKeyboardEnUs.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/MonkeyManager.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/MonkeyService.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/MonkeyEngine.rb" afterPath="$PROJECT_DIR$/lib/MonkeyEngine.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/MonkeyEngine/action_rules.rb" afterPath="$PROJECT_DIR$/lib/MonkeyEngine/action_rules.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/rspec/engine_spec.rb" afterPath="$PROJECT_DIR$/test/rspec/engine_spec.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/rspec/monkey_action_pause_spec.rb" afterPath="$PROJECT_DIR$/test/rspec/monkey_action_pause_spec.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/rspec/monkey_action_sleep_spec.rb" afterPath="$PROJECT_DIR$/test/rspec/monkey_action_sleep_spec.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/rspec/monkey_action_type_spec.rb" afterPath="$PROJECT_DIR$/test/rspec/monkey_action_type_spec.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/rspec/monkey_action_wake_spec.rb" afterPath="$PROJECT_DIR$/test/rspec/monkey_action_wake_spec.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/MonkeyKeyboard/monkey_keyboard_en_us.rb" afterPath="$PROJECT_DIR$/lib/MonkeyKeyboard/monkey_keyboard_en_us.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/Monkey/monkey.rb" afterPath="$PROJECT_DIR$/lib/Monkey/monkey.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/MonkeyService/monkey_service.rb" afterPath="$PROJECT_DIR$/lib/MonkeyService/monkey_service.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/rspec/monkey_service_spec.rb" afterPath="$PROJECT_DIR$/test/rspec/monkey_service_spec.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="MonkeyEngine.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/MonkeyEngine.rb" changelist="61433b63-e048-489d-a5ba-f534d6910d63" time="1371947829402" ignored="false" />
+    <file path="/MonkeyEngine.rb" changelist="61433b63-e048-489d-a5ba-f534d6910d63" time="1371980214590" ignored="false" />
     <file path="/a.rxml" changelist="61433b63-e048-489d-a5ba-f534d6910d63" time="1367363308537" ignored="false" />
     <file path="/a.rb" changelist="61433b63-e048-489d-a5ba-f534d6910d63" time="1367363316932" ignored="false" />
     <file path="/version.rb" changelist="61433b63-e048-489d-a5ba-f534d6910d63" time="1367576231513" ignored="false" />
     <file path="/action.rb" changelist="61433b63-e048-489d-a5ba-f534d6910d63" time="1369620264059" ignored="false" />
     <file path="/monkey_engine.rb" changelist="61433b63-e048-489d-a5ba-f534d6910d63" time="1371947203827" ignored="false" />
-    <file path="/monkey.rb" changelist="61433b63-e048-489d-a5ba-f534d6910d63" time="1369619058986" ignored="false" />
+    <file path="/monkey.rb" changelist="61433b63-e048-489d-a5ba-f534d6910d63" time="1371981795001" ignored="false" />
     <file path="/action_spec.rb" changelist="61433b63-e048-489d-a5ba-f534d6910d63" time="1367446209782" ignored="false" />
     <file path="/monkey_type_action.rb" changelist="61433b63-e048-489d-a5ba-f534d6910d63" time="1367459357164" ignored="false" />
     <file path="/type_action.rb" changelist="61433b63-e048-489d-a5ba-f534d6910d63" time="1367454360488" ignored="false" />
@@ -45,7 +47,7 @@
     <file path="/Dummy.txt" changelist="61433b63-e048-489d-a5ba-f534d6910d63" time="1371947376827" ignored="false" />
     <file path="/monkeyengine.gemspec" changelist="61433b63-e048-489d-a5ba-f534d6910d63" time="1367619834207" ignored="false" />
     <file path="/monkey_spec.rb" changelist="61433b63-e048-489d-a5ba-f534d6910d63" time="1367626372452" ignored="false" />
-    <file path="/engine_spec.rb" changelist="61433b63-e048-489d-a5ba-f534d6910d63" time="1371172927857" ignored="false" />
+    <file path="/engine_spec.rb" changelist="61433b63-e048-489d-a5ba-f534d6910d63" time="1371979826507" ignored="false" />
     <file path="/monkey_manager.rb" changelist="61433b63-e048-489d-a5ba-f534d6910d63" time="1369616048202" ignored="false" />
     <file path="/monkey_service.rb" changelist="61433b63-e048-489d-a5ba-f534d6910d63" time="1369617201060" ignored="false" />
     <file path="/monkey_service_spec.rb" changelist="61433b63-e048-489d-a5ba-f534d6910d63" time="1369352177284" ignored="false" />
@@ -54,7 +56,7 @@
     <file path="/protect_constructor.rb" changelist="61433b63-e048-489d-a5ba-f534d6910d63" time="1368148092244" ignored="false" />
     <file path="/monkey_action_wake.rb" changelist="61433b63-e048-489d-a5ba-f534d6910d63" time="1369618544814" ignored="false" />
     <file path="/monkey_action_wake_spec.rb" changelist="61433b63-e048-489d-a5ba-f534d6910d63" time="1369524223102" ignored="false" />
-    <file path="/action_rules.rb" changelist="61433b63-e048-489d-a5ba-f534d6910d63" time="1371176903764" ignored="false" />
+    <file path="/action_rules.rb" changelist="61433b63-e048-489d-a5ba-f534d6910d63" time="1371981116942" ignored="false" />
     <file path="/monkey_action_dead.rb" changelist="61433b63-e048-489d-a5ba-f534d6910d63" time="1369618522566" ignored="false" />
     <file path="/action_rules_spec.rb" changelist="61433b63-e048-489d-a5ba-f534d6910d63" time="1371263136273" ignored="false" />
     <file path="$APPLICATION_HOME_DIR$/lib/openapi.jar!/standardSchemas/xml.xsd" changelist="61433b63-e048-489d-a5ba-f534d6910d63" time="1370647901853" ignored="false" />
@@ -79,6 +81,12 @@
     <file path="/keyboard_char_evaluator.rb" changelist="61433b63-e048-489d-a5ba-f534d6910d63" time="1371261035679" ignored="false" />
     <file path="/keyboard_key_evaluator.rb" changelist="61433b63-e048-489d-a5ba-f534d6910d63" time="1371262902082" ignored="false" />
     <file path="/keyboard_input.rb" changelist="61433b63-e048-489d-a5ba-f534d6910d63" time="1371606358212" ignored="false" />
+    <file path="/MonkeyActions.rb" changelist="61433b63-e048-489d-a5ba-f534d6910d63" time="1371979768118" ignored="false" />
+    <file path="/MonkeyFactory.rb" changelist="61433b63-e048-489d-a5ba-f534d6910d63" time="1371980347682" ignored="false" />
+    <file path="/MonkeyKeyboardEnUs.rb" changelist="61433b63-e048-489d-a5ba-f534d6910d63" time="1371980636819" ignored="false" />
+    <file path="/MonkeyManager.rb" changelist="61433b63-e048-489d-a5ba-f534d6910d63" time="1371981261360" ignored="false" />
+    <file path="/Monkey.rb" changelist="61433b63-e048-489d-a5ba-f534d6910d63" time="1371981388394" ignored="false" />
+    <file path="/MonkeyService.rb" changelist="61433b63-e048-489d-a5ba-f534d6910d63" time="1371981745532" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,91 +106,82 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="action_rules.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/MonkeyEngine/action_rules.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="4" column="27" selection-start="87" selection-end="87" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="monkey_manager.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/MonkeyManager/monkey_manager.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="6" column="14" selection-start="99" selection-end="99" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="monkey_service.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/MonkeyService/monkey_service.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="11" column="12" selection-start="184" selection-end="184" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="monkey_service_spec.rb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test/rspec/monkey_service_spec.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="5" column="33" selection-start="88" selection-end="88" vertical-scroll-proportion="0.18203883">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="monkey.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/Monkey/monkey.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="6" column="44" selection-start="122" selection-end="122" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="monkey_keyboard_en_us.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/MonkeyKeyboard/monkey_keyboard_en_us.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="11" column="19" selection-start="227" selection-end="227" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="keyboard_key_evaluator.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/MonkeyKeyboard/keyboard_key_evaluator.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="engine_spec.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/rspec/engine_spec.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="21" selection-start="70" selection-end="70" vertical-scroll-proportion="0.0">
+            <state line="5" column="22" selection-start="118" selection-end="118" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="keyboard_char_spec.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/rspec/keyboard_char_spec.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="monkey_action_pause_spec.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/rspec/monkey_action_pause_spec.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="21" selection-start="143" selection-end="143" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="monkey_action_type_spec.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/rspec/monkey_action_type_spec.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="21" selection-start="142" selection-end="142" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="monkey_action_wake_spec.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/rspec/monkey_action_wake_spec.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="21" selection-start="142" selection-end="142" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="monkey_factory_spec.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/rspec/monkey_factory_spec.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="monkey_keyboard_en_us_spec.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/rspec/monkey_keyboard_en_us_spec.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="monkey_service_spec.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/rspec/monkey_service_spec.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MonkeyEngine.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="MonkeyEngine.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/MonkeyEngine.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="33" selection-start="365" selection-end="365" vertical-scroll-proportion="0.5012854">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="monkey_action_sleep_spec.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/rspec/monkey_action_sleep_spec.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="21" selection-start="143" selection-end="143" vertical-scroll-proportion="0.0">
+            <state line="11" column="21" selection-start="236" selection-end="236" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -207,22 +206,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/lib/MonkeyEngine/action_rules.rb" />
-        <option value="$PROJECT_DIR$/lib/MonkeyKeyboard/keyboard_char_evaluator.rb" />
-        <option value="$PROJECT_DIR$/lib/MonkeyAction/monkey_action_type.rb" />
-        <option value="$PROJECT_DIR$/lib/MonkeyKeyboard/keyboard_key_evaluator.rb" />
-        <option value="$PROJECT_DIR$/lib/MonkeyKeyboard/keyboard_input.rb" />
-        <option value="$PROJECT_DIR$/Gemfile" />
-        <option value="$PROJECT_DIR$/lib/MonkeyKeyboard/monkey_keyboard_en_us.rb" />
-        <option value="$PROJECT_DIR$/lib/monkey_engine.rb" />
-        <option value="$PROJECT_DIR$/lib/MonkeyService/monkey_service.rb" />
-        <option value="$PROJECT_DIR$/test/rspec/action_rules_spec.rb" />
-        <option value="$PROJECT_DIR$/test/rspec/engine_spec.rb" />
         <option value="$PROJECT_DIR$/test/rspec/monkey_action_pause_spec.rb" />
         <option value="$PROJECT_DIR$/test/rspec/monkey_action_sleep_spec.rb" />
         <option value="$PROJECT_DIR$/test/rspec/monkey_action_type_spec.rb" />
         <option value="$PROJECT_DIR$/test/rspec/monkey_action_wake_spec.rb" />
+        <option value="$PROJECT_DIR$/lib/MonkeyActions.rb" />
         <option value="$PROJECT_DIR$/lib/MonkeyEngine.rb" />
+        <option value="$PROJECT_DIR$/lib/MonkeyFactory.rb" />
+        <option value="$PROJECT_DIR$/test/rspec/engine_spec.rb" />
+        <option value="$PROJECT_DIR$/lib/MonkeyKeyboardEnUs.rb" />
+        <option value="$PROJECT_DIR$/lib/MonkeyEngine/action_rules.rb" />
+        <option value="$PROJECT_DIR$/lib/MonkeyManager.rb" />
+        <option value="$PROJECT_DIR$/lib/Monkey.rb" />
+        <option value="$PROJECT_DIR$/lib/MonkeyService/monkey_service.rb" />
+        <option value="$PROJECT_DIR$/lib/MonkeyService.rb" />
+        <option value="$PROJECT_DIR$/lib/Monkey/monkey.rb" />
+        <option value="$PROJECT_DIR$/test/rspec/monkey_service_spec.rb" />
       </list>
     </option>
   </component>
@@ -308,24 +307,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MonkeyEngine" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="monkeyengine" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MonkeyEngine" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -821,14 +802,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1440" height="874" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32891247" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32891247" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32891247" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32209468" sideWeight="0.63129973" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32209468" sideWeight="0.63129973" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.40848807" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33023873" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -906,22 +887,22 @@
       <breakpoints>
         <line-breakpoint type="ruby-line">
           <url>file://$PROJECT_DIR$/test/rspec/engine_spec.rb</url>
-          <line>28</line>
+          <line>25</line>
           <option name="timeStamp" value="92" />
         </line-breakpoint>
         <line-breakpoint type="ruby-line">
           <url>file://$PROJECT_DIR$/lib/MonkeyEngine/action_rules.rb</url>
-          <line>39</line>
+          <line>35</line>
           <option name="timeStamp" value="94" />
         </line-breakpoint>
         <line-breakpoint type="ruby-line">
           <url>file://$PROJECT_DIR$/lib/MonkeyEngine.rb</url>
-          <line>26</line>
+          <line>21</line>
           <option name="timeStamp" value="95" />
         </line-breakpoint>
         <line-breakpoint type="ruby-line">
           <url>file://$PROJECT_DIR$/lib/MonkeyEngine/action_rules.rb</url>
-          <line>45</line>
+          <line>41</line>
           <option name="timeStamp" value="96" />
         </line-breakpoint>
         <line-breakpoint type="ruby-line">
@@ -931,7 +912,7 @@
         </line-breakpoint>
         <line-breakpoint type="ruby-line">
           <url>file://$PROJECT_DIR$/lib/MonkeyEngine.rb</url>
-          <line>43</line>
+          <line>38</line>
           <option name="timeStamp" value="104" />
         </line-breakpoint>
       </breakpoints>
@@ -942,114 +923,114 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Gemfile">
+    <entry file="file://$PROJECT_DIR$/lib/Action/action.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="22" selection-start="163" selection-end="163" vertical-scroll-proportion="0.234375">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/MonkeyFactory.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="81" selection-start="47" selection-end="47" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/MonkeyKeyboardEnUs.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="41" selection-start="41" selection-end="41" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/MonkeyActions.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="0" selection-start="307" selection-end="307" vertical-scroll-proportion="0.20089285">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/MonkeyKeyboard/keyboard_key_evaluator.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/MonkeyKeyboard/monkey_keyboard_en_us.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="123" column="61" selection-start="4666" selection-end="4666" vertical-scroll-proportion="0.0">
+        <state line="11" column="19" selection-start="227" selection-end="227" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/monkeyengine.gemspec">
+    <entry file="file://$PROJECT_DIR$/lib/MonkeyEngine/action_rules.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="23" selection-start="241" selection-end="241" vertical-scroll-proportion="0.0">
+        <state line="4" column="27" selection-start="87" selection-end="87" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/MonkeyEngine/version.rb">
+    <entry file="file://$PROJECT_DIR$/lib/MonkeyManager.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="105" selection-start="44" selection-end="44" vertical-scroll-proportion="0.0">
+        <state line="0" column="46" selection-start="46" selection-end="46" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/MonkeyManager/monkey_manager.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="14" selection-start="99" selection-end="99" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/Monkey.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="31" selection-start="31" selection-end="31" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/MonkeyService.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="46" selection-start="46" selection-end="46" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/Monkey/monkey.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="44" selection-start="122" selection-end="122" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/MonkeyService/monkey_service.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="21" selection-start="45" selection-end="45" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/rspec/action_rules_spec.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="21" selection-start="169" selection-end="169" vertical-scroll-proportion="0.0">
+        <state line="11" column="12" selection-start="184" selection-end="184" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/rspec/engine_spec.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="21" selection-start="70" selection-end="70" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/rspec/keyboard_char_spec.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/rspec/monkey_action_sleep_spec.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="21" selection-start="143" selection-end="143" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/rspec/monkey_action_pause_spec.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="21" selection-start="143" selection-end="143" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/rspec/monkey_action_type_spec.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="21" selection-start="142" selection-end="142" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/rspec/monkey_action_wake_spec.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="21" selection-start="142" selection-end="142" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/rspec/monkey_factory_spec.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/rspec/monkey_keyboard_en_us_spec.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/rspec/monkey_service_spec.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="5" column="22" selection-start="118" selection-end="118" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/MonkeyEngine.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="33" selection-start="365" selection-end="365" vertical-scroll-proportion="0.5012854">
+        <state line="11" column="21" selection-start="236" selection-end="236" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/rspec/monkey_service_spec.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="33" selection-start="88" selection-end="88" vertical-scroll-proportion="0.18203883">
           <folding />
         </state>
       </provider>

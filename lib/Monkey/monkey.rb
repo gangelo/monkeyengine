@@ -1,6 +1,7 @@
 require 'thread'
-require 'MonkeyAction/monkey_action_dead'
-require 'MonkeyService/monkey_service'
+
+require 'MonkeyActions'
+require 'MonkeyService'
 require 'Helpers/protected_constructor'
 
 # Monkey class.
