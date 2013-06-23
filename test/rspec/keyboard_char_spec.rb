@@ -1,5 +1,4 @@
-require 'rspec'
-require 'MonkeyKeyboard/keyboard_char'
+require 'MonkeyKeyboardEnUs'
 
 describe 'KeyboardChar' do
 

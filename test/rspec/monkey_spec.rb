@@ -1,4 +1,3 @@
-require 'rspec'
 
 describe 'Monkey' do
   before { pending }

@@ -1,17 +1,10 @@
-require 'rspec'
 require_relative 'spec_helpers'
 
-require 'Monkey/monkey'
-require 'MonkeyEngine/action_rules'
-require 'MonkeyFactory/monkey_factory'
+require 'Monkey'
+require 'MonkeyFactory'
 require 'MonkeyEngine'
-require 'MonkeyManager/monkey_manager'
-require 'MonkeyAction/monkey_action_eat'
-require 'MonkeyAction/monkey_action_pause'
-require 'MonkeyAction/monkey_action_sleep'
-require 'MonkeyAction/monkey_action_type'
-require 'MonkeyAction/monkey_action_wake'
-require 'MonkeyAction/monkey_action_dead'
+require 'MonkeyManager'
+require 'MonkeyActions'
 
 describe 'ActionRules' do
 

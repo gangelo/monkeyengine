@@ -1,5 +1,3 @@
-require 'rspec'
-
 require 'MonkeyService'
 require 'MonkeyFactory'
 require 'MonkeyEngine'

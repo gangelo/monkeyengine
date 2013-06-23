@@ -1,9 +1,9 @@
-require 'rspec'
-require 'Monkey/monkey'
-require 'MonkeyAction/monkey_action_pause'
-require 'MonkeyFactory/monkey_factory'
+require 'Monkey'
+require 'MonkeyActions'
+require 'MonkeyFactory'
 require 'MonkeyEngine'
-require 'MonkeyManager/monkey_manager'
+require 'MonkeyManager'
+
 require_relative 'shared_spec'
 
 describe 'MonkeyActionPause' do

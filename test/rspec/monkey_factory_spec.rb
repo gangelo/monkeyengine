@@ -1,5 +1,4 @@
-require 'rspec'
-require 'MonkeyFactory/monkey_factory'
+require 'MonkeyFactory'
 
 describe 'MonkeyFactory' do
 
