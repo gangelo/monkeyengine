@@ -1,4 +1,4 @@
-require 'MonkeyAction/monkey_action'
+require_relative 'monkey_action'
 require 'MonkeyEngine/exceptions'
 
 # Monkey action:  dead (as in not alive)

@@ -1,4 +1,4 @@
-require 'Monkey/monkey'
+require 'Monkey'
 
 module MonkeyFactory
 

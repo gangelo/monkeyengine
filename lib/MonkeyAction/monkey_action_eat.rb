@@ -1,7 +1,8 @@
 require 'time'
-require 'MonkeyAction/monkey_action'
+
+require_relative 'monkey_action'
+require_relative 'monkey_timed_action'
 require 'MonkeyEngine/exceptions'
-require 'MonkeyAction/monkey_timed_action'
 
 # Monkey action:  eat (as in banana)
 # The monkey is eating.
