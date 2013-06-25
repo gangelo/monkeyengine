@@ -24,9 +24,7 @@ module MonkeyEngine
 
     def add(monkey)
       @monkey_manager.add(monkey).start
-
-      changed
-      notify_observers(Time.now, :add, {monkey: monkey})
+      do_notify_observers(:add, {monkey: monkey})
     end
 
     def any_alive?
@@ -41,17 +39,13 @@ module MonkeyEngine
 
     def kill!(monkey)
       @monkey_manager.kill!(monkey)
-
-      changed
-      notify_observers(Time.now, :kill!, monkey)
+      do_notify_observers(:kill!, {monkey: monkey})
     end
 
     # Kills all the monkeys.
     def kill_all!
       @monkey_manager.kill_all!
-
-      changed
-      notify_observers(Time.now, :kill_all!, nil)
+      do_notify_observers(:kill_all!, nil)
     end
 
     def new_action(monkey)
@@ -59,12 +53,20 @@ module MonkeyEngine
     end
 
     def monkey_do(action)
-      @engine.do_action action
+      do_notify_observers(:action_completed, {action: action}) if @engine.do_action action
     end
 
     def action_eval!(action)
       @engine.action_eval! action
     end
+
+    private
+
+    def do_notify_observers(param1, param2)
+      changed
+      notify_observers(Time.now, param1, param2)
+    end
+
   end
 
 end

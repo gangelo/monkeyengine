@@ -1,6 +1,6 @@
 require 'time'
 
-# Action.
+# Defines a base action.
 class Action
   attr_reader :value, :weight
   attr_accessor :action_time

@@ -2,6 +2,7 @@ require 'Monkey'
 require 'MonkeyActions'
 require 'MonkeyFactory'
 require 'MonkeyEngine'
+require_relative '../../lib/MonkeyKeyboard/keyboard_input'
 
 require_relative 'shared_spec'
 
@@ -9,10 +10,13 @@ describe 'MonkeyActionType' do
   before(:all) do
 
     @monkey = MonkeyFactory::create :typing_monkey1
-    @it = MonkeyActionType.new @monkey, %w{a b c d e f .}
+
+    keyboard_input = KeyboardInput.new
+    keyboard_input.input = %w{a b c d e f .}
+
+    @it = MonkeyActionType.new @monkey, keyboard_input
 
     MonkeyEngine::MonkeyManager.instance.add(@monkey)
-
   end
 
   after(:all) do
@@ -56,7 +60,11 @@ describe 'MonkeyActionType' do
   it "should not raise an error if value is valid" do
     monkey = MonkeyFactory::create(:typing_monkey2)
     MonkeyEngine::MonkeyManager.instance.add(monkey)
-    lambda { MonkeyActionType.new(monkey, %w{w o r d .}) }.should_not raise_error
+
+    keyboard_input = KeyboardInput.new
+    keyboard_input.input = %w{w o r d .}
+
+    lambda { MonkeyActionType.new(monkey, keyboard_input) }.should_not raise_error
   end
 
   it "should raise an error if value is the wrong type" do
@@ -69,7 +77,11 @@ describe 'MonkeyActionType' do
   it "should raise an error if value is empty?" do
     monkey = MonkeyFactory::create(:typing_monkey4)
     MonkeyEngine::MonkeyManager.instance.add(monkey)
-    lambda { MonkeyActionType.new(monkey, %w{}) }.should \
+
+    keyboard_input = KeyboardInput.new
+    keyboard_input.input = %w{}
+
+    lambda { MonkeyActionType.new(monkey, keyboard_input) }.should \
       raise_error MonkeyEngine::Exceptions::InvalidArgumentValueException
   end
 

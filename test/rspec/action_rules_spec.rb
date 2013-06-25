@@ -5,6 +5,7 @@ require 'MonkeyFactory'
 require 'MonkeyEngine'
 require 'MonkeyManager'
 require 'MonkeyActions'
+require_relative '../../lib/MonkeyKeyboard/keyboard_input'
 
 describe 'ActionRules' do
 
@@ -21,7 +22,10 @@ describe 'ActionRules' do
 
       monkey.extend(SpecHelpers::SetMonkeyAction)
 
-      action = MonkeyActionType.new(monkey, %w{ H e l l o })
+      keyboard_input = KeyboardInput.new
+      keyboard_input.input = %w{H e l l o}
+
+      action = MonkeyActionType.new(monkey, keyboard_input)
       action.action_completed = false
 
       monkey.set_action(action)

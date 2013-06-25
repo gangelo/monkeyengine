@@ -36,7 +36,7 @@ module MonkeyEngine
     end
 
     def do_action_type(action)
-
+      action.action_completed = true
     end
 
     # Returns a new action.

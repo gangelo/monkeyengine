@@ -21,7 +21,7 @@ class ActionRules
     return get_next_action_eval(monkey) unless nil
 
     # Nothing else interesting, monkey takes a breather...
-    #MonkeyActionPause.new(monkey, Random.new.rand(MonkeyActionPause::VALID_VALUES))
+    # MonkeyActionPause.new(monkey, Random.new.rand(MonkeyActionPause::VALID_VALUES))
     MonkeyActionPause.new(monkey, 5)
   end
 
