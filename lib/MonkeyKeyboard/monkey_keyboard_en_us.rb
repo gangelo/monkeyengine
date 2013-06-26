@@ -119,7 +119,7 @@ module MonkeyEngine
       }.collect { |key| keyboard_key_evaluator.get_char(key) }.compact
 
       # Keep going until we get something...
-      keyboard_input.input = get_keyboard_input if keyboard_input.input.empty?
+      keyboard_input = get_keyboard_input if keyboard_input.input.empty?
 
       keyboard_input.is_word = LittleWeasel::Checker.instance.exists?(keyboard_input.input.to_s)
 

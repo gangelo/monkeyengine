@@ -31,7 +31,7 @@ class MonkeyActionType < MonkeyAction
     raise MonkeyEngine::Exceptions::NilArgumentException.new "Value '#{value}' cannot be nil"  \
       if @value.nil?
 
-    raise MonkeyEngine::Exceptions::InvalidArgumentTypeException.new "Value '#{value}' is not a valid argument type"  \
+    raise MonkeyEngine::Exceptions::InvalidArgumentTypeException.new "Value '#{value}' is not a valid argument type (#{value.class.name})"  \
       unless @value.is_a?(Array)
 
     raise MonkeyEngine::Exceptions::InvalidArgumentValueException.new "Value '#{value}' cannot be empty"  \
