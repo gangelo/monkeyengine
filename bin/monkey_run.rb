@@ -1,5 +1,5 @@
 require '../lib/MonkeyFactory'
-require '../lib/MonkeyService'
+require '../lib/MonkeyEngine'
 
 runtime = ARGV[0]
 
