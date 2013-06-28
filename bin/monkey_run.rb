@@ -37,6 +37,8 @@ module Runner
     def update(time, action, param)
       begin
 
+        return unless param.is_a?(Hash) && param.has_key?(:action)
+
         if param[:action].is_a?(MonkeyActionType) && action == :action_completed
           puts "Is Word: [#{param[:action].keyboard_input.is_word}] | Value: [#{param[:action].keyboard_input.input_to_s}]"
         end
@@ -45,6 +47,7 @@ module Runner
           @words.push param[:action].keyboard_input.input_to_s
         end
       rescue Exception => e
+        puts "Exception: #{e}"
       end
     end
 
