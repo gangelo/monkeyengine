@@ -18,6 +18,7 @@ module MonkeyEngine
 
     public
 
+    # Evaluates whether or not the action is completed.
     def action_eval!(action)
       ActionRules.instance.action_eval! action
     end

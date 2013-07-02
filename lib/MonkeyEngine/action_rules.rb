@@ -4,16 +4,20 @@ require 'singleton'
 require 'MonkeyActions'
 require 'MonkeyKeyboardEnUs'
 
+# Handles monkey action rules.
 class ActionRules
   include Singleton
 
-  # Gets the next action
+# Retrieves tne next action for the monkey
+#
+# @param [monkey] the monkey whose next action is to be retrieved
+# @return [MonkeyAction] the next monkey action
   def get_next_action(monkey)
     raise MonkeyEngine::Exceptions::InvalidOperationException.new \
         "The action [#{monkey.action.class.name}] for Monkey [#{monkey.monkey_symbol}] must be completed before calling get_next_action" \
           unless monkey.action.nil? || monkey.action.action_completed?
 
-    current_action = monkey.action
+    # current_action = monkey.action
 
     # If the monkey is sleeping, or first action, wake him up.
     return MonkeyActionWake.new(monkey) if monkey.action.nil? || monkey.action.is_a?(MonkeyActionSleep)
