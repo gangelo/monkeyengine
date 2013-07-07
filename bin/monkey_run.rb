@@ -6,7 +6,7 @@ runtime = ARGV[0]
 
 monkey_service = MonkeyEngine::MonkeyService.instance
 
-LittleWeasel::Checker.instance.options = {exclude_alphabet: true}
+LittleWeasel::Checker.instance.options = {exclude_alphabet: true, strip_whitespace: false}
 
 module Runner
 

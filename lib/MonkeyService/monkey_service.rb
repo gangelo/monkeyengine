@@ -9,6 +9,10 @@ require 'MonkeyManager'
 module MonkeyEngine
 
   # The monkey service.
+  #
+  # Provides the main interface for all functionality relating to
+  # the MonkeyEngine (see MonkeyEngine) and this gem.
+  #
   class MonkeyService
     include Singleton
     include Observable
@@ -22,11 +26,22 @@ module MonkeyEngine
       @engine = MonkeyEngine::Engine.instance
     end
 
+    # Adds the Monkey to be managed.
+    #
+    # @param [Monkey, #read] monkey the Monkey to add.
+    #
     def add(monkey)
       @monkey_manager.add(monkey).start
       do_notify_observers(:add, {monkey: monkey})
     end
 
+    # Determines if any Monkeys that are being managed by the
+    # underlining MonkeyManager are alive.
+    #
+    # @note A Monkey is considered alive if the Monkey#thread.alive? is true.
+    #
+    # @return [Boolean] true if any Monkeys are alive, false otherwise.
+    #
     def any_alive?
       return false if @monkey_manager.count == 0
 
@@ -37,6 +52,10 @@ module MonkeyEngine
       alive_count > 0
     end
 
+    # Kills the monkey.
+    #
+    # @param [Monkey, #read/#write] monkey the Monkey to kill.
+    #
     def kill!(monkey)
       @monkey_manager.kill!(monkey)
       do_notify_observers(:kill!, {monkey: monkey})

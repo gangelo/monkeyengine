@@ -30,6 +30,8 @@ class ActionRules
   end
 
   def get_next_action_eval(monkey)
+    # TODO: Add logic to determine next logical action.
+
     keyboard_input = MonkeyEngine::MonkeyKeyboardEnUs.instance.get_keyboard_input
 
     return MonkeyActionType.new monkey, keyboard_input
