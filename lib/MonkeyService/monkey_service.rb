@@ -11,7 +11,8 @@ module MonkeyEngine
   # The monkey service.
   #
   # Provides the main interface for all functionality relating to
-  # the MonkeyEngine (see MonkeyEngine) and this gem.
+  # the MonkeyEngine (see MonkeyEngine) and this gem. This class wraps
+  # MonkeyManager and MonkeyEngine classes.
   #
   class MonkeyService
     include Singleton
