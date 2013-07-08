@@ -30,6 +30,11 @@ module MonkeyEngine
     #
     # @param [Monkey, #read] monkey the Monkey to add.
     #
+    # @note Observers are notified after this operation in the form of these update method params:
+    #  ObserverKlass#update(param1, param2, param3); where param1=Time of the operation,
+    #  param2=Symbol representing the operation (in this case, :add), param3=The following Hash:
+    #  {monkey: [monkey]} where monkey=The Monkey added.
+    #
     def add(monkey)
       @monkey_manager.add(monkey).start
       do_notify_observers(:add, {monkey: monkey})
@@ -56,12 +61,28 @@ module MonkeyEngine
     #
     # @param [Monkey, #read/#write] monkey the Monkey to kill.
     #
+    # @note The Monkey#monkey_do method executed continually by Monkey#thread is
+    #  terminated.
+    #
+    # @note Observers are notified after this operation in the form of these update method params:
+    #  ObserverKlass#update(param1, param2, param3); where param1=Time of the operation,
+    #  param2=Symbol representing the operation (in this case, :kill!), param3=The following Hash:
+    #  {monkey: [monkey]} where monkey=The Monkey killed.
+    #
     def kill!(monkey)
       @monkey_manager.kill!(monkey)
       do_notify_observers(:kill!, {monkey: monkey})
     end
 
-    # Kills all the monkeys.
+    # Kills all monkeys managed by the underlying MonkeyManager.
+    #
+    # @note The Monkey#monkey_do method executed continually by Monkey#thread, for each Monkey is
+    #  terminated.
+    #
+    # @note Observers are notified after this operation in the form of these update method params:
+    #  ObserverKlass#update(param1, param2, param3); where param1=Time of the operation,
+    #  param2=Symbol representing the operation (in this case, :kill_all!), param3=nil.
+    #
     def kill_all!
       @monkey_manager.kill_all!
       do_notify_observers(:kill_all!, nil)
@@ -71,10 +92,29 @@ module MonkeyEngine
       @engine.new_action monkey
     end
 
+    # Performs the action against the Monkey associated with this action.
+    #
+    # @param [MonkeyActionDead, MonkeyActionEat, MonkeyActionPause, MonkeyActionSleep, MonkeyActionType, MonkeyActionWake, etc., #read/#write]
+    #  action the action to apply against the Monkey associated with this action.
+    #
+    # @note Observers are notified after this operation in the form of these update method params:
+    #  ObserverKlass#update(param1, param2, param3); where param1=Time of the operation,
+    #  param2=Symbol representing the operation (in this case, :action_complete), param3=The following Hash:
+    #  {action: [action]} where action=The action that was completed.
+    #
+    # @return (Boolean) true if the action performed has been completed (Action#action_completed?), false otherwise.
+    #
     def monkey_do(action)
       do_notify_observers(:action_completed, {action: action}) if @engine.do_action action
     end
 
+    # Evaluates the given action, to determine whether or not the action is completed (Action#action_completed?).
+    #
+    # @param [MonkeyActionDead, MonkeyActionEat, MonkeyActionPause, MonkeyActionSleep, MonkeyActionType, MonkeyActionWake, etc., #read]
+    #  action the action to interrogate as to whether or not it is completed (Action#action_completed?).
+    #
+    # @return (Boolean) true if the action is completed (Action#action_completed?), false otherwise.
+    #
     def action_eval!(action)
       @engine.action_eval! action
     end
