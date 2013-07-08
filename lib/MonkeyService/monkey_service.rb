@@ -121,6 +121,8 @@ module MonkeyEngine
 
     private
 
+    # Notifies all observers.
+    #
     def do_notify_observers(param1, param2)
       changed
       notify_observers(Time.now, param1, param2)

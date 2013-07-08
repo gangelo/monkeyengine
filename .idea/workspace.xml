@@ -37,7 +37,7 @@
     <file path="/monkey_spec.rb" changelist="61433b63-e048-489d-a5ba-f534d6910d63" time="1367626372452" ignored="false" />
     <file path="/engine_spec.rb" changelist="61433b63-e048-489d-a5ba-f534d6910d63" time="1371979826507" ignored="false" />
     <file path="/monkey_manager.rb" changelist="61433b63-e048-489d-a5ba-f534d6910d63" time="1369616048202" ignored="false" />
-    <file path="/monkey_service.rb" changelist="61433b63-e048-489d-a5ba-f534d6910d63" time="1373242534299" ignored="false" />
+    <file path="/monkey_service.rb" changelist="61433b63-e048-489d-a5ba-f534d6910d63" time="1373243836128" ignored="false" />
     <file path="/monkey_service_spec.rb" changelist="61433b63-e048-489d-a5ba-f534d6910d63" time="1369352177284" ignored="false" />
     <file path="/monkey_factory.rb" changelist="61433b63-e048-489d-a5ba-f534d6910d63" time="1369616197736" ignored="false" />
     <file path="/monkey_factory_spec.rb" changelist="61433b63-e048-489d-a5ba-f534d6910d63" time="1369348521288" ignored="false" />
@@ -111,7 +111,7 @@
       <file leaf-file-name="monkey_service.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/MonkeyService/monkey_service.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="114" column="5" selection-start="4291" selection-end="4292" vertical-scroll-proportion="0.33403805">
+            <state line="123" column="29" selection-start="4514" selection-end="4514" vertical-scroll-proportion="0.61945033">
               <folding />
             </state>
           </provider>
@@ -819,11 +819,11 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32891247" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3579627" sideWeight="0.6816976" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22955523" sideWeight="0.6816976" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.40848807" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33023873" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3183024" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3183024" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1018,7 +1018,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/MonkeyService/monkey_service.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="114" column="5" selection-start="4291" selection-end="4292" vertical-scroll-proportion="0.33403805">
+        <state line="123" column="29" selection-start="4514" selection-end="4514" vertical-scroll-proportion="0.61945033">
           <folding />
         </state>
       </provider>
