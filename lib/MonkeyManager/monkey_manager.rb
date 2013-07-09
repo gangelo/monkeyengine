@@ -91,11 +91,27 @@ module MonkeyEngine
       raise MonkeyEngine::Exceptions::InvalidArgumentTypeException.new "Parameter 'monkey' is not a Symbol, String or Monkey object"
     end
 
-    # Deletes but does not kill.
+    # Removes the Monkey from the list of Monkeys being managed by this MonkeyManager.
+    #
+    # @param [Monkey] monkey The Monkey to delete.
+    #
+    # @note The Monkey to be deleted becomes unmanaged; the Monkey is NOT killed (Monkey#kill)
+    #
+    # @return [Monkey, nil] Returns the deleted Monkey, or nil if no matching Monkey was found to delete.
+    #
     def delete(monkey)
       @monkeys.delete(monkey)
     end
 
+    # Suspends the calling threads execution until all Monkey threads exit, or,
+    # until _limit_ seconds have passed.
+    #
+    # @param [int] limit The seconds to wait for all Monkey threads to exit, or _nil_ to
+    #   wait indefinitely.
+    #
+    # @return [Array, nil] Returns an [Array] of Monkey objects, or, nil, if no Monkey objects are being managed by
+    #    this MonkeyManager.
+    #
     def join_all(limit=nil)
       limit = 0 unless limit.nil?
       @monkeys.each { |monkey| monkey.join limit } unless @monkeys.empty?
