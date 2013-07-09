@@ -2,7 +2,7 @@ require 'thread'
 
 require 'MonkeyActions'
 require 'MonkeyService'
-require 'Helpers/protected_constructor'
+require 'ProtectedConstructor'
 
 # Monkey class.
 class Monkey
