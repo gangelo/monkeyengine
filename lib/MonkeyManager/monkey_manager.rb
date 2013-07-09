@@ -3,7 +3,10 @@ require 'forwardable'
 
 module MonkeyEngine
 
-  # Manages monkeys.
+  # The MonkeyManager.
+  #
+  # This class provides the functionality needed to manage Monkeys (See Monkey, MonkeyService)
+  #
   class MonkeyManager
     include Enumerable
     extend Forwardable
@@ -12,11 +15,23 @@ module MonkeyEngine
 
     include Singleton
 
+    # The constructor
+    #
     def initialize
       @monkeys = Array.new
     end
 
     public
+
+    # Adds the Monkey to the list of Monkeys to be managed.
+    #
+    # @param (Monkey, #read) monkey The Monkey to add.
+    #
+    # @return [Monkey] the Monkey added.
+    #
+    # @raise [MonkeyEngine::Exceptions::InvalidArgumentTypeException] if parameter monkey is not a Monkey object.
+    # @raise [MonkeyEngine::Exceptions::UniqueObjectException] if monkey already exists.
+    #
     def add(monkey)
       raise MonkeyEngine::Exceptions::InvalidArgumentTypeException.new "Parameter 'monkey' is not Monkey object" unless monkey.is_a? Monkey
       raise MonkeyEngine::Exceptions::UniqueObjectException.new "Monkeys must be unique" if exists? monkey
@@ -25,19 +40,46 @@ module MonkeyEngine
       monkey
     end
 
+    # Returns the total count of Monkey objects being managed by this MonkeyManager.
+    #
+    # @return [int] The Monkey count.
+    #
     def count
       @monkeys.count
     end
 
+    # Returns a [Boolean] indicating whether or not the Monkey exists (e.g. is currently being managed by this MonkeyManager).
+    #
+    # @param [Monkey, #read] monkey The Monkey to check.
+    #
+    # @return [Boolean] true if the Monkey is currently being manager by this MonkeyManager, false otherwise.
+    #
     def exists?(monkey)
       true unless get(monkey).nil?
     end
 
+    # Returns a [Boolean] indicating whether or not the Monkey is alive (Monkey#alive?).
+    #
+    # @param [Monkey] monkey The Monkey to check.
+    #
+    # @return [Boolean] true if the Monkey is currently active (Monkey#.alive?), false otherwise.
+    #
     def alive?(monkey)
       monkey = get(monkey)
       monkey.alive? unless monkey.nil?
     end
 
+    # Returns the Monkey indicated by *monkey*.
+    #
+    # @param [Monkey, Symbol, String, #read] monkey The Monkey to return.
+    #
+    # @note Monkey#monkey_symbol is interrogated. If *monkey* is a [Monkey] object, Monkey#monkey_symbol is used;
+    #    if *monkey* is a [Symbol], it is used; if *monkey* is a [String], String#to_sym is used.
+    #
+    # @return [Monkey] The Monkey if it exists.
+    #
+    # @raise [MonkeyEngine::Exceptions::InvalidArgumentTypeException] if parameter monkey is not a Monkey, Symbol, or String object.
+    #
     def get(monkey)
       return nil if @monkeys.empty?
 
