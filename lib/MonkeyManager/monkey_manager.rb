@@ -117,6 +117,13 @@ module MonkeyEngine
       @monkeys.each { |monkey| monkey.join limit } unless @monkeys.empty?
     end
 
+    # Kills the monkey.
+    #
+    # @param [Monkey, #read/#write] monkey the Monkey to kill.
+    #
+    # @note The Monkey#monkey_do method executed continually by Monkey#thread is
+    #  terminated.
+    #
     def kill!(monkey)
       monkey = get(monkey)
       return if monkey.nil?
@@ -125,6 +132,11 @@ module MonkeyEngine
       monkey.kill
     end
 
+    # Kills all monkeys managed by this MonkeyManager.
+    #
+    # @note The Monkey#monkey_do method executed continually by Monkey#thread, for each Monkey is
+    #  terminated.
+    #
     def kill_all!
       @monkeys.each { |monkey| monkey.kill } unless @monkeys.empty?
       @monkeys.clear
