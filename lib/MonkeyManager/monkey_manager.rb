@@ -91,6 +91,15 @@ module MonkeyEngine
       raise MonkeyEngine::Exceptions::InvalidArgumentTypeException.new "Parameter 'monkey' is not a Symbol, String or Monkey object"
     end
 
+    # Returns an Array of Monkey objects managed by this MonkeyManager.
+    #
+    # @return [Array] An Array of Monkey objects managed by this MonkeyManager.
+    #
+    def get_all
+      return @monkeys if @monkeys.empty?
+      @monkeys.dup
+    end
+
     # Removes the Monkey from the list of Monkeys being managed by this MonkeyManager.
     #
     # @param [Monkey] monkey The Monkey to delete.

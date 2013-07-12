@@ -20,7 +20,7 @@ module MonkeyEngine
     include Enumerable
     extend Forwardable
 
-    def_delegators :@monkey_manager, :alive?, :get, :count, :exists?, :join_all
+    def_delegators :@monkey_manager, :alive?, :get, :get_all, :count, :exists?, :join_all
 
     def initialize
       @monkey_manager = MonkeyEngine::MonkeyManager.instance
@@ -84,9 +84,12 @@ module MonkeyEngine
     #  ObserverKlass#update(param1, param2, param3); where param1=Time of the operation,
     #  param2=Symbol representing the operation (in this case, :kill_all!), param3=nil.
     #
+    # @return [Array] an Array of Monkey objects that were killed.
+    #
     def kill_all!
-      @monkey_manager.kill_all!
+      monkey_array = @monkey_manager.kill_all!
       do_notify_observers(:kill_all!, nil)
+      monkey_array
     end
 
     def new_action(monkey)

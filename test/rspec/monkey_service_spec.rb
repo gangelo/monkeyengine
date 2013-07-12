@@ -76,6 +76,22 @@ describe 'MonkeyService' do
       @it.any_alive?.should == false
     end
 
+    it 'kill_all! should return all monkeys killed' do
+      monkey_service = MonkeyEngine::MonkeyService.instance
+
+      monkey_service.add(MonkeyFactory::create :a)
+      monkey_service.add(MonkeyFactory::create :b)
+      monkey_service.add(MonkeyFactory::create :c)
+
+      monkeys = monkey_service.get_all
+
+      killed_monkeys = monkey_service.kill_all!
+
+      monkey_service.join_all(10)
+
+      (monkeys == killed_monkeys).should == true
+    end
+
   end
 
 end
