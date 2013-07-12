@@ -91,12 +91,11 @@ module MonkeyEngine
       raise MonkeyEngine::Exceptions::InvalidArgumentTypeException.new "Parameter 'monkey' is not a Symbol, String or Monkey object"
     end
 
-    # Returns an Array of Monkey objects managed by this MonkeyManager.
+    # Returns a duplicate Array of Monkey objects managed by this MonkeyManager.
     #
     # @return [Array] An Array of Monkey objects managed by this MonkeyManager.
     #
     def get_all
-      return @monkeys if @monkeys.empty?
       @monkeys.dup
     end
 
