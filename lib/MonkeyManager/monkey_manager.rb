@@ -119,10 +119,12 @@ module MonkeyEngine
 
     # Kills the monkey.
     #
-    # @param [Monkey, #read/#write] monkey the Monkey to kill.
+    # @param [Monkey, #read/#write, Symbol, String] monkey the Monkey to kill.
     #
     # @note The Monkey#monkey_do method executed continually by Monkey#thread is
     #  terminated.
+    #
+    # @return [Monkey] the Monkey that was killed.
     #
     def kill!(monkey)
       monkey = get(monkey)
@@ -130,6 +132,8 @@ module MonkeyEngine
 
       @monkeys.delete(monkey)
       monkey.kill
+
+      monkey
     end
 
     # Kills all monkeys managed by this MonkeyManager.
@@ -137,9 +141,14 @@ module MonkeyEngine
     # @note The Monkey#monkey_do method executed continually by Monkey#thread, for each Monkey is
     #  terminated.
     #
+    # @return [Array] an Array of Monkey objects that were killed.
+    #
     def kill_all!
       @monkeys.each { |monkey| monkey.kill } unless @monkeys.empty?
+      monkeys = @monkeys.dup
       @monkeys.clear
+
+      monkeys
     end
   end
 end
