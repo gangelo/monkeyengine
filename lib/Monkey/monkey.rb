@@ -5,6 +5,17 @@ require 'MonkeyService'
 require 'ProtectedConstructor'
 
 # Monkey class.
+#
+# @note The Monkey class represents a virtual monkey that performs particular _actions_
+#   that may or may not be typical of a real monkey.  Monkey _actions_ are derived from class _MonkeyAction_
+#
+# @note The constructor for this class is protected; to instantiate a managed _Monkey_, use
+#   MonkeyEngine::MonkeyService#add; to instantiate an unmanaged _Monkey_, use MonkeyEngine::MonkeyManager#add.
+#
+# @see MonkeyAction
+# @see MonkeyEngine::MonkeyService#add
+# @see MonkeyEngine::MonkeyManager#add
+#
 class Monkey
   include ProtectedConstructor
 
