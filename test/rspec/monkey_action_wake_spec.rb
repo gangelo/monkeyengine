@@ -3,7 +3,7 @@ require 'MonkeyActions'
 require 'MonkeyFactory'
 require 'MonkeyEngine'
 
-require_relative '../spec/support/monkey_engine_shared_examples'
+require_relative 'support/shared_examples'
 
 describe 'MonkeyActionWake' do
   before(:all) do
