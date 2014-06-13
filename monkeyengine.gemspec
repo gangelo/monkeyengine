@@ -8,9 +8,9 @@ Gem::Specification.new do |spec|
   spec.version       = MonkeyEngine::VERSION
   spec.authors       = ["Gene M. Angelo, Jr."]
   spec.email         = ["public.gma@gmail.com"]
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
-  spec.homepage      = ""
+  spec.description   = %q{MonkeyEngine - FUN!}
+  spec.summary       = %q{The engine that drives my monkeys!}
+  spec.homepage      = "http://www.geneangelo.com"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
@@ -18,6 +18,15 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
 
+  spec.required_ruby_version = '~> 1.9.3'
+
+  spec.add_runtime_dependency 'LittleWeasel', '~> 1.1.0'
+  spec.add_runtime_dependency 'ProtectedConstructor', '~> 1.0.5'
+
   spec.add_development_dependency "bundler", "~> 1.3"
   spec.add_development_dependency "rake"
+
+  spec.add_development_dependency "rspec", "~> 2.13.0"
+  spec.add_development_dependency "yard", "0.8.6.2"
+  spec.add_development_dependency "redcarpet", "~> 2.3.0"
 end

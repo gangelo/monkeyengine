@@ -4,7 +4,7 @@ require 'MonkeyFactory'
 require 'MonkeyEngine'
 require_relative '../../lib/MonkeyKeyboard/keyboard_input'
 
-require_relative 'shared_spec'
+require_relative '../spec/support/monkey_engine_shared_examples'
 
 describe 'MonkeyActionType' do
   before(:all) do

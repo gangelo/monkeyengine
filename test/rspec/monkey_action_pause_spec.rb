@@ -4,7 +4,7 @@ require 'MonkeyFactory'
 require 'MonkeyEngine'
 require 'MonkeyManager'
 
-require_relative 'shared_spec'
+require_relative '../spec/support/monkey_engine_shared_examples'
 
 describe 'MonkeyActionPause' do
   before(:all) do

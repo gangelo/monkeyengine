@@ -1,10 +1,8 @@
 
 describe 'MonkeyManager' do
-  before { pending }
+  before { pending 'todo' }
 
   it 'should do something' do
-
-    #To change this template use File | Settings | File Templates.
-    true.should == false
+    pending 'todo'
   end
 end
