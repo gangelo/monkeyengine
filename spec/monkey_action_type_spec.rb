@@ -2,7 +2,7 @@ require 'Monkey'
 require 'MonkeyActions'
 require 'MonkeyFactory'
 require 'MonkeyEngine'
-require_relative '../../lib/MonkeyKeyboard/keyboard_input'
+require_relative '../lib/MonkeyKeyboard/keyboard_input'
 
 require_relative 'support/shared_examples'
 

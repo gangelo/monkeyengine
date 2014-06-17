@@ -50,7 +50,7 @@ describe 'Engine' do
 
   context 'do_action' do
     it 'should do something' do
-      pending 'todo'
+      skip 'todo'
     end
   end
 end

@@ -2,7 +2,6 @@ require 'MonkeyService'
 require 'MonkeyFactory'
 require 'MonkeyEngine'
 
-
 describe 'MonkeyService' do
 
   before(:all) do
@@ -18,7 +17,7 @@ describe 'MonkeyService' do
 
   after(:all) do
     # Kill all the threads.
-    @it.kill_all
+    @it.kill_all!
 
     # Give them a little bit to finish.
     @it.join_all(10)

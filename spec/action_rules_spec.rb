@@ -5,7 +5,7 @@ require 'MonkeyFactory'
 require 'MonkeyEngine'
 require 'MonkeyManager'
 require 'MonkeyActions'
-require_relative '../../lib/MonkeyKeyboard/keyboard_input'
+require_relative '../lib/MonkeyKeyboard/keyboard_input'
 
 describe 'ActionRules' do
 

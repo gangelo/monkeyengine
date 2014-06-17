@@ -1,8 +1,8 @@
 
 describe 'MonkeyManager' do
-  before { pending 'todo' }
+  before { skip 'todo' }
 
   it 'should do something' do
-    pending 'todo'
+    skip 'todo'
   end
 end
