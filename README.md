@@ -1,6 +1,6 @@
 # MonkeyEngine
 
-TODO: Write a gem description
+Have some fun! MonkeyEngine is a gem that allows virtual monkeys to tap away on a virtual keyboard. 
 
 ## Installation
 

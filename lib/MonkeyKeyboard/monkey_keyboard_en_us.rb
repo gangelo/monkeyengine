@@ -121,8 +121,8 @@ module MonkeyEngine
       # Keep going until we get something...
       keyboard_input = get_keyboard_input if keyboard_input.input.empty?
 
-      #keyboard_input.is_word = LittleWeasel::Checker.instance.exists?(keyboard_input.input.to_s)
-      keyboard_input.is_word = LittleWeasel::Checker.instance.exists?(keyboard_input.input_to_s)
+      keyboard_input.is_word = LittleWeasel::Checker.instance.exists?(keyboard_input.input_to_s, 
+        exclude_alphabet: true, strip_whitespace: true, ignore_numeric: false, single_word_mode: true)
 
       keyboard_input
     end
