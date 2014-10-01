@@ -27,6 +27,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'redcarpet', '~> 2.3', '>= 2.3.0'
   spec.add_development_dependency 'pry', '~> 0.10.1'
 
-  spec.add_runtime_dependency 'LittleWeasel', '~> 3.0' #, '>= 3.0.0'
+  spec.add_runtime_dependency 'LittleWeasel', '~> 3.0.0'
   spec.add_runtime_dependency 'ProtectedConstructor', '~> 2.0', '>=2.0.0'
 end
