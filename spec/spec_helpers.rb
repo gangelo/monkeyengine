@@ -1,4 +1,5 @@
 module SpecHelpers
+  require 'minitest/autorun'
 
   module SetMonkeyAction
     def set_action(action)
