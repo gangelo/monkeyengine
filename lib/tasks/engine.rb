@@ -31,6 +31,9 @@ module Runner
 
     def go
       @monkey_service.add(MonkeyFactory::create :groucho)
+      @monkey_service.add(MonkeyFactory::create :harpo)
+      @monkey_service.add(MonkeyFactory::create :chico)
+      @monkey_service.add(MonkeyFactory::create :zeppo)
     end
 
     def update(time, action, param)
@@ -39,18 +42,19 @@ module Runner
         return unless param.is_a?(Hash) && param.has_key?(:action)
 
         if param[:action].is_a?(MonkeyActionType) && action == :action_completed
-          puts "Monkey: [#{param[:action].monkey.monkey_symbol.to_s}] | Is Word: [#{param[:action].keyboard_input.is_word}] | Value: [#{param[:action].keyboard_input.input_to_s}]"
-        end
+        
+          monkey = param[:action].monkey.monkey_symbol.to_s
+          is_word = param[:action].keyboard_input.is_word
+          word = param[:action].keyboard_input.input_to_s
 
-        if param[:action].keyboard_input.is_word
-          @words << param[:action].keyboard_input.input_to_s
-        end
+          #if param[:action].is_a?(MonkeyActionType) && action == :action_completed
+            puts "Monkey: [#{monkey.capitalize}] | Is Word: [#{is_word}] | Value: [#{word.capitalize}]"
+          #end
 
-        if param[:action].keyboard_input.is_word
-          #puts param[:action].to_yaml
+          if is_word
+            @words << { word: word, monkey: monkey }
+          end
         end
-
-        #binding.pry
       rescue Exception => e
         puts "Exception: #{e}"
       end
@@ -74,9 +78,14 @@ namespace :engine do
     service.kill_all!
     service.join_all(10)
 
-    puts "Total words: #{runner.words.count}"
+    puts "Total valid words: #{runner.words.count}"
+
+    runner.words.sort!{|a,b| a[:monkey]<=>b[:monkey]}
+
     runner.words.each { |word|
-      puts word
+      puts "Monkey [#{word[:monkey].capitalize}] typed [#{word[:word].capitalize}]"
     }
   end
 end
+
+
