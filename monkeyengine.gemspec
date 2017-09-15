@@ -8,9 +8,9 @@ Gem::Specification.new do |spec|
   spec.version       = MonkeyEngine::VERSION
   spec.authors       = ["Gene M. Angelo, Jr."]
   spec.email         = ["public.gma@gmail.com"]
-  spec.description   = %q{MonkeyEngine - FUN!}
+  spec.description   = %q{Have some fun! MonkeyEngine is a gem that allows virtual monkeys to tap away on a virtual keyboard! Can any of them complete a sentence? write a book? The sky's the limit! Add your own AI! Publish the results! Go...BANANAS!}
   spec.summary       = %q{The engine that drives my monkeys!}
-  spec.homepage      = "http://www.geneangelo.com"
+  spec.homepage      = "https://github.com/gangelo/monkeyengine"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)

@@ -66,7 +66,7 @@ end
 namespace :engine do
   desc "Run the MonkeyEngine"
   task :run do
-    runtime = 10 #ARGV[0]
+    runtime = 15 #ARGV[0]
 
     service = MonkeyEngine::MonkeyService.instance
 
@@ -77,14 +77,26 @@ namespace :engine do
 
     service.kill_all!
     service.join_all(10)
-
-    puts "Total valid words: #{runner.words.count}"
+    sleep(3)
 
     runner.words.sort!{|a,b| a[:monkey]<=>b[:monkey]}
 
-    runner.words.each { |word|
-      puts "Monkey [#{word[:monkey].capitalize}] typed [#{word[:word].capitalize}]"
+    puts '-----------------------------------------'
+    puts "Valid words:"
+
+    runner.words.each_with_index { |word, index|
+      if word[:word].length > 2
+        puts "#{index + 1}. Monkey [#{word[:monkey].capitalize}] typed [#{word[:word].capitalize}] <=== #{word[:word].length}-letter word!"
+      else
+        puts "#{index + 1}. Monkey [#{word[:monkey].capitalize}] typed [#{word[:word].capitalize}]"
+      end
     }
+
+    puts '-----------------------------------------'
+    puts "Total valid words: #{runner.words.count}"
+    puts 'Done.'
+    puts
+    puts
   end
 end
 
