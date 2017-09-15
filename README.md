@@ -1,6 +1,10 @@
 # MonkeyEngine
 
-Have some fun! MonkeyEngine is a gem that allows virtual monkeys to tap away on a virtual keyboard. 
+Have some fun! MonkeyEngine is a gem that allows virtual monkeys to tap away on a virtual keyboard! Can any of them complete a sentence? write a book? The sky's the limit! Add your own AI! Publish the results! Go...BANANAS! 
+
+Run the following rake task at the command line to see a little sample app:
+
+$ bundle exec rake engine:run
 
 ## Installation
 
