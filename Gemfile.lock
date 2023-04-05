@@ -33,7 +33,7 @@ GEM
       byebug (~> 11.0)
       pry (>= 0.13, < 0.15)
     rake (13.0.6)
-    redcarpet (2.3.0)
+    redcarpet (3.6.0)
     rspec (3.12.0)
       rspec-core (~> 3.12.0)
       rspec-expectations (~> 3.12.0)
@@ -56,6 +56,7 @@ GEM
 
 PLATFORMS
   x86_64-darwin-19
+  x86_64-linux
 
 DEPENDENCIES
   MonkeyEngine!
@@ -63,7 +64,7 @@ DEPENDENCIES
   colorize (~> 0.8.1)
   pry-byebug (~> 3.9)
   rake (~> 13.0, >= 13.0.6)
-  redcarpet (~> 2.3, >= 2.3.0)
+  redcarpet (~> 3.6, >= 2.3.0)
   rspec (~> 3.10)
   yard (~> 0.9.28)
 
