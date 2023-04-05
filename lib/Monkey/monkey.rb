@@ -1,4 +1,4 @@
-require 'thread'
+# frozen_string_literal: true
 
 require 'MonkeyActions'
 require 'MonkeyService'
@@ -27,6 +27,7 @@ class Monkey
   attr_reader :monkey_symbol, :action
 
   protected
+
   def initialize(monkey_symbol)
     @monkey_symbol = monkey_symbol
     @monkey_service = MonkeyEngine::MonkeyService.instance
@@ -43,6 +44,7 @@ class Monkey
   #
   def alive?
     return false if @thread.nil?
+
     @thread.alive?
   end
 
@@ -52,6 +54,7 @@ class Monkey
   #
   def current_action
     return MonkeyActionDead.new(self) unless alive?
+
     @action
   end
 
@@ -71,8 +74,11 @@ class Monkey
   # @return [Monkey, self]
   #
   def start
-    raise MonkeyEngine::Exceptions::InvalidOperationException.new "The monkey [#{@monkey_symbol}] thread is already started" \
-      if alive?
+    if alive?
+      raise MonkeyEngine::Exceptions::InvalidOperationException,
+            "The monkey [#{@monkey_symbol}] thread is already started"
+    end
+
     initialize_thread
     self
   end
@@ -81,25 +87,24 @@ class Monkey
   #
   # @return [Thread]
   #
-  def thread
-    @thread
-  end
+  attr_reader :thread
 
   protected
+
   def initialize_thread
-    @sleep_time = 1.0/250.0
+    @sleep_time = 1.0 / 250.0
     @kill_thread = false
 
-    @thread = Thread.new {
+    @thread = Thread.new do
       monkey_do
-    }
+    end
 
-    #@thread.freeze
+    # @thread.freeze
     @thread.abort_on_exception = true
   end
 
   def monkey_do
-    until @kill_thread do
+    until @kill_thread
       @action = @monkey_service.new_action(self) if @action.nil? || @action.action_completed?
       @monkey_service.monkey_do @action unless @monkey_service.action_eval! @action
       sleep(@sleep_time)

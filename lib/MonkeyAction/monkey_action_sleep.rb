@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'time'
 
 require_relative 'monkey_action'
@@ -7,7 +9,6 @@ require 'MonkeyEngine/exceptions'
 # Monkey action:  sleep (as in take a snooze)
 # The monkey is a sleep.
 class MonkeyActionSleep < MonkeyTimedAction
-
   WEIGHT = 10.0
   VALID_VALUES = ((60 * 6)..(60 * 8)) # 6 through 8 hours
 
@@ -22,10 +23,11 @@ class MonkeyActionSleep < MonkeyTimedAction
   end
 
   protected
+
   def validate
     super
 
-    raise MonkeyEngine::Exceptions::InvalidArgumentValueException.new "Value '#{value}' is not a valid value"  \
-      if !VALID_VALUES.include?(@value)
+    raise MonkeyEngine::Exceptions::InvalidArgumentValueException, "Value '#{value}' is not a valid value"  \
+      unless VALID_VALUES.include?(@value)
   end
 end

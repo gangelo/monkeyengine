@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'time'
 require 'singleton'
 
@@ -8,14 +10,15 @@ require 'MonkeyKeyboardEnUs'
 class ActionRules
   include Singleton
 
-# Retrieves tne next action for the monkey
-#
-# @param [monkey] the monkey whose next action is to be retrieved
-# @return [MonkeyAction] the next monkey action
+  # Retrieves tne next action for the monkey
+  #
+  # @param [monkey] the monkey whose next action is to be retrieved
+  # @return [MonkeyAction] the next monkey action
   def get_next_action(monkey)
-    raise MonkeyEngine::Exceptions::InvalidOperationException.new \
-        "The action [#{monkey.action.class.name}] for Monkey [#{monkey.monkey_symbol}] must be completed before calling get_next_action" \
-          unless monkey.action.nil? || monkey.action.action_completed?
+    unless monkey.action.nil? || monkey.action.action_completed?
+      raise MonkeyEngine::Exceptions::InvalidOperationException,
+            "The action [#{monkey.action.class.name}] for Monkey [#{monkey.monkey_symbol}] must be completed before calling get_next_action"
+    end
 
     # current_action = monkey.action
 
@@ -34,15 +37,15 @@ class ActionRules
 
     keyboard_input = MonkeyEngine::MonkeyKeyboardEnUs.instance.get_keyboard_input
 
-    return MonkeyActionType.new monkey, keyboard_input
+    MonkeyActionType.new monkey, keyboard_input
   end
 
   # Evaluates an action and sets it to completed if the criteria for completion is met.
   def action_eval!(action)
-    raise MonkeyEngine::Exceptions::NilArgumentException.new "The [action] to be evaluated cannot be nil" \
+    raise MonkeyEngine::Exceptions::NilArgumentException, 'The [action] to be evaluated cannot be nil' \
         if action.nil?
 
-    raise MonkeyEngine::Exceptions::InvalidArgumentTypeException.new "The [action] is not the correct type" \
+    raise MonkeyEngine::Exceptions::InvalidArgumentTypeException, 'The [action] is not the correct type' \
         unless action.is_a? Action
 
     action_eval_eat(action) if action.is_a?(MonkeyActionEat)
@@ -61,28 +64,28 @@ class ActionRules
   # Action evaluation methods
 
   def action_eval_eat(action)
-    raise MonkeyEngine::Exceptions::InvalidArgumentTypeException.new "The [action] is not the correct type" \
+    raise MonkeyEngine::Exceptions::InvalidArgumentTypeException, 'The [action] is not the correct type' \
         unless action.is_a? MonkeyActionEat
 
     action_eval_timed_action action
   end
 
   def action_eval_pause(action)
-    raise MonkeyEngine::Exceptions::InvalidArgumentTypeException.new "The [action] is not the correct type" \
+    raise MonkeyEngine::Exceptions::InvalidArgumentTypeException, 'The [action] is not the correct type' \
         unless action.is_a? MonkeyActionPause
 
     action_eval_timed_action action
   end
 
   def action_eval_sleep(action)
-    raise MonkeyEngine::Exceptions::InvalidArgumentTypeException.new "The [action] is not the correct type" \
+    raise MonkeyEngine::Exceptions::InvalidArgumentTypeException, 'The [action] is not the correct type' \
         unless action.is_a? MonkeyActionSleep
 
     action_eval_timed_action action
   end
 
   def action_eval_type(action)
-    raise MonkeyEngine::Exceptions::InvalidArgumentTypeException.new "The [action] is not the correct type" \
+    raise MonkeyEngine::Exceptions::InvalidArgumentTypeException, 'The [action] is not the correct type' \
         unless action.is_a? MonkeyActionType
 
     # TODO: How do I evaluate this?
@@ -91,7 +94,7 @@ class ActionRules
   end
 
   def action_eval_wake(action)
-    raise MonkeyEngine::Exceptions::InvalidArgumentTypeException.new "The [action] is not the correct type" \
+    raise MonkeyEngine::Exceptions::InvalidArgumentTypeException, 'The [action] is not the correct type' \
         unless action.is_a? MonkeyActionWake
 
     action.action_completed = true
@@ -100,12 +103,11 @@ class ActionRules
   end
 
   def action_eval_timed_action(action)
-    raise MonkeyEngine::Exceptions::InvalidArgumentTypeException.new "The [action] is not the correct type" \
+    raise MonkeyEngine::Exceptions::InvalidArgumentTypeException, 'The [action] is not the correct type' \
         unless action.is_a? MonkeyTimedAction
 
     action.action_completed = true if action.action_time_of_completion <= Time.now
 
     action
   end
-
 end

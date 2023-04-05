@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'Monkey'
 require 'MonkeyActions'
 require 'MonkeyFactory'
@@ -7,12 +9,10 @@ require_relative 'support/shared_examples'
 
 describe 'MonkeyActionWake' do
   before(:all) do
-
     @monkey = MonkeyFactory.create :waking_monkey1
     @it = MonkeyActionWake.new @monkey
 
     MonkeyEngine::MonkeyManager.instance.add(@monkey)
-
   end
 
   after(:all) do
@@ -39,7 +39,7 @@ describe 'MonkeyActionWake' do
     @it.value.should == true
   end
 
-  it "@value should be is_a? TrueClass" do
+  it '@value should be is_a? TrueClass' do
     @it.value.is_a?(TrueClass).should == true
   end
 
@@ -49,10 +49,9 @@ describe 'MonkeyActionWake' do
   end
 
   # validate
-  it "should not raise an error if value is within acceptable range" do
+  it 'should not raise an error if value is within acceptable range' do
     monkey = MonkeyFactory.create(:waking_monkey2)
     MonkeyEngine::MonkeyManager.instance.add(monkey)
-    lambda { MonkeyActionWake.new(monkey) }.should_not raise_error
+    -> { MonkeyActionWake.new(monkey) }.should_not raise_error
   end
-
 end

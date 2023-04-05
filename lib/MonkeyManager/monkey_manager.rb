@@ -1,8 +1,9 @@
+# frozen_string_literal: true
+
 require 'singleton'
 require 'forwardable'
 
 module MonkeyEngine
-
   # The MonkeyManager.
   #
   # This class provides the functionality needed to manage Monkeys (See Monkey, MonkeyService)
@@ -18,10 +19,8 @@ module MonkeyEngine
     # The constructor
     #
     def initialize
-      @monkeys = Array.new
+      @monkeys = []
     end
-
-    public
 
     # Adds the Monkey to the list of Monkeys to be managed.
     #
@@ -33,8 +32,10 @@ module MonkeyEngine
     # @raise [MonkeyEngine::Exceptions::UniqueObjectException] if monkey already exists.
     #
     def add(monkey)
-      raise MonkeyEngine::Exceptions::InvalidArgumentTypeException.new "Parameter 'monkey' is not Monkey object" unless monkey.is_a? Monkey
-      raise MonkeyEngine::Exceptions::UniqueObjectException.new "Monkeys must be unique" if exists? monkey
+      unless monkey.is_a? Monkey
+        raise MonkeyEngine::Exceptions::InvalidArgumentTypeException, "Parameter 'monkey' is not Monkey object"
+      end
+      raise MonkeyEngine::Exceptions::UniqueObjectException, 'Monkeys must be unique' if exists? monkey
 
       @monkeys.push(monkey)
       monkey
@@ -66,7 +67,7 @@ module MonkeyEngine
     #
     def alive?(monkey)
       monkey = get(monkey)
-      monkey.alive? unless monkey.nil?
+      monkey&.alive?
     end
 
     # Returns the Monkey indicated by *monkey*.
@@ -88,7 +89,8 @@ module MonkeyEngine
       return @monkeys.select { |m| m.monkey_symbol == monkey.to_sym }.first if monkey.is_a? String
       return @monkeys.select { |m| m.monkey_symbol == monkey.monkey_symbol }.first if monkey.is_a? Monkey
 
-      raise MonkeyEngine::Exceptions::InvalidArgumentTypeException.new "Parameter 'monkey' is not a Symbol, String or Monkey object"
+      raise MonkeyEngine::Exceptions::InvalidArgumentTypeException,
+            "Parameter 'monkey' is not a Symbol, String or Monkey object"
     end
 
     # Returns a duplicate Array of Monkey objects managed by this MonkeyManager.
@@ -120,7 +122,7 @@ module MonkeyEngine
     # @return [Array, nil] Returns an [Array] of Monkey objects, or, nil, if no Monkey objects are being managed by
     #    this MonkeyManager.
     #
-    def join_all(limit=nil)
+    def join_all(limit = nil)
       limit = 0 unless limit.nil?
       @monkeys.each { |monkey| monkey.join limit } unless @monkeys.empty?
     end
@@ -152,7 +154,7 @@ module MonkeyEngine
     # @return [Array] an Array of Monkey objects that were killed.
     #
     def kill_all!
-      @monkeys.each { |monkey| monkey.kill } unless @monkeys.empty?
+      @monkeys.each(&:kill) unless @monkeys.empty?
       monkeys = @monkeys.dup
       @monkeys.clear
 

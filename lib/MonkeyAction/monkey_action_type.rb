@@ -1,20 +1,23 @@
+# frozen_string_literal: true
+
 require_relative 'monkey_action'
 require 'MonkeyEngine/exceptions'
 
 # Monkey action:  type (as in keyboard)
 # The monkey typed something on the keyboard.
 class MonkeyActionType < MonkeyAction
-
   attr_reader :keyboard_input
 
   WEIGHT = 5.0
 
   def initialize(monkey, keyboard_input)
-    raise MonkeyEngine::Exceptions::NilArgumentException.new "keyboard_input '#{keyboard_input}' cannot be nil"  \
+    raise MonkeyEngine::Exceptions::NilArgumentException, "keyboard_input '#{keyboard_input}' cannot be nil"  \
       if keyboard_input.nil?
 
-    raise MonkeyEngine::Exceptions::InvalidArgumentTypeException.new "keyboard_input '#{keyboard_input}' is not a valid argument type"  \
-      unless keyboard_input.is_a?(KeyboardInput)
+    unless keyboard_input.is_a?(KeyboardInput)
+      raise MonkeyEngine::Exceptions::InvalidArgumentTypeException,
+            "keyboard_input '#{keyboard_input}' is not a valid argument type"
+    end
 
     @keyboard_input = keyboard_input
 
@@ -26,15 +29,17 @@ class MonkeyActionType < MonkeyAction
   end
 
   protected
-  def validate
 
-    raise MonkeyEngine::Exceptions::NilArgumentException.new "Value '#{value}' cannot be nil"  \
+  def validate
+    raise MonkeyEngine::Exceptions::NilArgumentException, "Value '#{value}' cannot be nil"  \
       if @value.nil?
 
-    raise MonkeyEngine::Exceptions::InvalidArgumentTypeException.new "Value '#{value}' is not a valid argument type (#{value.class.name})"  \
-      unless @value.is_a?(Array)
+    unless @value.is_a?(Array)
+      raise MonkeyEngine::Exceptions::InvalidArgumentTypeException,
+            "Value '#{value}' is not a valid argument type (#{value.class.name})"
+    end
 
-    raise MonkeyEngine::Exceptions::InvalidArgumentValueException.new "Value '#{value}' cannot be empty"  \
+    raise MonkeyEngine::Exceptions::InvalidArgumentValueException, "Value '#{value}' cannot be empty"  \
       if @value.empty?
   end
 end

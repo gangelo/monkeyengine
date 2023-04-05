@@ -1,21 +1,21 @@
-require 'test/unit/assertions'
+# frozen_string_literal: true
 
 module MonkeyEngine
   module Exceptions
-    class InvalidArgumentValueException < ArgumentError;
+    class InvalidArgumentValueException < ArgumentError
     end
 
-    class InvalidArgumentTypeException < ArgumentError;
+    class InvalidArgumentTypeException < ArgumentError
     end
 
-    class NilArgumentException < ArgumentError;
+    class NilArgumentException < ArgumentError
     end
 
     # The object must be unique.
-    class UniqueObjectException < ArgumentError;
+    class UniqueObjectException < ArgumentError
     end
 
-    class InvalidOperationException < ArgumentError;
+    class InvalidOperationException < ArgumentError
     end
   end
 end

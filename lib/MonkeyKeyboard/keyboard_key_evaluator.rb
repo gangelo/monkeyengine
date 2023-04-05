@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class KeyboardKeyEvaluator
   def initialize
     @shift_on = false
@@ -10,15 +12,11 @@ class KeyboardKeyEvaluator
 
     return nil if keyboard_key.keyboard_char.char.is_a? Symbol
 
-    if @shift_on
-      return keyboard_key.keyboard_shift_char.char
-    end
+    return keyboard_key.keyboard_shift_char.char if @shift_on
 
     char = keyboard_key.keyboard_char.char
 
-    if @caps_on
-      return char.upcase
-    end
+    return char.upcase if @caps_on
 
     char
   end

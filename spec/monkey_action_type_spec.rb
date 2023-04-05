@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'Monkey'
 require 'MonkeyActions'
 require 'MonkeyFactory'
@@ -8,11 +10,10 @@ require_relative 'support/shared_examples'
 
 describe 'MonkeyActionType' do
   before(:all) do
-
-    @monkey = MonkeyFactory::create :typing_monkey1
+    @monkey = MonkeyFactory.create :typing_monkey1
 
     keyboard_input = KeyboardInput.new
-    keyboard_input.input = %w{a b c d e f .}
+    keyboard_input.input = %w[a b c d e f .]
 
     @it = MonkeyActionType.new @monkey, keyboard_input
 
@@ -40,14 +41,14 @@ describe 'MonkeyActionType' do
 
   # Value
   it '@value should return the right value' do
-    @it.value.should == %w{a b c d e f .}
+    @it.value.should == %w[a b c d e f .]
   end
 
-  it "@value should be is_a? Array" do
+  it '@value should be is_a? Array' do
     @it.value.is_a?(Array).should == true
   end
 
-  it "@value should not be nil?" do
+  it '@value should not be nil?' do
     @it.value.nil?.should_not == true
   end
 
@@ -57,38 +58,38 @@ describe 'MonkeyActionType' do
   end
 
   # validate
-  it "should not raise an error if value is valid" do
-    monkey = MonkeyFactory::create(:typing_monkey2)
+  it 'should not raise an error if value is valid' do
+    monkey = MonkeyFactory.create(:typing_monkey2)
     MonkeyEngine::MonkeyManager.instance.add(monkey)
 
     keyboard_input = KeyboardInput.new
-    keyboard_input.input = %w{w o r d .}
+    keyboard_input.input = %w[w o r d .]
 
-    lambda { MonkeyActionType.new(monkey, keyboard_input) }.should_not raise_error
+    -> { MonkeyActionType.new(monkey, keyboard_input) }.should_not raise_error
   end
 
-  it "should raise an error if value is the wrong type" do
-    monkey = MonkeyFactory::create(:typing_monkey3)
+  it 'should raise an error if value is the wrong type' do
+    monkey = MonkeyFactory.create(:typing_monkey3)
     MonkeyEngine::MonkeyManager.instance.add(monkey)
-    lambda { MonkeyActionType.new(monkey, :wrong_type) }.should \
+    -> { MonkeyActionType.new(monkey, :wrong_type) }.should \
       raise_error MonkeyEngine::Exceptions::InvalidArgumentTypeException
   end
 
-  it "should raise an error if value is empty?" do
-    monkey = MonkeyFactory::create(:typing_monkey4)
+  it 'should raise an error if value is empty?' do
+    monkey = MonkeyFactory.create(:typing_monkey4)
     MonkeyEngine::MonkeyManager.instance.add(monkey)
 
     keyboard_input = KeyboardInput.new
-    keyboard_input.input = %w{}
+    keyboard_input.input = %w[]
 
-    lambda { MonkeyActionType.new(monkey, keyboard_input) }.should \
+    -> { MonkeyActionType.new(monkey, keyboard_input) }.should \
       raise_error MonkeyEngine::Exceptions::InvalidArgumentValueException
   end
 
-  it "should raise an error if value is nil" do
-    monkey = MonkeyFactory::create(:typing_monkey5)
+  it 'should raise an error if value is nil' do
+    monkey = MonkeyFactory.create(:typing_monkey5)
     MonkeyEngine::MonkeyManager.instance.add(monkey)
-    lambda { MonkeyActionType.new(monkey, nil) }.should \
+    -> { MonkeyActionType.new(monkey, nil) }.should \
       raise_error MonkeyEngine::Exceptions::NilArgumentException
   end
 end

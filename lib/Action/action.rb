@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'time'
 
 # Defines a base action.
@@ -18,11 +20,10 @@ class Action
     @action_completed
   end
 
-  def action_completed=(value)
-    @action_completed = value
-  end
+  attr_writer :action_completed
 
   protected
+
   def validate
     # throw if invalid state
   end

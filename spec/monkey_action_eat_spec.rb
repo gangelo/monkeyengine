@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'Monkey'
 require 'MonkeyActions'
 require 'MonkeyFactory'
@@ -7,12 +9,10 @@ require_relative 'support/shared_examples'
 
 describe 'MonkeyActionEat' do
   before(:all) do
-
     @monkey = MonkeyFactory.create :eating_monkey1
     @it = MonkeyActionEat.new @monkey, 30 # minutes
 
     MonkeyEngine::MonkeyManager.instance.add(@monkey)
-
   end
 
   after(:all) do
@@ -39,7 +39,7 @@ describe 'MonkeyActionEat' do
     @it.value.should == 30
   end
 
-  it "@value should be is_a? Integer" do
+  it '@value should be is_a? Integer' do
     @it.value.is_a?(Integer).should == true
   end
 
@@ -49,38 +49,37 @@ describe 'MonkeyActionEat' do
   end
 
   # validate
-  it "should not raise an error if value is within acceptable range" do
+  it 'should not raise an error if value is within acceptable range' do
     monkey = MonkeyFactory.create(:eating_monkey2)
     MonkeyEngine::MonkeyManager.instance.add(monkey)
-    lambda { MonkeyActionEat.new(monkey, 40) }.should_not raise_error
+    -> { MonkeyActionEat.new(monkey, 40) }.should_not raise_error
   end
 
-  it "should raise an error if value is the wrong type" do
+  it 'should raise an error if value is the wrong type' do
     monkey = MonkeyFactory.create(:eating_monkey3)
     MonkeyEngine::MonkeyManager.instance.add(monkey)
-    lambda { MonkeyActionEat.new(monkey, :wrong_type) }.should \
+    -> { MonkeyActionEat.new(monkey, :wrong_type) }.should \
       raise_error MonkeyEngine::Exceptions::InvalidArgumentTypeException
   end
 
-  it "should raise an error if value is less than min acceptable range" do
+  it 'should raise an error if value is less than min acceptable range' do
     monkey = MonkeyFactory.create(:eating_monkey4)
     MonkeyEngine::MonkeyManager.instance.add(monkey)
-    lambda { MonkeyActionEat.new(monkey, 29) }.should \
+    -> { MonkeyActionEat.new(monkey, 29) }.should \
       raise_error MonkeyEngine::Exceptions::InvalidArgumentValueException
   end
 
-  it "should raise an error if value is greater than max acceptable range" do
+  it 'should raise an error if value is greater than max acceptable range' do
     monkey = MonkeyFactory.create(:eating_monkey5)
     MonkeyEngine::MonkeyManager.instance.add(monkey)
-    lambda { MonkeyActionEat.new(monkey, 61) }.should \
+    -> { MonkeyActionEat.new(monkey, 61) }.should \
       raise_error MonkeyEngine::Exceptions::InvalidArgumentValueException
   end
 
-  it "should raise an error if value is nil" do
+  it 'should raise an error if value is nil' do
     monkey = MonkeyFactory.create(:eating_monkey6)
     MonkeyEngine::MonkeyManager.instance.add(monkey)
-    lambda { MonkeyActionEat.new(monkey, nil) }.should \
+    -> { MonkeyActionEat.new(monkey, nil) }.should \
       raise_error MonkeyEngine::Exceptions::NilArgumentException
   end
-
 end

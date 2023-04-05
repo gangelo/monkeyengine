@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'singleton'
 require 'observer'
 require 'forwardable'
@@ -7,7 +9,6 @@ require 'MonkeyEngine'
 require 'MonkeyManager'
 
 module MonkeyEngine
-
   # The monkey service.
   #
   # Provides the main interface for all functionality relating to
@@ -38,7 +39,7 @@ module MonkeyEngine
     #
     def add(monkey)
       @monkey_manager.add(monkey).start
-      do_notify_observers(:add, {monkey: monkey})
+      do_notify_observers(:add, { monkey: monkey })
     end
 
     # Determines if any Monkeys that are being managed by the
@@ -49,13 +50,13 @@ module MonkeyEngine
     # @return [Boolean] true if any Monkeys are alive, false otherwise.
     #
     def any_alive?
-      return false if @monkey_manager.count == 0
+      return false if @monkey_manager.count.zero?
 
       alive_count = 0
 
       @monkey_manager.each { |monkey| alive_count += 1 if monkey.alive? }
 
-      alive_count > 0
+      alive_count.positive?
     end
 
     # Kills the monkey.
@@ -72,7 +73,7 @@ module MonkeyEngine
     #
     def kill!(monkey)
       @monkey_manager.kill!(monkey)
-      do_notify_observers(:kill!, {monkey: monkey})
+      do_notify_observers(:kill!, { monkey: monkey })
     end
 
     # Kills all monkeys managed by the underlying MonkeyManager.
@@ -109,7 +110,7 @@ module MonkeyEngine
     # @return (Boolean) true if the action performed has been completed (Action#action_completed?), false otherwise.
     #
     def monkey_do(action)
-      do_notify_observers(:action_completed, {action: action}) if @engine.do_action action
+      do_notify_observers(:action_completed, { action: action }) if @engine.do_action action
     end
 
     # Evaluates the given action, to determine whether or not the action is completed (Action#action_completed?).
@@ -131,7 +132,5 @@ module MonkeyEngine
       changed
       notify_observers(Time.now, param1, param2)
     end
-
   end
-
 end

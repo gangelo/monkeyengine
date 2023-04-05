@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'time'
 
 require_relative 'monkey_action'
@@ -7,7 +9,6 @@ require 'MonkeyEngine/exceptions'
 # Monkey action:  pause (as in take a break)
 # The monkey paused, usually from typing.
 class MonkeyActionPause < MonkeyTimedAction
-
   WEIGHT = 2.0
   VALID_VALUES = (0..60) # Seconds (0 - 60 seconds)
 
@@ -22,11 +23,11 @@ class MonkeyActionPause < MonkeyTimedAction
   end
 
   protected
+
   def validate
     super
 
-    raise MonkeyEngine::Exceptions::InvalidArgumentValueException.new "Value '#{value}' is not a valid value"  \
-      if !VALID_VALUES.include?(@value)
+    raise MonkeyEngine::Exceptions::InvalidArgumentValueException, "Value '#{value}' is not a valid value"  \
+      unless VALID_VALUES.include?(@value)
   end
-
 end

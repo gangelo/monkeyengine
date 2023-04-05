@@ -1,76 +1,73 @@
-require 'pry'
+# frozen_string_literal: true
 
+require 'pry-byebug'
+require 'colorize'
 require 'yaml'
-require "minitest/autorun"
+require 'minitest/autorun'
 require 'LittleWeasel'
 
-require File.expand_path('../../MonkeyFactory', __FILE__)
-require File.expand_path('../../MonkeyEngine', __FILE__)
+require File.expand_path('../MonkeyFactory', __dir__)
+require File.expand_path('../MonkeyEngine', __dir__)
+
+LittleWeasel.configure do |config| end
 
 module Runner
-  
   class MonkeyRun
-    attr_reader :monkey_service, :runtime, :thread, :words
+    attr_reader :monkey_service, :runtime, :thread, :monkey_words
 
     def initialize(monkey_service, runtime)
-      @words = Array.new
+      @monkey_words = {}
       @monkey_service = monkey_service
       @runtime = runtime.to_i
 
       @monkey_service.add_observer self
 
-      @thread = Thread.new {
+      @thread = Thread.new do
         go
         sleep @runtime
-      }
+      end
 
       self
     end
 
-    #protected
-
     def go
-      @monkey_service.add(MonkeyFactory::create :groucho)
-      @monkey_service.add(MonkeyFactory::create :harpo)
-      @monkey_service.add(MonkeyFactory::create :chico)
-      @monkey_service.add(MonkeyFactory::create :zeppo)
+      @monkey_service.add(MonkeyFactory.create(:groucho))
+      @monkey_service.add(MonkeyFactory.create(:harpo))
+      @monkey_service.add(MonkeyFactory.create(:chico))
+      @monkey_service.add(MonkeyFactory.create(:zeppo))
     end
 
-    def update(time, action, param)
-      begin
+    def update(_time, action, param)
+      return unless param.is_a?(Hash) && param.key?(:action)
 
-        return unless param.is_a?(Hash) && param.has_key?(:action)
+      if param[:action].is_a?(MonkeyActionType) && action == :action_completed
+        monkey = param[:action].monkey.monkey_symbol.to_s
+        is_word = param[:action].keyboard_input.is_word
+        word = param[:action].keyboard_input.input_to_s
 
-        if param[:action].is_a?(MonkeyActionType) && action == :action_completed
-        
-          monkey = param[:action].monkey.monkey_symbol.to_s
-          is_word = param[:action].keyboard_input.is_word
-          word = param[:action].keyboard_input.input_to_s
-
-          #if param[:action].is_a?(MonkeyActionType) && action == :action_completed
-            puts "Monkey: [#{monkey.capitalize}] | Is Word: [#{is_word}] | Value: [#{word.capitalize}]"
-          #end
-
-          if is_word
-            @words << { word: word, monkey: monkey }
-          end
+        message = "Monkey: [#{monkey.capitalize}] | Is Word: [#{is_word}] | Value: [#{word.capitalize}]"
+        if is_word
+          @monkey_words[monkey] = {} unless @monkey_words[monkey]
+          @monkey_words[monkey][word] = 0 unless @monkey_words.dig(monkey, word)
+          times = @monkey_words[monkey][word] += 1
+          puts "#{message} | Times: #{times} so far!".colorize(color: :green, mode: :bold)
+          return
         end
-      rescue Exception => e
-        puts "Exception: #{e}"
+
+        puts message
       end
+    rescue StandardError => e
+      puts "StandardError: #{e}"
     end
   end
 end
 
-
 namespace :engine do
-  desc "Run the MonkeyEngine"
+  desc 'Run the MonkeyEngine'
   task :run do
-    runtime = 15 #ARGV[0]
+    runtime = 60 * 2
 
     service = MonkeyEngine::MonkeyService.instance
-
-    LittleWeasel::Checker.instance.options = {exclude_alphabet: true, strip_whitespace: false, ignore_numeric: false}
 
     runner = Runner::MonkeyRun.new service, runtime
     runner.thread.join
@@ -79,25 +76,33 @@ namespace :engine do
     service.join_all(10)
     sleep(3)
 
-    runner.words.sort!{|a,b| a[:monkey]<=>b[:monkey]}
+    monkey_words_sorted = runner.monkey_words.sort_by { |key, _value| key }
 
     puts '-----------------------------------------'
-    puts "Valid words:"
+    puts 'Valid words:'
 
-    runner.words.each_with_index { |word, index|
-      if word[:word].length > 2
-        puts "#{index + 1}. Monkey [#{word[:monkey].capitalize}] typed [#{word[:word].capitalize}] <=== #{word[:word].length}-letter word!"
-      else
-        puts "#{index + 1}. Monkey [#{word[:monkey].capitalize}] typed [#{word[:word].capitalize}]"
+    word_index = 0
+
+    monkey_words_sorted.each do |monkey_word_info|
+      monkey = monkey_word_info[0]
+      monkey_word_info[1].each do |monkey_word|
+        word_index += 1
+        word = monkey_word[0]
+        times = monkey_word[1]
+        if word.length > 1
+          puts "#{word_index}. Monkey [#{monkey.capitalize}] typed [#{word.capitalize}] [#{times}] time(s) <=== #{word.length}-letter word!".colorize(color: :green, mode: :bold)
+        else
+          puts "#{word_index}. Monkey [#{monkey.capitalize}] typed [#{word.capitalize}] [#{times}] time(s)".colorize(color: :green)
+        end
       end
-    }
+    end
+    total_valid_words_count = runner.monkey_words.inject(0) { |sum, monkey_word_info| sum + monkey_word_info[1].keys.count }
 
     puts '-----------------------------------------'
-    puts "Total valid words: #{runner.words.count}"
+    puts "Total valid words: #{total_valid_words_count}"
+    puts 'These monkeys can type!' if total_valid_words_count > 0
     puts 'Done.'
     puts
     puts
   end
 end
-
-
