@@ -24,26 +24,26 @@ describe 'MonkeyService' do
     @it.join_all(10)
   end
 
-  def update(time, action, param)
+  def update(time, action, _param)
     # puts "Time: [#{time}], Action: [#{action}], Param: [#{param}]"
     puts "Time: [#{time}], Action: [#{action}], Param: <not shown>"
   end
 
   context 'initialization' do
-    it 'it should have 3 monkeys' do
+    it 'has 3 monkeys' do
       @it.count.should == 3
     end
 
-    it 'should have monkey harpo' do
-      @it.exists?(:harpo).should == true
+    it 'has monkey harpo' do
+      @it.exists?(:harpo).should be true
     end
 
-    it 'should have monkey groucho' do
-      @it.exists?(:groucho).should == true
+    it 'has monkey groucho' do
+      @it.exists?(:groucho).should be true
     end
 
-    it 'should have monkey chico' do
-      @it.exists?(:chico).should == true
+    it 'has monkey chico' do
+      @it.exists?(:chico).should be true
     end
   end
 
@@ -59,7 +59,7 @@ describe 'MonkeyService' do
     end
 
     it "'any_alive?' should return objects that are alive" do
-      @it.any_alive?.should == true
+      @it.any_alive?.should be true
     end
   end
 
@@ -71,7 +71,7 @@ describe 'MonkeyService' do
       # Give them a little bit to finish.
       @it.join_all(10)
 
-      @it.any_alive?.should == false
+      @it.any_alive?.should be false
     end
 
     it 'kill_all! should return all monkeys killed' do
@@ -87,7 +87,7 @@ describe 'MonkeyService' do
 
       monkey_service.join_all(10)
 
-      (monkeys == killed_monkeys).should == true
+      (monkeys == killed_monkeys).should be true
     end
   end
 end

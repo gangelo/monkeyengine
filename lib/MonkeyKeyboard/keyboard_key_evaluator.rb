@@ -10,7 +10,7 @@ class KeyboardKeyEvaluator
     @shift_on = !@shift_on if keyboard_key.keyboard_char.char == :shift
     @caps_on = !@shift_on if keyboard_key.keyboard_char.char == :caps
 
-    return nil if keyboard_key.keyboard_char.char.is_a? Symbol
+    return if keyboard_key.keyboard_char.char.is_a? Symbol
 
     return keyboard_key.keyboard_shift_char.char if @shift_on
 

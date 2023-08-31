@@ -82,15 +82,15 @@ module MonkeyEngine
     # @raise [MonkeyEngine::Exceptions::InvalidArgumentTypeException] if parameter monkey is not a Monkey, Symbol, or String object.
     #
     def get(monkey)
-      return nil if @monkeys.empty?
+      return if @monkeys.empty?
 
       # TODO: This seems inefficient.
-      return @monkeys.select { |m| m.monkey_symbol == monkey }.first if monkey.is_a? Symbol
-      return @monkeys.select { |m| m.monkey_symbol == monkey.to_sym }.first if monkey.is_a? String
-      return @monkeys.select { |m| m.monkey_symbol == monkey.monkey_symbol }.first if monkey.is_a? Monkey
+      return @monkeys.find { |m| m.monkey_symbol == monkey } if monkey.is_a? Symbol
+      return @monkeys.find { |m| m.monkey_symbol == monkey.to_sym } if monkey.is_a? String
+      return @monkeys.find { |m| m.monkey_symbol == monkey.monkey_symbol } if monkey.is_a? Monkey
 
       raise MonkeyEngine::Exceptions::InvalidArgumentTypeException,
-            "Parameter 'monkey' is not a Symbol, String or Monkey object"
+        "Parameter 'monkey' is not a Symbol, String or Monkey object"
     end
 
     # Returns a duplicate Array of Monkey objects managed by this MonkeyManager.

@@ -12,8 +12,6 @@ class Action
     @weight = weight
     @action_time = Time.now
     @action_completed = false
-
-    self
   end
 
   def action_completed?

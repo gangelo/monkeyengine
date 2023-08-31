@@ -23,10 +23,10 @@ describe 'MonkeyActionWake' do
     MonkeyEngine::MonkeyManager.instance.join_all(10)
   end
 
-  it_should_behave_like 'MonkeyAction'
+  it_behaves_like 'MonkeyAction'
 
   it '@it should be the correct type' do
-    @it.is_a?(MonkeyActionWake).should == true
+    @it.is_a?(MonkeyActionWake).should be true
   end
 
   # Monkey
@@ -36,11 +36,11 @@ describe 'MonkeyActionWake' do
 
   # Value
   it '@value should return the right value' do
-    @it.value.should == true
+    @it.value.should be true
   end
 
   it '@value should be is_a? TrueClass' do
-    @it.value.is_a?(TrueClass).should == true
+    @it.value.is_a?(TrueClass).should be true
   end
 
   # Weight
@@ -49,7 +49,7 @@ describe 'MonkeyActionWake' do
   end
 
   # validate
-  it 'should not raise an error if value is within acceptable range' do
+  it 'does not raise an error if value is within acceptable range' do
     monkey = MonkeyFactory.create(:waking_monkey2)
     MonkeyEngine::MonkeyManager.instance.add(monkey)
     -> { MonkeyActionWake.new(monkey) }.should_not raise_error

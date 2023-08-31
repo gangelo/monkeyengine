@@ -17,7 +17,7 @@ class ActionRules
   def get_next_action(monkey)
     unless monkey.action.nil? || monkey.action.action_completed?
       raise MonkeyEngine::Exceptions::InvalidOperationException,
-            "The action [#{monkey.action.class.name}] for Monkey [#{monkey.monkey_symbol}] must be completed before calling get_next_action"
+        "The action [#{monkey.action.class.name}] for Monkey [#{monkey.monkey_symbol}] must be completed before calling get_next_action"
     end
 
     # current_action = monkey.action

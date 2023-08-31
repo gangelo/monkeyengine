@@ -13,17 +13,15 @@ class MonkeyTimedAction < MonkeyAction
     @action_time_of_completion = nil
 
     validate
-
-    self
   end
 
   protected
 
   def validate
-    raise MonkeyEngine::Exceptions::NilArgumentException, "Value '#{value}' cannot be nil"  \
+    raise MonkeyEngine::Exceptions::NilArgumentException, "Value '#{value}' cannot be nil" \
       if @value.nil?
 
-    raise MonkeyEngine::Exceptions::InvalidArgumentTypeException, "Value '#{value}' is not a valid argument type"  \
+    raise MonkeyEngine::Exceptions::InvalidArgumentTypeException, "Value '#{value}' is not a valid argument type" \
       unless @value.is_a?(Integer)
   end
 end

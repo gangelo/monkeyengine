@@ -8,14 +8,8 @@ require 'MonkeyActions'
 require_relative '../lib/MonkeyKeyboard/keyboard_input'
 
 describe 'ActionRules' do
-  before(:each) do
-  end
-
-  after(:all) do
-  end
-
   context 'get_next_action' do
-    it 'should throw an exception if the action is not completed' do
+    it 'throws an exception if the action is not completed' do
       monkey = MonkeyFactory.create :groucho
 
       monkey.extend(SpecHelpers::SetMonkeyAction)
@@ -26,24 +20,24 @@ describe 'ActionRules' do
       action = MonkeyActionType.new(monkey, keyboard_input)
       action.action_completed = false
 
-      monkey.set_action(action)
+      monkey.force_action(action)
 
       lambda {
         ActionRules.instance.get_next_action monkey
       }.should raise_error MonkeyEngine::Exceptions::InvalidOperationException
     end
 
-    it 'should get correct action if current action is nil?' do
+    it 'gets correct action if current action is nil?' do
       monkey = MonkeyFactory.create :groucho
 
       monkey.extend(SpecHelpers::SetMonkeyAction)
 
-      monkey.set_action(nil)
+      monkey.force_action(nil)
 
-      ActionRules.instance.get_next_action(monkey).is_a?(MonkeyActionWake).should == true
+      ActionRules.instance.get_next_action(monkey).is_a?(MonkeyActionWake).should be true
     end
 
-    it 'should get correct action if current action is MonkeyActionSleep' do
+    it 'gets correct action if current action is MonkeyActionSleep' do
       monkey = MonkeyFactory.create :groucho
 
       monkey.extend(SpecHelpers::SetMonkeyAction)
@@ -51,9 +45,9 @@ describe 'ActionRules' do
       action = MonkeyActionSleep.new(monkey, 6 * 60)
       action.action_completed = true
 
-      monkey.set_action(action)
+      monkey.force_action(action)
 
-      ActionRules.instance.get_next_action(monkey).is_a?(MonkeyActionWake).should == true
+      ActionRules.instance.get_next_action(monkey).is_a?(MonkeyActionWake).should be true
     end
   end
 end

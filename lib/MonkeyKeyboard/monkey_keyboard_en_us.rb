@@ -16,7 +16,7 @@ module MonkeyEngine
     attr_reader :keys, :left_keys, :right_keys
 
     def initialize
-      LittleWeasel.configure do |config| end
+      LittleWeasel.configure { |config| }
 
       @keys = [
         # Row 1 of 5
@@ -124,7 +124,7 @@ module MonkeyEngine
       # Take the keys until we hit a key that terminates a word...
       keyboard_input.input = keys.take_while do |key|
         !keyboard_char_ends_word?(key.keyboard_char.char)
-      end.collect { |key| keyboard_key_evaluator.get_char(key) }.compact
+      end.filter_map { |key| keyboard_key_evaluator.get_char(key) }
 
       # Keep going until we get something...
       keyboard_input = get_keyboard_input if keyboard_input.input.empty?

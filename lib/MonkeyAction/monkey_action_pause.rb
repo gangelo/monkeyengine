@@ -18,8 +18,6 @@ class MonkeyActionPause < MonkeyTimedAction
     @action_time_of_completion = @action_time + value
 
     validate
-
-    self
   end
 
   protected
@@ -27,7 +25,7 @@ class MonkeyActionPause < MonkeyTimedAction
   def validate
     super
 
-    raise MonkeyEngine::Exceptions::InvalidArgumentValueException, "Value '#{value}' is not a valid value"  \
+    raise MonkeyEngine::Exceptions::InvalidArgumentValueException, "Value '#{value}' is not a valid value" \
       unless VALID_VALUES.include?(@value)
   end
 end

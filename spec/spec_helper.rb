@@ -4,7 +4,7 @@ require 'pry-byebug'
 
 module SpecHelpers
   module SetMonkeyAction
-    def set_action(action)
+    def force_action(action)
       @action = action
     end
   end

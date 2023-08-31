@@ -7,14 +7,11 @@ describe 'MonkeyKeyboardEnUs' do
     @it = MonkeyEngine::MonkeyKeyboardEnUs.instance
   end
 
-  context 'keys' do
-  end
-
   context 'left_keys' do
-    it 'should have the correct amount of keyboard entries on the left side of the keyboard' do
+    it 'has the correct amount of keyboard entries on the left side of the keyboard' do
       key_count = 0
 
-      @it.keys.each do |key|
+      @it.keys.each do |key| # rubocop:disable Style/HashEachMethods
         key_count += key.keyboard_key_weight if key.keyboard_key_section == :left
       end
 
@@ -23,10 +20,10 @@ describe 'MonkeyKeyboardEnUs' do
   end
 
   context 'right_keys' do
-    it 'should have the correct amount of keyboard entries on the right side of the keyboard' do
+    it 'has the correct amount of keyboard entries on the right side of the keyboard' do
       key_count = 0
 
-      @it.keys.each do |key|
+      @it.keys.each do |key| # rubocop:disable Style/HashEachMethods
         key_count += key.keyboard_key_weight if key.keyboard_key_section == :right
       end
 

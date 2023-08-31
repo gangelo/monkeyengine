@@ -3,7 +3,7 @@
 describe 'MonkeyManager' do
   before { skip 'todo' }
 
-  it 'should do something' do
+  it 'does something' do
     skip 'todo'
   end
 end

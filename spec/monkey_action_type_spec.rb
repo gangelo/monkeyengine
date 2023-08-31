@@ -28,10 +28,10 @@ describe 'MonkeyActionType' do
     MonkeyEngine::MonkeyManager.instance.join_all(10)
   end
 
-  it_should_behave_like 'MonkeyAction'
+  it_behaves_like 'MonkeyAction'
 
   it '@it should be the correct type' do
-    @it.is_a?(MonkeyActionType).should == true
+    @it.is_a?(MonkeyActionType).should be true
   end
 
   # Monkey
@@ -45,7 +45,7 @@ describe 'MonkeyActionType' do
   end
 
   it '@value should be is_a? Array' do
-    @it.value.is_a?(Array).should == true
+    @it.value.is_a?(Array).should be true
   end
 
   it '@value should not be nil?' do
@@ -58,7 +58,7 @@ describe 'MonkeyActionType' do
   end
 
   # validate
-  it 'should not raise an error if value is valid' do
+  it 'does not raise an error if value is valid' do
     monkey = MonkeyFactory.create(:typing_monkey2)
     MonkeyEngine::MonkeyManager.instance.add(monkey)
 
@@ -68,14 +68,14 @@ describe 'MonkeyActionType' do
     -> { MonkeyActionType.new(monkey, keyboard_input) }.should_not raise_error
   end
 
-  it 'should raise an error if value is the wrong type' do
+  it 'raises an error if value is the wrong type' do
     monkey = MonkeyFactory.create(:typing_monkey3)
     MonkeyEngine::MonkeyManager.instance.add(monkey)
     -> { MonkeyActionType.new(monkey, :wrong_type) }.should \
       raise_error MonkeyEngine::Exceptions::InvalidArgumentTypeException
   end
 
-  it 'should raise an error if value is empty?' do
+  it 'raises an error if value is empty?' do
     monkey = MonkeyFactory.create(:typing_monkey4)
     MonkeyEngine::MonkeyManager.instance.add(monkey)
 
@@ -86,7 +86,7 @@ describe 'MonkeyActionType' do
       raise_error MonkeyEngine::Exceptions::InvalidArgumentValueException
   end
 
-  it 'should raise an error if value is nil' do
+  it 'raises an error if value is nil' do
     monkey = MonkeyFactory.create(:typing_monkey5)
     MonkeyEngine::MonkeyManager.instance.add(monkey)
     -> { MonkeyActionType.new(monkey, nil) }.should \

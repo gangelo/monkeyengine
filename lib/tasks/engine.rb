@@ -9,7 +9,7 @@ require 'LittleWeasel'
 require File.expand_path('../MonkeyFactory', __dir__)
 require File.expand_path('../MonkeyEngine', __dir__)
 
-LittleWeasel.configure do |config| end
+LittleWeasel.configure { |config| }
 
 module Runner
   class MonkeyRun
@@ -26,8 +26,6 @@ module Runner
         go
         sleep @runtime
       end
-
-      self
     end
 
     def go
@@ -90,17 +88,23 @@ namespace :engine do
         word = monkey_word[0]
         times = monkey_word[1]
         if word.length > 1
-          puts "#{word_index}. Monkey [#{monkey.capitalize}] typed [#{word.capitalize}] [#{times}] time(s) <=== #{word.length}-letter word!".colorize(color: :green, mode: :bold)
+          puts "#{word_index}. Monkey [#{monkey.capitalize}] typed [#{word.capitalize}] [#{times}] time(s) " \
+               "<=== #{word.length}-letter word!".colorize(
+                 color: :green, mode: :bold
+               )
         else
-          puts "#{word_index}. Monkey [#{monkey.capitalize}] typed [#{word.capitalize}] [#{times}] time(s)".colorize(color: :green)
+          puts "#{word_index}. Monkey [#{monkey.capitalize}] typed [#{word.capitalize}] [#{times}] time(s)"
+            .colorize(color: :green)
         end
       end
     end
-    total_valid_words_count = runner.monkey_words.inject(0) { |sum, monkey_word_info| sum + monkey_word_info[1].keys.count }
+    total_valid_words_count = runner.monkey_words.inject(0) do |sum, monkey_word_info|
+      sum + monkey_word_info[1].keys.count
+    end
 
     puts '-----------------------------------------'
     puts "Total valid words: #{total_valid_words_count}"
-    puts 'These monkeys can type!' if total_valid_words_count > 0
+    puts 'These monkeys can type!' if total_valid_words_count.positive?
     puts 'Done.'
     puts
     puts

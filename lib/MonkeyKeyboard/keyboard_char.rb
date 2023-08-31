@@ -6,6 +6,5 @@ class KeyboardChar
 
   def initialize(char)
     @char = char
-    self
   end
 end

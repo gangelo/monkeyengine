@@ -13,8 +13,6 @@ class MonkeyActionWake < MonkeyAction
     super monkey, true, WEIGHT
 
     validate
-
-    self
   end
 
   protected
@@ -22,7 +20,7 @@ class MonkeyActionWake < MonkeyAction
   def validate
     super
 
-    raise MonkeyEngine::Exceptions::InvalidArgumentValueException, "Value '#{value}' is not a valid value"  \
+    raise MonkeyEngine::Exceptions::InvalidArgumentValueException, "Value '#{value}' is not a valid value" \
       unless VALID_VALUES.include?(@value)
   end
 end

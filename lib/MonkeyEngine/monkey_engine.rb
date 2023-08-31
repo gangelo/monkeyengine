@@ -13,12 +13,6 @@ module MonkeyEngine
     include Singleton
     include Observable
 
-    private
-
-    def initialize; end
-
-    public
-
     # Evaluates whether or not the action is completed.
     def action_eval!(action)
       ActionRules.instance.action_eval! action
@@ -27,7 +21,7 @@ module MonkeyEngine
     def do_action(action)
       if action.action_completed?
         raise MonkeyEngine::Exceptions::InvalidOperationException,
-              "The action [#{action.class.name}] for Monkey [#{action.monkey.monkey_symbol}] is already completed"
+          "The action [#{action.class.name}] for Monkey [#{action.monkey.monkey_symbol}] is already completed"
       end
 
       do_action_type(action) if action.is_a? MonkeyActionType
@@ -47,7 +41,7 @@ module MonkeyEngine
     def new_action(monkey)
       unless monkey.action.nil? || monkey.action.action_completed?
         raise MonkeyEngine::Exceptions::InvalidOperationException,
-              "The action [#{monkey.action.class.name}] for Monkey [#{monkey.monkey_symbol}] must be completed before calling new_action"
+          "The action [#{monkey.action.class.name}] for Monkey [#{monkey.monkey_symbol}] must be completed before calling new_action"
       end
 
       ActionRules.instance.get_next_action monkey

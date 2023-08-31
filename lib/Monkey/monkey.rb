@@ -31,7 +31,6 @@ class Monkey
   def initialize(monkey_symbol)
     @monkey_symbol = monkey_symbol
     @monkey_service = MonkeyEngine::MonkeyService.instance
-    self
   end
 
   public
@@ -76,7 +75,7 @@ class Monkey
   def start
     if alive?
       raise MonkeyEngine::Exceptions::InvalidOperationException,
-            "The monkey [#{@monkey_symbol}] thread is already started"
+        "The monkey [#{@monkey_symbol}] thread is already started"
     end
 
     initialize_thread

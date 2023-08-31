@@ -11,10 +11,14 @@ Gem::Specification.new do |spec|
   spec.version       = MonkeyEngine::VERSION
   spec.authors       = ['Gene M. Angelo, Jr.']
   spec.email         = ['public.gma@gmail.com']
-  spec.description   = "Have some fun! MonkeyEngine is a gem that allows virtual monkeys to tap away on a virtual keyboard! Can any of them complete a sentence? write a book? The sky's the limit! Add your own AI! Publish the results! Go...BANANAS!"
+  spec.description   = "Have some fun! MonkeyEngine is a gem that allows virtual monkeys " \
+    "to tap away on a virtual keyboard! Can any of them complete a sentence? " \
+    "write a book? The sky is the limit! Add your own AI! Publish the results! " \
+    "Go...BANANAS!"
   spec.summary       = 'The engine that drives my monkeys!'
   spec.homepage      = 'https://github.com/gangelo/monkeyengine'
   spec.license       = 'MIT'
+  spec.required_ruby_version = '>= 3.0.1'
 
   spec.files         = `git ls-files`.split($INPUT_RECORD_SEPARATOR)
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
