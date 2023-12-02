@@ -1,30 +1,41 @@
 PATH
   remote: .
   specs:
-    MonkeyEngine (2.0.2)
-      LittleWeasel (~> 5.0, >= 5.0.3)
-      ProtectedConstructor (~> 2.0, >= 2.0.3)
+    MonkeyEngine (2.0.3)
+      LittleWeasel (>= 5.0, < 6.0)
+      ProtectedConstructor (>= 2.0, < 3.0)
 
 GEM
   remote: https://rubygems.org/
   specs:
-    LittleWeasel (5.0.7)
-      activesupport (~> 7.0.8)
-    ProtectedConstructor (2.1.5)
-    activesupport (7.0.8)
+    LittleWeasel (5.0.8)
+      activesupport (>= 7.0.8, < 8.0)
+    ProtectedConstructor (2.1.6)
+    activesupport (7.1.2)
+      base64
+      bigdecimal
       concurrent-ruby (~> 1.0, >= 1.0.2)
+      connection_pool (>= 2.2.5)
+      drb
       i18n (>= 1.6, < 2)
       minitest (>= 5.1)
+      mutex_m
       tzinfo (~> 2.0)
+    base64 (0.2.0)
+    bigdecimal (3.1.4)
     byebug (11.1.3)
     coderay (1.1.3)
     colorize (0.8.1)
     concurrent-ruby (1.2.2)
+    connection_pool (2.4.1)
     diff-lcs (1.5.0)
+    drb (2.2.0)
+      ruby2_keywords
     i18n (1.14.1)
       concurrent-ruby (~> 1.0)
     method_source (1.0.0)
     minitest (5.20.0)
+    mutex_m (0.2.0)
     pry (0.14.2)
       coderay (~> 1.1)
       method_source (~> 1.0)
@@ -46,6 +57,7 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.12.0)
     rspec-support (3.12.1)
+    ruby2_keywords (0.0.5)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
     yard (0.9.34)
@@ -56,13 +68,13 @@ PLATFORMS
 
 DEPENDENCIES
   MonkeyEngine!
-  bundler (~> 2.4, >= 2.4.21)
-  colorize (~> 0.8.1)
-  pry-byebug (~> 3.9)
-  rake (~> 13.0, >= 13.0.6)
-  redcarpet (~> 2.3, >= 2.3.0)
-  rspec (~> 3.10)
-  yard (~> 0.9.28)
+  bundler (>= 2.4, < 3.0)
+  colorize (>= 0.8.1, < 1.0)
+  pry-byebug (>= 3.9, < 4.0)
+  rake (>= 13.0, < 14.0)
+  redcarpet (>= 2.3, < 3.0)
+  rspec (>= 3.10, < 4.0)
+  yard (>= 0.9.28, < 1.0)
 
 BUNDLED WITH
    2.4.21
