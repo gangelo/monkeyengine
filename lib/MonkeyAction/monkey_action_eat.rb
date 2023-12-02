@@ -13,7 +13,7 @@ class MonkeyActionEat < MonkeyTimedAction
   VALID_VALUES = (30..60) # 30 through 60 minutes
 
   def initialize(monkey, value)
-    super monkey, value, WEIGHT
+    super(monkey, value, WEIGHT)
 
     @action_time_of_completion = @action_time + (value * 60)
 

@@ -21,7 +21,7 @@ class MonkeyActionType < MonkeyAction
 
     @keyboard_input = keyboard_input
 
-    super monkey, @keyboard_input.input, WEIGHT
+    super(monkey, @keyboard_input.input, WEIGHT)
 
     validate
   end

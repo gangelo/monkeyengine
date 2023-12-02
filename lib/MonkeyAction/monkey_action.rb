@@ -7,7 +7,7 @@ class MonkeyAction < Action
   attr_reader :monkey
 
   def initialize(monkey, value, weight)
-    super value, weight
+    super(value, weight)
 
     @monkey = monkey
   end

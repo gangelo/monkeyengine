@@ -8,7 +8,7 @@ class MonkeyTimedAction < MonkeyAction
   attr_accessor :action_time_of_completion
 
   def initialize(monkey, value, weight)
-    super monkey, value, weight
+    super(monkey, value, weight)
 
     @action_time_of_completion = nil
 

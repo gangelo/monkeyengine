@@ -13,7 +13,7 @@ class MonkeyActionPause < MonkeyTimedAction
   VALID_VALUES = (0..60) # Seconds (0 - 60 seconds)
 
   def initialize(monkey, value)
-    super monkey, value, WEIGHT
+    super(monkey, value, WEIGHT)
 
     @action_time_of_completion = @action_time + value
 

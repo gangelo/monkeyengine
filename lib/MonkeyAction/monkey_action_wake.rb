@@ -10,7 +10,7 @@ class MonkeyActionWake < MonkeyAction
   VALID_VALUES = [true].freeze
 
   def initialize(monkey)
-    super monkey, true, WEIGHT
+    super(monkey, true, WEIGHT)
 
     validate
   end
