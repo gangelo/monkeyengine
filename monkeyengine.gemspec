@@ -25,14 +25,13 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ['lib']
 
-  spec.add_development_dependency 'bundler', '>= 2.4', '< 3.0'
-  spec.add_development_dependency 'colorize', '>= 0.8.1', '< 1.0'
-  spec.add_development_dependency 'pry-byebug', '>= 3.9', '< 4.0'
-  spec.add_development_dependency 'rake', '>= 13.0', '< 14.0'
-  spec.add_development_dependency 'redcarpet', '>= 2.3', '< 3.0'
-  spec.add_development_dependency 'rspec', '>= 3.10', '< 4.0'
-  spec.add_development_dependency 'yard', '>= 0.9.28', '< 1.0'
-
   spec.add_runtime_dependency 'LittleWeasel', '>= 5.0', '< 6.0'
   spec.add_runtime_dependency 'ProtectedConstructor', '>= 2.0', '< 3.0'
+  spec.post_install_message = <<~POST_INSTALL
+    Thank you for installing MonkeyEngine.
+
+    This is a gem created for fun and demonstrates a little about ruby threads.
+
+    Run `bundle exec rake engine:run` from your command line to see a sample.
+  POST_INSTALL
 end

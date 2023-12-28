@@ -63,7 +63,7 @@ end
 namespace :engine do
   desc 'Run the MonkeyEngine'
   task :run do
-    runtime = 60 * 2
+    runtime = 30
 
     service = MonkeyEngine::MonkeyService.instance
 

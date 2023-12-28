@@ -1,3 +1,11 @@
+### Version 2.0.4 2023-12-28
+
+Changes
+
+- Update ruby gems.
+- Add github actions to run specs.
+- Change the time task engine:run takes to run from 120 seconds to 30 seconds.
+
 ### Version 2.0.3 2023-12-02
 - Update ruby gems.
 
