@@ -3,14 +3,14 @@ PATH
   specs:
     MonkeyEngine (2.0.4)
       LittleWeasel (>= 5.0, < 6.0)
-      ProtectedConstructor (>= 2.0, < 3.0)
+      ProtectedConstructor (~> 3.0)
 
 GEM
   remote: https://rubygems.org/
   specs:
     LittleWeasel (5.0.9)
       activesupport (>= 7.0.8, < 8.0)
-    ProtectedConstructor (2.1.6)
+    ProtectedConstructor (3.0.0)
     activesupport (7.1.2)
       base64
       bigdecimal

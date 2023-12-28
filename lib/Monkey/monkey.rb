@@ -2,7 +2,7 @@
 
 require 'MonkeyActions'
 require 'MonkeyService'
-require 'ProtectedConstructor'
+require 'protected_constructor'
 
 # Monkey class.
 #
