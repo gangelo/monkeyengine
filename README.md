@@ -1,3 +1,11 @@
+[![Ruby](https://github.com/gangelo/MonkeyEngine/actions/workflows/ruby.yml/badge.svg?refresh=1)](https://github.com/gangelo/MonkeyEngine/actions/workflows/ruby.yml)
+[![GitHub version](http://badge.fury.io/gh/gangelo%2FMonkeyEngine.svg?refresh=2)](https://badge.fury.io/gh/gangelo%2FMonkeyEngine)
+[![Gem Version](https://badge.fury.io/rb/MonkeyEngine.svg?refresh=2)](https://badge.fury.io/rb/MonkeyEngine)
+[![](http://ruby-gem-downloads-badge.herokuapp.com/MonkeyEngine?type=total)](http://www.rubydoc.info/gems/MonkeyEngine/)
+[![Documentation](http://img.shields.io/badge/docs-rdoc.info-blue.svg)](http://www.rubydoc.info/gems/MonkeyEngine/)
+[![Report Issues](https://img.shields.io/badge/report-issues-red.svg)](https://github.com/gangelo/MonkeyEngine/issues)
+[![License](http://img.shields.io/badge/license-MIT-yellowgreen.svg)](#license)
+
 # MonkeyEngine
 
 Have some fun! MonkeyEngine is a gem that allows virtual monkeys to tap away on a virtual keyboard! Can any of them complete a sentence? write a book? The sky's the limit! Add your own AI! Publish the results! Go...BANANAS! 
