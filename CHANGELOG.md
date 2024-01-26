@@ -1,3 +1,9 @@
+### Version 2.0.6 2024-01-25
+
+Changes
+
+- Update ruby gems.
+
 ### Version 2.0.5 2024-01-07
 
 Changes
