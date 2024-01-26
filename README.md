@@ -1,6 +1,6 @@
 [![Ruby](https://github.com/gangelo/MonkeyEngine/actions/workflows/ruby.yml/badge.svg?refresh=1)](https://github.com/gangelo/MonkeyEngine/actions/workflows/ruby.yml)
-[![GitHub version](http://badge.fury.io/gh/gangelo%2FMonkeyEngine.svg?refresh=4)](https://badge.fury.io/gh/gangelo%2FMonkeyEngine)
-[![Gem Version](https://badge.fury.io/rb/MonkeyEngine.svg?refresh=4)](https://badge.fury.io/rb/MonkeyEngine)
+[![GitHub version](http://badge.fury.io/gh/gangelo%2FMonkeyEngine.svg?refresh=5)](https://badge.fury.io/gh/gangelo%2FMonkeyEngine)
+[![Gem Version](https://badge.fury.io/rb/MonkeyEngine.svg?refresh=5)](https://badge.fury.io/rb/MonkeyEngine)
 [![](http://ruby-gem-downloads-badge.herokuapp.com/MonkeyEngine?type=total)](http://www.rubydoc.info/gems/MonkeyEngine/)
 [![Documentation](http://img.shields.io/badge/docs-rdoc.info-blue.svg)](http://www.rubydoc.info/gems/MonkeyEngine/)
 [![Report Issues](https://img.shields.io/badge/report-issues-red.svg)](https://github.com/gangelo/MonkeyEngine/issues)
@@ -8,7 +8,7 @@
 
 # MonkeyEngine
 
-Have some fun! MonkeyEngine is a gem that allows virtual monkeys to tap away on a virtual keyboard! Can any of them complete a sentence? write a book? The sky's the limit! Add your own AI! Publish the results! Go...BANANAS! 
+Have some fun! MonkeyEngine is a gem that allows virtual monkeys to tap away on a virtual keyboard! Can any of them complete a sentence? write a book? The sky's the limit! Add your own AI! Publish the results! Go...BANANAS!
 
 Run the following rake task at the command line to see a little sample app:
 
