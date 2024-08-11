@@ -1,6 +1,6 @@
 [![Ruby](https://github.com/gangelo/MonkeyEngine/actions/workflows/ruby.yml/badge.svg?refresh=1)](https://github.com/gangelo/MonkeyEngine/actions/workflows/ruby.yml)
-[![GitHub version](http://badge.fury.io/gh/gangelo%2FMonkeyEngine.svg?refresh=5)](https://badge.fury.io/gh/gangelo%2FMonkeyEngine)
-[![Gem Version](https://badge.fury.io/rb/MonkeyEngine.svg?refresh=5)](https://badge.fury.io/rb/MonkeyEngine)
+[![GitHub version](http://badge.fury.io/gh/gangelo%2FMonkeyEngine.svg?refresh=6)](https://badge.fury.io/gh/gangelo%2FMonkeyEngine)
+[![Gem Version](https://badge.fury.io/rb/MonkeyEngine.svg?refresh=6)](https://badge.fury.io/rb/MonkeyEngine)
 [![](http://ruby-gem-downloads-badge.herokuapp.com/MonkeyEngine?type=total)](http://www.rubydoc.info/gems/MonkeyEngine/)
 [![Documentation](http://img.shields.io/badge/docs-rdoc.info-blue.svg)](http://www.rubydoc.info/gems/MonkeyEngine/)
 [![Report Issues](https://img.shields.io/badge/report-issues-red.svg)](https://github.com/gangelo/MonkeyEngine/issues)
