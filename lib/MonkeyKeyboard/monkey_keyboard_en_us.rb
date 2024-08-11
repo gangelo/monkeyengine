@@ -16,7 +16,9 @@ module MonkeyEngine
     attr_reader :keys, :left_keys, :right_keys
 
     def initialize
-      LittleWeasel.configure { |config| }
+      LittleWeasel.configure do |config|
+        config.max_dictionary_file_megabytes = 7
+      end
 
       @keys = [
         # Row 1 of 5
